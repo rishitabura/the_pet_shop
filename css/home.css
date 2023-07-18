@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+}
+
+.image-background {
+    max-width: 700px;
+    opacity: 0.85;
+    padding-top: 100px;
+    padding-left: 50px;
+    padding-bottom: 100px;
+    height: 100%;
+    border-radius: 40%;
+}
+
+@media (max-width: 768px) {
+    .image-background {
+        padding-bottom: 12px;
+    }
+}
+
+.image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
