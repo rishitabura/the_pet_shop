@@ -14,8 +14,8 @@ function Navbar()
                     <li><a href="#">About</a></li> --> */}
                 </ul>
                 <div class="logo"><a href="index.html">Pet Bazaar</a></div>
-                <div class="logo"><a href="index.html"><img src="#" style={{height: '60px', width: 'auto'}}/></a>
-                </div>
+                {/* <div class="logo"><a href="index.html"><img src="#" style={{height: '60px', width: 'auto'}}/></a>
+                </div> */}
                 <input type="radio" name="slider" id="menu-btn"/>
                 <input type="radio" name="slider" id="close-btn"/>
                 <ul class="nav-links">

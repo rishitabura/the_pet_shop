@@ -333,7 +333,7 @@ nav input {
 
 /* footer begins */
 footer {
-    position: fixed;
+    position: relative;
     /* background: #F1C93B; */
     background-color: #333333;
     /* opacity: 0.9; */

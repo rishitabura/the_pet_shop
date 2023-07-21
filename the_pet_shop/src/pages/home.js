@@ -40,25 +40,6 @@ function Home() {
             <img src={bg} alt="Image" style={{width: '100%'}}/>
         </div>
     </div>
-    <div>
-        <h2>
-            Pet
-        </h2>
-        <h2>
-            Pet
-        </h2>
-        <h2>
-            Pet
-        </h2>
-        <h2>
-            Pet
-        </h2>
-        <h2>
-            Pet
-        </h2>
-    </div>
-
-
 
 
 
