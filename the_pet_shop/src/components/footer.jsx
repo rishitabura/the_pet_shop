@@ -1,45 +1,123 @@
-import "../styles/home.css";
+import "../styles/style.css";
 import "../styles/common.css";
+import footer from "../assets/images/footer-bg.jpg";
 
 
 function Footer() {
     return (
-        <footer>
-            <div class="content">
-                <div class="top">
-                    <div class="logo-details">
-                        <a href="index.html"><img src="img/logo5.png" style={{ width: 'auto', height: '100px' }} /></a>
-                    </div>
-                    <div class="media-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
+        <footer class="footer" style="background-image: url({footer})">
+
+        <div class="footer-top section">
+            <div class="container">
+
+                <div class="footer-brand">
+
+                    <a href="#" class="logo">Pet Bazaar</a>
+
+                    <p class="footer-text">
+                        If you have any question, please contact us at <a href="mailto:support@gmail.com"
+                            class="link">petbazaar@gmail.com</a>
+                    </p>
+
+                    <ul class="contact-list" id="contact">
+
+                        <li class="contact-item">
+                            <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
+
+                            <address class="address">
+                                Pune, Maharashtra
+                            </address>
+                        </li>
+
+                        <li class="contact-item">
+                            <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
+
+                            <a href="tel:+16234567891011" class="contact-link">xxxxxxxxx</a>
+                        </li>
+
+                    </ul>
+
+                    <ul class="social-list">
+
+                        <li>
+                            <a href="#" class="social-link">
+                                <ion-icon name="logo-facebook"></ion-icon>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="social-link">
+                                <ion-icon name="logo-twitter"></ion-icon>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="social-link">
+                                <ion-icon name="logo-pinterest"></ion-icon>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="social-link">
+                                <ion-icon name="logo-instagram"></ion-icon>
+                            </a>
+                        </li>
+
+                    </ul>
+
                 </div>
-                <br />
-                <div class="link-boxes">
-                    <ul class="box">
-                        <li class="link_name">Policies</li>
-                        <li><a href="#">Terms and Conditions</a></li>
-                        <li><a href="#">Shipping Policy</a></li>
-                        <li><a href="#">Return and Exchange Policy</a></li>
-                    </ul>
-                    <ul class="box">
-                        <li class="link_name">Overview</li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Our Collection</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
-                    <ul class="box input-box">
-                        <li class="link_name">Subscribe</li>
-                        <li><input type="email" placeholder="Enter your email" /></li>
-                        <li><input type="button" value="Subscribe" /></li>
-                    </ul>
-                </div>
+
+                <ul class="footer-list">
+
+                    <li>
+                        <p class="footer-list-title">Overview</p>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">About us</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">Categories</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">Contact Us</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">FAQs</a>
+                    </li>
+
+                </ul>
+
+                <ul class="footer-list">
+
+                    <li>
+                        <p class="footer-list-title">Policies</p>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">Terms and Condition</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">Shipping Policy</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">Refund Policy</a>
+                    </li>
+
+                </ul>
+
+
+
             </div>
-        </footer>
+        </div>
+    </footer>
+
+
     )
 }
 

@@ -1,91 +1,68 @@
-import "../styles/home.css";
-import "../styles/common.css";
+import "../styles/style.css";
+// import "../styles/common.css";
 
 
 function Navbar() {
     return (
 
-        <nav>
-            <div class="wrapper">
-                <ul class="nav-links">
-                  
-                </ul>
-                <div class="logo">
-                    <a href="index.html">Pet Bazaar</a>
-                </div>
-                <input type="radio" name="slider" id="menu-btn" />
-                <input type="radio" name="slider" id="close-btn" />
-                <ul class="nav-links">
-                    <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li>
-                        <a href="#" class="desktop-item">Dropdown Menu <i class="fa fa-angle-down"></i></a>
-                        <input type="checkbox" id="showDrop" />
-                        <label for="showDrop" class="mobile-item">Dropdown Menu</label>
-                        <ul class="drop-menu">
-                            <li><a href="#">Drop menu 1</a></li>
-                            <li><a href="#">Drop menu 2</a></li>
-                            <li><a href="#">Drop menu 3</a></li>
-                            <li><a href="#">Drop menu 4</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#" class="desktop-item">Shop <i class="fa fa-angle-down"></i></a>
-                        <input type="checkbox" id="showMega" />
-                        <label for="showMega" class="mobile-item">Shop</label>
-                        <div class="mega-box">
-                            <div class="content">
-                                {/* <!-- <div class="row">
-                    <img src="img.jpg" alt=""/>
-                  </div> --> */}
-                                <div class="row">
-                                    <header>Farm Animals</header>
-                                    <ul class="mega-links" style={{ 'list-style-image': 'url(./img/pawicon.jpeg)' }}>
-                                        <li><a href="#">Polaroids</a></li>
-                                        <li><a href="#">Candles</a></li>
-                                        <li><a href="#">Coasters</a></li>
-                                        <li><a href="#">Stickers</a></li>
-                                    </ul>
-                                </div>
-                                <div class="row">
-                                    <header>Domestic Pets</header>
-                                    <ul class="mega-links">
-                                        <li><a href="#">Necklaces</a></li>
-                                        <li><a href="#">Braclets</a></li>
-                                        <li><a href="#">Earrings</a></li>
-                                        <li><a href="#">Rings</a></li>
-                                        <li><a href="#">Aklets</a></li>
-                                    </ul>
-                                </div>
-                                <div class="row">
-                                    <header>Pet Care</header>
-                                    <ul class="mega-links">
-                                        <li><a href="#">Scrunchies</a></li>
-                                        <li><a href="#">Bows</a></li>
-                                        {/* <!-- <li><a href="#">Privacy Seal</a></li>
-                                        <li><a href="#">Website design</a></li> --> */}
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li><a href="#">Contact</a></li>
-                    <li>
-                        <div class="header-item item-right">
-                            <a href="#"><i class="fas fa-user"></i></a>
-                            {/* <!-- <a href="#"><i class="fas fa-sign-in-alt"></i></a> --> */}
-                            <a href="#"><i class="fas fa-shopping-cart"></i></a>
-
-                            <div class="mobile-menu-trigger">
-                                <span></span>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-                <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
-            </div>
-        </nav>
+        <header class="header" data-header style="background-color: white;">
+        <div class="container">
+    
+          <button class="nav-toggle-btn" aria-label="toggle manu" data-nav-toggler>
+            <ion-icon name="menu-outline" aria-hidden="true" class="menu-icon"></ion-icon>
+            <ion-icon name="close-outline" aria-label="true" class="close-icon"></ion-icon>
+          </button>
+    
+          <a href="#" class="logo">Pet Bazaar</a>
+    
+          <nav class="navbar" data-navbar>
+            <ul class="navbar-list">
+    
+              <li class="navbar-item">
+                <a href="index.html" class="navbar-link" data-nav-link>Home</a>
+              </li>
+    
+              <li class="navbar-item">
+                <a href="#pet-categories" class="navbar-link" data-nav-link>Pet Categories</a>
+              </li>
+    
+              <li class="navbar-item">
+                <a href="#shop" class="navbar-link" data-nav-link>Shop</a>
+              </li>
+    
+              <li class="navbar-item">
+                <a href="about.html" target="_blank" class="navbar-link" data-nav-link>About Us </a>
+              </li>
+    
+              <li class="navbar-item">
+                <a href="#contact" class="navbar-link" data-nav-link>Contact</a>
+              </li>
+    
+            </ul>
+    
+            <a href="#" class="navbar-action-btn">Log In</a>
+          </nav>
+    
+          <div class="header-actions">
+    
+            <button class="action-btn" aria-label="Search">
+              <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+            </button>
+    
+            <button class="action-btn user" aria-label="User">
+              <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+            </button>
+    
+            <button class="action-btn" aria-label="cart">
+              <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+    
+              <span class="btn-badge">0</span>
+            </button>
+    
+          </div>
+    
+        </div>
+      </header>
     )
 
 }
