@@ -2,29 +2,26 @@ import "../styles/home.css";
 import "../styles/common.css";
 
 
-function Navbar()
-{
-    return(
-        
-    <nav>
+function Navbar() {
+    return (
+
+        <nav>
             <div class="wrapper">
                 <ul class="nav-links">
-                    {/* <!-- <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label> -->
-                    <!-- <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li> --> */}
+                  
                 </ul>
-                <div class="logo"><a href="index.html">Pet Bazaar</a></div>
-                {/* <div class="logo"><a href="index.html"><img src="#" style={{height: '60px', width: 'auto'}}/></a>
-                </div> */}
-                <input type="radio" name="slider" id="menu-btn"/>
-                <input type="radio" name="slider" id="close-btn"/>
+                <div class="logo">
+                    <a href="index.html">Pet Bazaar</a>
+                </div>
+                <input type="radio" name="slider" id="menu-btn" />
+                <input type="radio" name="slider" id="close-btn" />
                 <ul class="nav-links">
                     <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About</a></li>
                     <li>
                         <a href="#" class="desktop-item">Dropdown Menu <i class="fa fa-angle-down"></i></a>
-                        <input type="checkbox" id="showDrop"/>
+                        <input type="checkbox" id="showDrop" />
                         <label for="showDrop" class="mobile-item">Dropdown Menu</label>
                         <ul class="drop-menu">
                             <li><a href="#">Drop menu 1</a></li>
@@ -35,7 +32,7 @@ function Navbar()
                     </li>
                     <li>
                         <a href="#" class="desktop-item">Shop <i class="fa fa-angle-down"></i></a>
-                        <input type="checkbox" id="showMega"/>
+                        <input type="checkbox" id="showMega" />
                         <label for="showMega" class="mobile-item">Shop</label>
                         <div class="mega-box">
                             <div class="content">
@@ -44,7 +41,7 @@ function Navbar()
                   </div> --> */}
                                 <div class="row">
                                     <header>Farm Animals</header>
-                                    <ul class="mega-links" style={{'list-style-image': 'url(./img/pawicon.jpeg)'}}>
+                                    <ul class="mega-links" style={{ 'list-style-image': 'url(./img/pawicon.jpeg)' }}>
                                         <li><a href="#">Polaroids</a></li>
                                         <li><a href="#">Candles</a></li>
                                         <li><a href="#">Coasters</a></li>
@@ -79,7 +76,7 @@ function Navbar()
                             <a href="#"><i class="fas fa-user"></i></a>
                             {/* <!-- <a href="#"><i class="fas fa-sign-in-alt"></i></a> --> */}
                             <a href="#"><i class="fas fa-shopping-cart"></i></a>
-                           
+
                             <div class="mobile-menu-trigger">
                                 <span></span>
                             </div>
@@ -90,7 +87,7 @@ function Navbar()
             </div>
         </nav>
     )
-        
+
 }
 
 export default Navbar;
