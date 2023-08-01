@@ -5,7 +5,7 @@ import "../styles/style.css";
 function Navbar() {
     return (
 
-        <header class="header" data-header style="background-color: white;">
+        <header class="header" data-header style={{'background-color': 'white'}}>
         <div class="container">
     
           <button class="nav-toggle-btn" aria-label="toggle manu" data-nav-toggler>
