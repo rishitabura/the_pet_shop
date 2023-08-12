@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-pascal-case */
 import React from "react";
 import "../styles/style.css";
 import bg2 from "../assets/img/bg2.jpg";
@@ -25,6 +26,7 @@ import ctabg from "../assets/img/cta-bg.jpg";
 import ctabanner from "../assets/img/cta-banner.png";
 
 import Navbar from "../components/Navbar";
+import Footer from "../components/footer";
 
 function Home() {
   return (
@@ -94,12 +96,7 @@ function Home() {
               <ul class="grid-list">
 
                 <li>
-                  <Card_PetAcc
-                   img_url = {petfoodimg1}
-                   title = "Pet Food"
-                   page_url = "#"
-                  />
-                  
+                  <Card_PetAcc img_url = {petfoodimg1} title = "Pet Food" page_url = "#" />
                 </li>
 
                 <li>
@@ -214,6 +211,10 @@ function Home() {
 
         </article>
       </main>
+
+      <br></br>
+      <br></br>
+      <Footer />
 
     </div>
   );

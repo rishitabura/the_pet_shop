@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import "../styles/style.css";
 import "../styles/common.css";
 import footer from "../assets/img/footer-bg.jpg";
@@ -5,7 +6,7 @@ import footer from "../assets/img/footer-bg.jpg";
 
 function Footer() {
     return (
-        <footer class="footer" style={{'background-image': 'url({footer})'}}>
+        <footer class="footer" style={{'background-image': 'url('+footer+')'}}>
 
         <div class="footer-top section">
             <div class="container">

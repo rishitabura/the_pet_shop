@@ -18,11 +18,12 @@
   },
   "homepage": "https://github.com/rishitabura/the_pet_shop#readme",
   "dependencies": {
+    "@ionic/react": "^7.2.3",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "ionicons": "^7.1.2",
     "jsonwebtoken": "^9.0.1",
     "mongodb": "^5.7.0"
-  },
-  "devDependencies": {}
+  }
 }
