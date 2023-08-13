@@ -3,7 +3,7 @@ import "../styles/style.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/footer";
 
-function Animals() {
+function About() {
   return (
     <div>
 
@@ -18,5 +18,5 @@ function Animals() {
   );
 }
 
-export default Animals;
+export default About;
 

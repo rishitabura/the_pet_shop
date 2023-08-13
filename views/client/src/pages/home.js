@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-pascal-case */
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/style.css";
 import bg2 from "../assets/img/bg2.jpg";
 
@@ -38,9 +39,9 @@ function Home() {
         <article>
 
 
-          <section class="section hero has-bg-image" id="home" aria-label="home"
+          <section className="section hero has-bg-image" id="home" aria-label="home"
             style={{ 'background-image': 'url('+bg2+')' }}>
-            <div class="container">
+            <div className="container">
 
             </div>
           </section>
@@ -48,18 +49,18 @@ function Home() {
 
 
 
-          <section class="section offer" id="pet-categories" aria-label="offer">
-            <div class="container">
-              <h2 class="h2 section-title">
-                <span class="span">Top</span> categories
+          <section className="section offer" id="pet-categories" aria-label="offer">
+            <div className="container">
+              <h2 className="h2 section-title">
+                <span className="span">Top</span> categories
               </h2>
-              <ul class="grid-list">
+              <ul className="grid-list">
 
                 <li>
                   <Card_TopCat
                   img_url = {animalsimg1}
                   subtitle = "Animals"
-                  page_url = "../pages/animals.js"
+                  page_url = "./animals.js"
                   />
                 </li>
 
@@ -86,14 +87,14 @@ function Home() {
           </section>
 
 
-          <section class="section product" id="shop" aria-label="product">
-            <div class="container">
+          <section className="section product" id="shop" aria-label="product">
+            <div className="container">
 
-              <h2 class="h2 section-title">
-                <span class="span">Pet</span> Accessories
+              <h2 className="h2 section-title">
+                <span className="span">Pet</span> Accessories
               </h2>
 
-              <ul class="grid-list">
+              <ul className="grid-list">
 
                 <li>
                   <Card_PetAcc img_url = {petfoodimg1} title = "Pet Food" page_url = "#" />
@@ -129,16 +130,16 @@ function Home() {
             </div>
           </section>
 
-          <section class="section category" aria-label="category">
-            <div class="container">
+          <section className="section category" aria-label="category">
+            <div className="container">
 
-              <h2 class="h2 section-title">
-                <span class="span">Top</span> categories
+              <h2 className="h2 section-title">
+                <span className="span">Top</span> categories
               </h2>
 
-              <ul class="has-scrollbar">
+              <ul className="has-scrollbar">
 
-                <li class="scrollbar-item">
+                <li className="scrollbar-item">
                 <Card_TopCat2
                  img_url = {catimg}
                  title = "Cats"
@@ -146,7 +147,7 @@ function Home() {
                  />
                 </li>
 
-                <li class="scrollbar-item">
+                <li className="scrollbar-item">
                 <Card_TopCat2
                  img_url = {dogimg}
                  title = "Dogs"
@@ -154,7 +155,7 @@ function Home() {
                  />
                 </li>
 
-                <li class="scrollbar-item">
+                <li className="scrollbar-item">
                 <Card_TopCat2
                  img_url = {rabbitimg}
                  title = "Rabbits"
@@ -162,7 +163,7 @@ function Home() {
                  />
                 </li>
 
-                <li class="scrollbar-item">
+                <li className="scrollbar-item">
                 <Card_TopCat2
                  img_url = {farm_animalimg}
                  title = "Farm Animals"
@@ -170,7 +171,7 @@ function Home() {
                  />
                 </li>
 
-                <li class="scrollbar-item">
+                <li className="scrollbar-item">
                 <Card_TopCat2
                  img_url = {birdimg2}
                  title = "Birds"
@@ -184,23 +185,24 @@ function Home() {
             </div>
           </section>
 
-          <section class="cta has-bg-image" aria-label="cta" style={{ "background-image": "url("+ctabg+")" }}>
-            <div class="container">
+          <section className="cta has-bg-image" aria-label="cta" style={{ "background-image": "url("+ctabg+")" }}>
+            <div className="container">
 
-              <figure class="cta-banner">
-                <img src={ctabanner} width="900" height="660" loading="lazy" alt="cat" class="w-100" />
+              <figure className="cta-banner">
+                <img src={ctabanner} width="900" height="660" loading="lazy" alt="cat" className="w-100" />
               </figure>
 
-              <div class="cta-content">
-                <h1 class="h1"> Find your Perfect Pet</h1>
+              <div className="cta-content">
+                <h1 className="h1"> Find your Perfect Pet</h1>
 
-                <h2 class="h2 section-title">Care of Your Little Pets</h2>
+                <h2 className="h2 section-title">Care of Your Little Pets</h2>
 
-                <p class="section-text">
+                <p className="section-text">
 
                 </p>
 
-                <a href="./pages/about.html" target="_blank" class="btn">About us</a>
+                {/* <a href="aboutus.js" className="btn">About us</a> */}
+                <Link  to= "/about" className="btn"> About us</Link>
 
               </div>
 
