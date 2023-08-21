@@ -9,6 +9,11 @@ import Home from "./pages/home";
 import About from './pages/aboutus';
 
 
+<<<<<<< HEAD
+=======
+import Animals from './pages/animals';
+
+>>>>>>> 524bffb5ec26051e2233e7055ec5d1044c0c23c3
 function App() {
   return (
     <>
