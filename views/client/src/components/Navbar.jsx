@@ -59,7 +59,7 @@ function Navbar() {
               </li>
     
               <li className="navbar-item">
-                <a href="about.html" target="_blank" className="navbar-link" data-nav-link>About Us </a>
+                <a href="/about" className="navbar-link" data-nav-link>About Us </a>
               </li>
     
               <li className="navbar-item">

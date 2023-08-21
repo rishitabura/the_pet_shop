@@ -12,6 +12,8 @@ function About() {
 
       <br></br>
       <br></br>
+      <br></br>
+      <br></br>
       <Footer />
 
     </div>
