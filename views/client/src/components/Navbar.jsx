@@ -1,4 +1,5 @@
-// import React from 'react';
+import React, { useState, useContext } from "react";
+import { Link, useLocation } from "react-router-dom";
 // import { IonIcon } from '@ionic/react';
 // import '@ionic/react/css/core.css';
 import "../styles/style.css";
@@ -6,11 +7,29 @@ import "../styles/style.css";
 
 
 function Navbar() {
+
+  let location = useLocation();
+  var login = false;
+
+  const islogin = () => {
+    const token = window.localStorage.getItem("token");
+    console.log(token);
+    if (token) login = true;
+    else login = false;
+  }
+
+  const logout = () => {
+    alert("Successful");
+    window.localStorage.clear();
+    window.location.href = "/";
+  }
+
+
     return (
 
         <header className="header" data-header style={{'background-color': 'white'}}>
         <div className="container">
-    
+        {islogin()}
           <button className="nav-toggle-btn" aria-label="toggle manu" data-nav-toggler>
             <ion-icon className="menu-outline" aria-hidden="true" class="menu-icon"></ion-icon>
             <ion-icon className="close-outline" aria-label="true" class="close-icon"></ion-icon>
@@ -68,10 +87,12 @@ function Navbar() {
               <span className="btn-badge">0</span>
             </button>
 
-            <button className="action-btn" aria-label="cart">
-            <a href="/login">Login</a>
+         
 
-            </button>
+            <Link to="/login"><button type="button" className={login ? "hide" : "loginbtn"}>Login</button></Link>
+           <button type="button" className={login ? "loginbtn" : "hide"} onClick={logout}>Logout</button>
+
+          
     
           </div>
     

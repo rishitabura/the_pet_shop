@@ -19,7 +19,7 @@ const Login = () => {
 
   const redirectNow = () => {
     const redirectTo = location.search.replace("?redirectTo=", "");
-    navigate(redirectTo ? redirectTo : "/auth");
+    navigate(redirectTo ? redirectTo : "/");
   }
 
   const onSubmit = async (event) => {

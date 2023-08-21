@@ -60,7 +60,7 @@ const Register = () => {
     .then((data)=>{
         console.log(data, "userRegister");
         alert("Successful");
-        navigate("/loginpatient");
+        navigate("/login");
     });
  };
  
@@ -110,7 +110,7 @@ const Register = () => {
                     </div>
 
                      <div class="wrap-input">
-                        <input type="text" class="input" name="loginid" placeholder="Phone Number" 
+                        <input type="text" class="input" name="phone" placeholder="Phone Number" 
                         label="Phone" value={form.phone}
                         onInput={onFormInputChange}
                         required/>
