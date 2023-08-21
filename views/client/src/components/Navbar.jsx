@@ -41,13 +41,13 @@ function Navbar() {
           <IonIcon name="close-outline" aria-label="true" className="close-icon" />
         </button> */}
     
-          <a href="#" className="logo">Pet Bazaar</a>
+          <a href="/" className="logo">Pet Bazaar</a>
     
           <nav className="navbar" data-navbar>
             <ul className="navbar-list">
     
               <li className="navbar-item">
-                <a href="index.html" className="navbar-link" data-nav-link>Home</a>
+                <a href="/" className="navbar-link" data-nav-link>Home</a>
               </li>
     
               <li className="navbar-item">

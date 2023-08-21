@@ -1,13 +1,34 @@
+/* eslint-disable react/jsx-pascal-case */
 import React from "react";
 import "../styles/style.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/footer";
-import CatImg from "../assets/img/cat.jpg";
-import DogImg from "../assets/img/dog.jpg";
-import RabbitImg from "../assets/img/rabbit.jpeg";
-import ParrotImg from "../assets/img/parrot.jpg";
 
-import Card from "../components/card_topCategories";
+
+import GermanShepherd from "../assets/img/German-Shepherd-Dog.jpg"
+import FrenchBulldogs from "../assets/img/French-Bulldogs.jpg";
+import GoldenRetrievers from "../assets/img/Golden-Retrievers.jpg";
+import PoodlesDog from "../assets/img/Poodles-dog.jpg";
+import RottweilersDog from "../assets/img/Rottweilers-dog.jpg";
+import BeaglesDog from "../assets/img/Beagles-dog.jpg";
+import ctabg from "../assets/img/cta-bg.jpg";
+import ctabanner from "../assets/img/cta-banner.png";
+
+
+import cows from "../assets/img/cows.jpeg";
+import hens from "../assets/img/hens.jpg";
+import goat from "../assets/img/goat.jpeg";
+
+
+
+import { Card_TopCat2 } from "../components/card_topCategories";
+import catimg from "../assets/img/cat.jpg";
+import dogimg from "../assets/img/dog.jpg";
+import rabbitimg from "../assets/img/rabbit.jpeg";
+import farm_animalimg from "../assets/img/parrot.jpg";
+import birdimg2 from "../assets/img/parrot.jpg";
+
+// import Card from "../components/card_topCategories";
 
 function Animals() {
   return (
@@ -18,7 +39,7 @@ function Animals() {
       <main>
         <article>
 
-          <section class="section category" aria-label="category">
+          {/* <section class="section category" aria-label="category">
             <div class="container">
 
               <h2 class="h2 section-title">
@@ -28,408 +49,235 @@ function Animals() {
               <ul class="has-scrollbar">
 
                 <li class="scrollbar-item">
-                  <Card 
-                    img_url = {CatImg}
-                    subtitle = "Cats"
-                    page_url = "#"
-                    />
+                  <Card
+                    img_url={CatImg}
+                    subtitle="Cats"
+                    page_url="#"
+                  />
                 </li>
                 <li class="scrollbar-item">
-                  <Card 
-                    img_url = {DogImg}
-                    subtitle = "Dog"
-                    page_url = "#"
-                    />  
-                  </li>
-                  <li class="scrollbar-item">
+                  <Card
+                    img_url={DogImg}
+                    subtitle="Dog"
+                    page_url="#"
+                  />
+                </li>
+                <li class="scrollbar-item">
 
-                  <Card 
-                    img_url = {CatImg}
-                    subtitle = "Cats"
-                    page_url = "#"
-                    />
-                    </li>
- <li class="scrollbar-item">
-                  <Card 
-                    img_url = {DogImg}
-                    subtitle = "Dog"
-                    page_url = "#"
-                    />  
-                    </li>
- <li class="scrollbar-item">
-                  <Card 
-                    img_url = {CatImg}
-                    subtitle = "Cats"
-                    page_url = "#"
-                    />
-                    </li>
- <li class="scrollbar-item">
-                  <Card 
-                    img_url = {DogImg}
-                    subtitle = "Dog"
-                    page_url = "#"
-                    />  
-                 
+                  <Card
+                    img_url={CatImg}
+                    subtitle="Cats"
+                    page_url="#"
+                  />
+                </li>
+                <li class="scrollbar-item">
+                  <Card
+                    img_url={DogImg}
+                    subtitle="Dog"
+                    page_url="#"
+                  />
+                </li>
+                <li class="scrollbar-item">
+                  <Card
+                    img_url={CatImg}
+                    subtitle="Cats"
+                    page_url="#"
+                  />
+                </li>
+                <li class="scrollbar-item">
+                  <Card
+                    img_url={DogImg}
+                    subtitle="Dog"
+                    page_url="#"
+                  />
+
                 </li>
               </ul>
 
             </div>
-          </section>
+          </section> */}
+          <br></br>
+          <br></br>
 
-          <section class="section category" aria-label="category">
-            <div class="container">
+          <section className="section category" aria-label="category">
+            <div className="container">
 
-              <h2 class="h2 section-title">
-                <span class="span">Cats</span> Breads
+              <h2 className="h2 section-title" >
+                <span className="span">Dogs</span> Breads
               </h2>
 
-              <ul class="has-scrollbar">
-{/* 
-                <li class="scrollbar-item">
-                  <div class="category-card">
+              <ul className="has-scrollbar">
 
-                    <figure class="card-banner img-holder" style="--width: 330; --height: 300;">
-                      <img src={CatImg} width="330" height="300" loading="lazy" alt="Cat Food"
-                        class="img-cover"/>
-                    </figure>
-
-                    <h3 class="h3">
-                      <a href="#" class="card-title">Cats</a>
-                    </h3>
-
-                  </div>
+                <li className="scrollbar-item">
+                <Card_TopCat2
+                 img_url = {GermanShepherd}
+                 title = "German Shepherd Dog"
+                 page_url = "#"
+                 />
                 </li>
 
-                <li class="scrollbar-item">
-                  <div class="category-card">
-
-                    <figure class="card-banner img-holder" style="--width: 330; --height: 300;">
-                      <img src={DogImg} width="330" height="300" loading="lazy" alt="Cat Toys"
-                        class="img-cover"/>
-                    </figure>
-
-                    <h3 class="h3">
-                      <a href="#" class="card-title">Dogs</a>
-                    </h3>
-
-                  </div>
+                <li className="scrollbar-item">
+                <Card_TopCat2
+                 img_url = {FrenchBulldogs}
+                 title = "French Bull Dog"
+                 page_url = "#"
+                 />
                 </li>
 
-                <li class="scrollbar-item">
-                  <div class="category-card">
-
-                    <figure class="card-banner img-holder" style="--width: 330; --height: 300;">
-                      <img src={RabbitImg} width="330" height="300" loading="lazy" alt="Dog Food"
-                        class="img-cover"/>
-                    </figure>
-
-                    <h3 class="h3">
-                      <a href="#" class="card-title">Rabbits</a>
-                    </h3>
-
-                  </div>
+                <li className="scrollbar-item">
+                <Card_TopCat2
+                 img_url = {GoldenRetrievers}
+                 title = "Golden Retrievers Dog"
+                 page_url = "#"
+                 />
                 </li>
 
-                <li class="scrollbar-item">
-                  <div class="category-card">
-
-                    <figure class="card-banner img-holder" style="--width: 330; --height: 300;">
-                      <img src={ParrotImg} width="330" height="300" loading="lazy" alt="Dog Toys"
-                        class="img-cover"/>
-                    </figure>
-
-                    <h3 class="h3">
-                      <a href="#" class="card-title">Farm animals</a>
-                    </h3>
-
-                  </div>
+                <li className="scrollbar-item">
+                <Card_TopCat2
+                 img_url = {PoodlesDog}
+                 title = "Poodles Dog"
+                 page_url = "#"
+                 />
                 </li>
 
-                <li class="scrollbar-item">
-                  <div class="category-card">
-
-                    <figure class="card-banner img-holder" style="--width: 330; --height: 300;">
-                      <img src={ParrotImg} width="330" height="300" loading="lazy"
-                        alt="Dog Sumpplements" class="img-cover"/>
-                    </figure>
-
-                    <h3 class="h3">
-                      <a href="#" class="card-title">Birds</a>
-                    </h3>
-
-                  </div>
+                <li className="scrollbar-item">
+                <Card_TopCat2
+                 img_url = {RottweilersDog}
+                 title = "Rottweilers Dog"
+                 page_url = "#"
+                 />
                 </li>
-                <li class="scrollbar-item">
-                  <div class="category-card">
 
-                    <figure class="card-banner img-holder" style="--width: 330; --height: 300;">
-                      <img src={ParrotImg} width="330" height="300" loading="lazy"
-                        alt="Dog Sumpplements" class="img-cover"/>
-                    </figure>
-
-                    <h3 class="h3">
-                      <a href="#" class="card-title">Birds</a>
-                    </h3>
-
-                  </div>
-                </li>
-                <li class="scrollbar-item">
-                  <div class="category-card">
-
-                    <figure class="card-banner img-holder" style="--width: 330; --height: 300;">
-                      <img src={ParrotImg} width="330" height="300" loading="lazy"
-                        alt="Dog Sumpplements" class="img-cover"/>
-                    </figure>
-
-                    <h3 class="h3">
-                      <a href="#" class="card-title">Birds</a>
-                    </h3>
-
-                  </div>
+                <li className="scrollbar-item">
+                <Card_TopCat2
+                 img_url = {BeaglesDog}
+                 title = "Beagles Dog"
+                 page_url = "#"
+                 />
+               
                 </li>
 
               </ul>
 
             </div>
           </section>
-          <section class="section category" aria-label="category">
-            <div class="container">
 
-              <h2 class="h2 section-title">
-                <span class="span">Rabbits</span> Breads
+
+          <section className="section category" aria-label="category">
+            <div className="container">
+
+              <h2 className="h2 section-title" >
+                <span className="span">Cats</span> Breads
               </h2>
 
-              <ul class="has-scrollbar">
+              <ul className="has-scrollbar">
 
-                <li class="scrollbar-item">
-                  <div class="category-card">
-
-                    <figure class="card-banner img-holder" style="--width: 330; --height: 300;">
-                      <img src="../assets/img/cat.jpg" width="330" height="300" loading="lazy" alt="Cat Food"
-                        class="img-cover"/>
-                    </figure>
-
-                    <h3 class="h3">
-                      <a href="#" class="card-title">Cats</a>
-                    </h3>
-
-                  </div>
+                <li className="scrollbar-item">
+                <Card_TopCat2
+                 img_url = {catimg}
+                 title = "Cats"
+                 page_url = "#"
+                 />
                 </li>
 
-                <li class="scrollbar-item">
-                  <div class="category-card">
-
-                    <figure class="card-banner img-holder" style="--width: 330; --height: 300;">
-                      <img src="../assets/img/dog.jpg" width="330" height="300" loading="lazy" alt="Cat Toys"
-                        class="img-cover"/>
-                    </figure>
-
-                    <h3 class="h3">
-                      <a href="#" class="card-title">Dogs</a>
-                    </h3>
-
-                  </div>
+                <li className="scrollbar-item">
+                <Card_TopCat2
+                 img_url = {dogimg}
+                 title = "Dogs"
+                 page_url = "#"
+                 />
                 </li>
 
-                <li class="scrollbar-item">
-                  <div class="category-card">
-
-                    <figure class="card-banner img-holder" style="--width: 330; --height: 300;">
-                      <img src="../assets/img/rabbit.jpeg" width="330" height="300" loading="lazy" alt="Dog Food"
-                        class="img-cover"/>
-                    </figure>
-
-                    <h3 class="h3">
-                      <a href="#" class="card-title">Rabbits</a>
-                    </h3>
-
-                  </div>
+                <li className="scrollbar-item">
+                <Card_TopCat2
+                 img_url = {rabbitimg}
+                 title = "Rabbits"
+                 page_url = "#"
+                 />
                 </li>
 
-                <li class="scrollbar-item">
-                  <div class="category-card">
-
-                    <figure class="card-banner img-holder" style="--width: 330; --height: 300;">
-                      <img src="../assets/img/parrot.jpg" width="330" height="300" loading="lazy" alt="Dog Toys"
-                        class="img-cover"/>
-                    </figure>
-
-                    <h3 class="h3">
-                      <a href="#" class="card-title">Farm animals</a>
-                    </h3>
-
-                  </div>
+                <li className="scrollbar-item">
+                <Card_TopCat2
+                 img_url = {farm_animalimg}
+                 title = "Farm Animals"
+                 page_url = "#"
+                 />
                 </li>
 
-                <li class="scrollbar-item">
-                  <div class="category-card">
-
-                    <figure class="card-banner img-holder" style="--width: 330; --height: 300;">
-                      <img src="../assets/img/parrot.jpg" width="330" height="300" loading="lazy"
-                        alt="Dog Sumpplements" class="img-cover"/>
-                    </figure>
-
-                    <h3 class="h3">
-                      <a href="#" class="card-title">Birds</a>
-                    </h3>
-
-                  </div>
-                </li>
-                <li class="scrollbar-item">
-                  <div class="category-card">
-
-                    <figure class="card-banner img-holder" style="--width: 330; --height: 300;">
-                      <img src="../assets/img/parrot.jpg" width="330" height="300" loading="lazy"
-                        alt="Dog Sumpplements" class="img-cover"/>
-                    </figure>
-
-                    <h3 class="h3">
-                      <a href="#" class="card-title">Birds</a>
-                    </h3>
-
-                  </div>
-                </li>
-                <li class="scrollbar-item">
-                  <div class="category-card">
-
-                    <figure class="card-banner img-holder" style="--width: 330; --height: 300;">
-                      <img src="../assets/img/parrot.jpg" width="330" height="300" loading="lazy"
-                        alt="Dog Sumpplements" class="img-cover"/>
-                    </figure>
-
-                    <h3 class="h3">
-                      <a href="#" class="card-title">Birds</a>
-                    </h3>
-
-                  </div>
+                <li className="scrollbar-item">
+                <Card_TopCat2
+                 img_url = {birdimg2}
+                 title = "Birds"
+                 page_url = "#"
+                 />
+               
                 </li>
 
               </ul>
 
             </div>
           </section>
-          <section class="section category" aria-label="category">
-            <div class="container">
 
-              <h2 class="h2 section-title">
-                <span class="span">Farm</span> Animals
+          <section className="section category" aria-label="category">
+            <div className="container">
+
+              <h2 className="h2 section-title" >
+                <span className="span">Farm</span> Animals
               </h2>
 
-              <ul class="has-scrollbar">
+              <ul className="has-scrollbar">
 
-                <li class="scrollbar-item">
-                  <div class="category-card">
-
-                    <figure class="card-banner img-holder" style="--width: 330; --height: 300;">
-                      <img src="../assets/img/cat.jpg" width="330" height="300" loading="lazy" alt="Cat Food"
-                        class="img-cover"/>
-                    </figure>
-
-                    <h3 class="h3">
-                      <a href="#" class="card-title">Cats</a>
-                    </h3>
-
-                  </div>
+                <li className="scrollbar-item">
+                <Card_TopCat2
+                 img_url = {cows}
+                 title = "Cows"
+                 page_url = "#"
+                 />
                 </li>
 
-                <li class="scrollbar-item">
-                  <div class="category-card">
-
-                    <figure class="card-banner img-holder" style="--width: 330; --height: 300;">
-                      <img src="../assets/img/dog.jpg" width="330" height="300" loading="lazy" alt="Cat Toys"
-                        class="img-cover"/>
-                    </figure>
-
-                    <h3 class="h3">
-                      <a href="#" class="card-title">Dogs</a>
-                    </h3>
-
-                  </div>
+                <li className="scrollbar-item">
+                <Card_TopCat2
+                 img_url = {hens}
+                 title = "Hens"
+                 page_url = "#"
+                 />
                 </li>
 
-                <li class="scrollbar-item">
-                  <div class="category-card">
-
-                    <figure class="card-banner img-holder" style="--width: 330; --height: 300;">
-                      <img src="../assets/img/rabbit.jpeg" width="330" height="300" loading="lazy" alt="Dog Food"
-                        class="img-cover"/>
-                    </figure>
-
-                    <h3 class="h3">
-                      <a href="#" class="card-title">Rabbits</a>
-                    </h3>
-
-                  </div>
+                <li className="scrollbar-item">
+                <Card_TopCat2
+                 img_url = {goat}
+                 title = "Goat"
+                 page_url = "#"
+                 />
                 </li>
 
-                <li class="scrollbar-item">
-                  <div class="category-card">
-
-                    <figure class="card-banner img-holder" style="--width: 330; --height: 300;">
-                      <img src="../assets/img/parrot.jpg" width="330" height="300" loading="lazy" alt="Dog Toys"
-                        class="img-cover"/>
-                    </figure>
-
-                    <h3 class="h3">
-                      <a href="#" class="card-title">Farm animals</a>
-                    </h3>
-
-                  </div>
+                <li className="scrollbar-item">
+                <Card_TopCat2
+                 img_url = {farm_animalimg}
+                 title = "Farm Animals"
+                 page_url = "#"
+                 />
                 </li>
 
-                <li class="scrollbar-item">
-                  <div class="category-card">
-
-                    <figure class="card-banner img-holder" style="--width: 330; --height: 300;">
-                      <img src="../assets/img/parrot.jpg" width="330" height="300" loading="lazy"
-                        alt="Dog Sumpplements" class="img-cover"/>
-                    </figure>
-
-                    <h3 class="h3">
-                      <a href="#" class="card-title">Birds</a>
-                    </h3>
-
-                  </div>
+                <li className="scrollbar-item">
+                <Card_TopCat2
+                 img_url = {birdimg2}
+                 title = "Birds"
+                 page_url = "#"
+                 />
+               
                 </li>
-                <li class="scrollbar-item">
-                  <div class="category-card">
 
-                    <figure class="card-banner img-holder" style="--width: 330; --height: 300;">
-                      <img src="../assets/img/parrot.jpg" width="330" height="300" loading="lazy"
-                        alt="Dog Sumpplements" class="img-cover"/>
-                    </figure>
-
-                    <h3 class="h3">
-                      <a href="#" class="card-title">Birds</a>
-                    </h3>
-
-                  </div>
-                </li>
-                <li class="scrollbar-item">
-                  <div class="category-card">
-
-                    <figure class="card-banner img-holder" style="--width: 330; --height: 300;">
-                      <img src="../assets/img/parrot.jpg" width="330" height="300" loading="lazy"
-                        alt="Dog Sumpplements" class="img-cover"/>
-                    </figure>
-
-                    <h3 class="h3">
-                      <a href="#" class="card-title">Birds</a>
-                    </h3>
-
-                  </div>
-                </li>
-*/}
               </ul>
 
             </div>
           </section>
 
-          <section class="cta has-bg-image" aria-label="cta" style={{'background-image': 'url("../assets/images/cta-bg.jpg")'}}>
+          <section class="cta has-bg-image" aria-label="cta" style={{ "background-image": "url("+ctabg+")" }}>
             <div class="container">
 
               <figure class="cta-banner">
-                <img src="../assets/images/cta-banner.png" width="900" height="660" loading="lazy" alt="cat" class="w-100"/>
+                <img src={ctabanner} width="900" height="660" loading="lazy" alt="cat" class="w-100" />
               </figure>
 
               <div class="cta-content">
@@ -445,7 +293,7 @@ function Animals() {
 
               </div>
 
-            </div> 
+            </div>
           </section>
         </article>
       </main>
@@ -453,7 +301,7 @@ function Animals() {
 
       <br></br>
       <br></br>
-      
+
       <Footer />
 
     </div>
