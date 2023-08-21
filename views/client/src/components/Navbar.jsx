@@ -67,6 +67,11 @@ function Navbar() {
     
               <span className="btn-badge">0</span>
             </button>
+
+            <button className="action-btn" aria-label="cart">
+            <a href="/login">Login</a>
+
+            </button>
     
           </div>
     

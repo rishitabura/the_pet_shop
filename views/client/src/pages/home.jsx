@@ -60,7 +60,7 @@ function Home() {
                   <Card_TopCat
                   img_url = {animalsimg1}
                   subtitle = "Animals"
-                  page_url = "./animals.js"
+                  page_url = "/animals"
                   />
                 </li>
 
