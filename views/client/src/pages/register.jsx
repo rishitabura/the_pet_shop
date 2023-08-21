@@ -120,10 +120,10 @@ const Register = () => {
                         </span>
                     </div>
                     <div className="wrap-input">
-                        <input type="password" className="input" name="pass" placeholder="Password" 
+                        <input type="password" className="input" name="password" placeholder="Password" 
                         label="Password"
-                        type="password"
-                        name="password"
+                        // type="password"
+                        // name="password"
                         value={form.password}
                         onInput={onFormInputChange}
                         required/>
