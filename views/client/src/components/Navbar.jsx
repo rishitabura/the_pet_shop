@@ -77,7 +77,7 @@ function Navbar() {
     
           <div className="header-actions" >
 
-            <Link to="/login">
+            <Link to="/loginSample">
               <button type="button" className={login ? "hide" : "loginbtn"} > <MdAccountCircle size={30} color="black"/> 
               </button>
             </Link>

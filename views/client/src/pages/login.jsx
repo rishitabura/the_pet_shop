@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-//import '../styles/login.css'
-//import login_img from '';
+import '../styles/login.css'
+// import login_img from '';
  
 const Login = () => {
  const navigate = useNavigate();
