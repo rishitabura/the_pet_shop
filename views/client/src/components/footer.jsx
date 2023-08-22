@@ -1,8 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import "../styles/style.css";
-import "../styles/common.css";
 import footer from "../assets/img/footer-bg.jpg";
 
+import { BiLogoInstagramAlt } from "react-icons/bi";
+import { BsFacebook } from "react-icons/bs";
+import { AiFillTwitterCircle } from "react-icons/ai";
+import { BsPinterest } from "react-icons/bs";
 
 function Footer() {
     return (
@@ -42,25 +45,29 @@ function Footer() {
 
                         <li>
                             <a href="#" class="social-link">
-                                <ion-icon name="logo-facebook"></ion-icon>
+                            < BsFacebook  color="#4267B2" />
+                                {/* <ion-icon name="logo-facebook">< BsFacebook/></ion-icon> */}
                             </a>
                         </li>
 
                         <li>
                             <a href="#" class="social-link">
-                                <ion-icon name="logo-twitter"></ion-icon>
+                            < AiFillTwitterCircle color="#1DA1F2"/>
+                                {/* <ion-icon name="logo-twitter"></ion-icon> */}
                             </a>
                         </li>
 
                         <li>
                             <a href="#" class="social-link">
-                                <ion-icon name="logo-pinterest"></ion-icon>
+                            < BsPinterest color="#c8232c "/>
+                                {/* <ion-icon name="logo-pinterest"></ion-icon> */}
                             </a>
                         </li>
 
                         <li>
                             <a href="#" class="social-link">
-                                <ion-icon name="logo-instagram"></ion-icon>
+                            < BiLogoInstagramAlt color="#d62976"/>
+                                {/* <ion-icon name="logo-instagram">< BiLogoInstagramAlt/></ion-icon> */}
                             </a>
                         </li>
 

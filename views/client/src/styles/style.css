@@ -305,6 +305,7 @@ body {
   gap: 15px;
 }
 
+
 .header .action-btn {
   position: relative;
   font-size: 22px;
@@ -627,13 +628,13 @@ body {
 
 .social-list {
   display: flex;
-  gap: 10px;
+  gap: 20px;
 }
 
 .social-link {
   background-color: var(--white);
   color: var(--black);
-  padding: 12px;
+  padding: 10px 13px;
   border-radius: 50%;
   transition: var(--transition-1);
 }
