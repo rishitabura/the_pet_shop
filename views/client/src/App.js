@@ -32,23 +32,6 @@ function App() {
   );
 }
 
-// function App() {
-//   return (
-//     <>
-//      <Router>
-//        <Switch>
-
-//           <Route exact path="/" element={<Home />} />
-
-//           <Route path="/about" component={About} />
-
-//           <Redirect to="/" />
-
-//       </Switch>
-//       </Router>
-//     </>
-//   );
-// }
 
 export default App;
 
