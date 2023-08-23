@@ -1,7 +1,9 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import '../styles/login.css'
-// import login_img from '';
+import cat_anmi from "../assets/img/cat_anim.jpg";
+import Navbar from "../components/Navbar";
+
  
 const Login = () => {
  const navigate = useNavigate();
@@ -58,6 +60,8 @@ const Login = () => {
  return(
 
     <div><div>
+        <Navbar/>
+
    <body>
     <div className="Main-container">
         <div className="container-login">
@@ -69,7 +73,7 @@ const Login = () => {
             </div>
 
                 <div class="login-pic">
-                    <img src='' alt="IMG" className="login-pic-img"/>
+                    <img src={cat_anmi} alt="IMG" className="login-pic-img"/>
                 </div>
 
                 <form class="login-form">

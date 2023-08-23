@@ -1,7 +1,9 @@
 import React from "react";
-//import '../styles/login.css'
+import '../styles/login.css'
+import cat_anmi from "../assets/img/cat_anim.jpg";
 import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
  
 const Register = () => {
@@ -67,6 +69,7 @@ const Register = () => {
  return(
 
     <div><container>
+        <Navbar/><br></br><br></br>
    <body>
     <div className="Main-container">
         <div className="container-login">
@@ -78,7 +81,7 @@ const Register = () => {
             </div>
 
                 <div className="login-pic">
-                    <img src=''alt="IMG" className="login-pic-img"/>
+                    <img src= {cat_anmi} alt="IMG" className="login-pic-img"/>
                 </div>
 
                 <form className="login-form">

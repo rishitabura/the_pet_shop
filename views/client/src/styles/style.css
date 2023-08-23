@@ -99,11 +99,11 @@
 
 li { list-style: none; }
 
-a,
+/* a,
 img,
 span,
 button,
-ion-icon { display: block; }
+ion-icon { display: block; } */
 
 a {
   color: inherit;

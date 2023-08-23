@@ -1,60 +1,43 @@
-import React from 'react';
-import "../styles/login.css";
-import {
-  MDBContainer,
-  MDBCol,
-  MDBRow,
-  MDBBtn,
-  MDBIcon,
-  MDBInput,
-  MDBCheckbox
-}
-from 'mdb-react-ui-kit';
+import React, { useState } from 'react';
+import '../styles/login.css'; // Import the CSS file
 
-function LoginSample() {
+const PopupForm = () => {
+  const [formVisible, setFormVisible] = useState(false);
+
+  const openForm = () => {
+    setFormVisible(true);
+  };
+
+  const closeForm = () => {
+    setFormVisible(false);
+  };
+
   return (
-    <MDBContainer fluid className="p-3 my-5">
+    <div>
+      <h2>Popup Form</h2>
+      <p>Click on the button at the bottom of this page to open the login form.</p>
+      <p>Note that the button and the form are fixed - they will always be positioned at the bottom of the browser window.</p>
 
-      <MDBRow>
+      <button className="open-button" onClick={openForm}>Open Form</button>
 
-        <MDBCol col='10' md='6'>
-          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg" class="img-fluid" alt="Phone image" />
-        </MDBCol>
+      {formVisible ? (
+        <div className="form-popup" id="myForm">
+          <div className="form-container">
+            <h1>Login</h1>
 
-        <MDBCol col='4' md='6'>
+            <label htmlFor="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required />
 
+            <label htmlFor="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required />
 
-          <MDBInput wrapperClass='mb-4' label='Email address' id='formControlLg' type='email' size="lg"/>
-          <MDBInput wrapperClass='mb-4' label='Password' id='formControlLg' type='password' size="lg"/>
-
-
-          <div className="d-flex justify-content-between mx-4 mb-4">
-            <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Remember me' />
-            <a href="!#">Forgot password?</a>
+            <button type="submit" className="btn">Login</button>
+            <button type="button" className="btn cancel" onClick={closeForm}>Close</button>
           </div>
-
-          <MDBBtn className="mb-4 w-100" size="lg">Sign in</MDBBtn>
-
-          <div className="divider d-flex align-items-center my-4 ">
-            <p className="text-center fw-bold mx-3 mb-0">OR</p>
-          </div>
-
-          <MDBBtn className="mb-4 w-100" size="lg" style={{backgroundColor: '#3b5998'}}>
-            <MDBIcon fab icon="facebook-f" className="mx-2"/>
-            Continue with facebook
-          </MDBBtn>
-
-          <MDBBtn className="mb-4 w-100" size="lg" style={{backgroundColor: '#55acee'}}>
-            <MDBIcon fab icon="twitter" className="mx-2"/>
-            Continue with twitter
-          </MDBBtn>
-
-        </MDBCol>
-
-      </MDBRow>
-
-    </MDBContainer>
+        </div>
+      ) : null}
+    </div>
   );
-}
+};
 
-export default LoginSample;
+export default PopupForm;
