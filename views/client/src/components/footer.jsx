@@ -6,6 +6,8 @@ import { BiLogoInstagramAlt } from "react-icons/bi";
 import { BsFacebook } from "react-icons/bs";
 import { AiFillTwitterCircle } from "react-icons/ai";
 import { BsPinterest } from "react-icons/bs";
+import {BiSolidPhoneCall} from "react-icons/bi";
+import {FaLocationDot} from  "react-icons/fa6";
 
 function Footer() {
     return (
@@ -26,7 +28,7 @@ function Footer() {
                     <ul class="contact-list" id="contact">
 
                         <li class="contact-item">
-                            <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
+                            <ion-icon name="location-outline" aria-hidden="true"><FaLocationDot color="white"/></ion-icon>
 
                             <address class="address">
                                 Pune, Maharashtra
@@ -34,9 +36,9 @@ function Footer() {
                         </li>
 
                         <li class="contact-item">
-                            <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
+                            <ion-icon name="call-outline" aria-hidden="true"><BiSolidPhoneCall color="white"/></ion-icon>
 
-                            <a href="tel:+16234567891011" class="contact-link">xxxxxxxxx</a>
+                            <a href="tel:+16234567891011" class="contact-link">1234567890</a>
                         </li>
 
                     </ul>
