@@ -13,6 +13,8 @@ import LoginSample from './pages/loginSample';
 import Register from './pages/register';
 
 import Animals from './pages/animals';
+import Birds from './pages/birds';
+import SeaAnimals from './pages/seaanimals'
 
 
 function App() {
@@ -26,6 +28,8 @@ function App() {
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/about" element={< About/>}/> 
           <Route exact path="/animals" element={<Animals />} />
+          <Route exact path="/birds" element={<Birds />} />
+          <Route exact path="/seaanimals" element={<SeaAnimals />} />
       </Routes>
       </BrowserRouter>
     </>

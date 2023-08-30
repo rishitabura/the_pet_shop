@@ -68,7 +68,7 @@ function Home() {
                 <Card_TopCat
                   img_url = {birdsimg1}
                   subtitle = "Birds"
-                  page_url = "#"
+                  page_url = "./birds"
                   />
                 </li>
 
@@ -76,7 +76,7 @@ function Home() {
                 <Card_TopCat
                   img_url = {sea_animalsimg1}
                   subtitle = "Sea Animals"
-                  page_url = "#"
+                  page_url = "/seaanimals"
                   />
                 </li>
 
