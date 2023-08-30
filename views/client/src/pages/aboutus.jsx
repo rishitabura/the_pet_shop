@@ -1,9 +1,10 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from "react";
 import "../styles/style1.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/footer";
 import aboutimg from "../assets/img/about.jpg";
-import dogimg from "../assets/img/dog.jpg";
+// import dogimg from "../assets/img/dog.jpg";
 
 function About() {
   return (
