@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-pascal-case */
 import React from "react";
+import  { useState } from 'react';
 import "../styles/style.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/footer";
@@ -28,9 +29,11 @@ import rabbitimg from "../assets/img/rabbit.jpeg";
 import farm_animalimg from "../assets/img/parrot.jpg";
 import birdimg2 from "../assets/img/parrot.jpg";
 
-// import Card from "../components/card_topCategories";
 
+// import Card from "../components/card_topCategories";
 function Animals() {
+  // const [openModal, setOpenModal] = useState(false);
+
   return (
     <div>
 
@@ -107,7 +110,6 @@ function Animals() {
               </h2>
 
               <ul className="has-scrollbar">
-
                 <li className="scrollbar-item">
                 <Card_TopCat2
                  img_url = {GermanShepherd}
