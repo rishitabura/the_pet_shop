@@ -16,7 +16,7 @@ function Navbar() {
 
   const islogin = () => {
     const token = window.localStorage.getItem("token");
-    console.log(token);
+    //console.log(token);
     if (token) login = true;
     else login = false;
   }

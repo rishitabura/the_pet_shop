@@ -28,7 +28,6 @@ const Login = () => {
     event.preventDefault();
     var email = form.email;
     var password = form.password;
-    const utype = "patient";
     fetch("http://localhost:5000/login", {
         method: "POST",
         CrossDomain: true,
