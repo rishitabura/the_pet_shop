@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-pascal-case */
 import React from "react";
-import  { useState } from 'react';
 import "../styles/style.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/footer";
@@ -29,11 +28,9 @@ import rabbitimg from "../assets/img/rabbit.jpeg";
 import farm_animalimg from "../assets/img/parrot.jpg";
 import birdimg2 from "../assets/img/parrot.jpg";
 
-
 // import Card from "../components/card_topCategories";
-function Animals() {
-  // const [openModal, setOpenModal] = useState(false);
 
+function SeaAnimals() {
   return (
     <div>
 
@@ -41,64 +38,6 @@ function Animals() {
 
       <main>
         <article>
-
-          {/* <section class="section category" aria-label="category">
-            <div class="container">
-
-              <h2 class="h2 section-title">
-                <span class="span">Dog</span> Breads
-              </h2>
-
-              <ul class="has-scrollbar">
-
-                <li class="scrollbar-item">
-                  <Card
-                    img_url={CatImg}
-                    subtitle="Cats"
-                    page_url="#"
-                  />
-                </li>
-                <li class="scrollbar-item">
-                  <Card
-                    img_url={DogImg}
-                    subtitle="Dog"
-                    page_url="#"
-                  />
-                </li>
-                <li class="scrollbar-item">
-
-                  <Card
-                    img_url={CatImg}
-                    subtitle="Cats"
-                    page_url="#"
-                  />
-                </li>
-                <li class="scrollbar-item">
-                  <Card
-                    img_url={DogImg}
-                    subtitle="Dog"
-                    page_url="#"
-                  />
-                </li>
-                <li class="scrollbar-item">
-                  <Card
-                    img_url={CatImg}
-                    subtitle="Cats"
-                    page_url="#"
-                  />
-                </li>
-                <li class="scrollbar-item">
-                  <Card
-                    img_url={DogImg}
-                    subtitle="Dog"
-                    page_url="#"
-                  />
-
-                </li>
-              </ul>
-
-            </div>
-          </section> */}
           <br></br>
           <br></br>
 
@@ -110,6 +49,7 @@ function Animals() {
               </h2>
 
               <ul className="has-scrollbar">
+
                 <li className="scrollbar-item">
                 <Card_TopCat2
                  img_url = {GermanShepherd}
@@ -310,5 +250,5 @@ function Animals() {
   );
 }
 
-export default Animals;
+export default SeaAnimals;
 

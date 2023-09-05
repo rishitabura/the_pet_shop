@@ -13,13 +13,22 @@ import Register from './pages/register';
 
 //general
 import Animals from './pages/animals';
+import Birds from './pages/birds';
+import SeaAnimals from './pages/seaanimals';
+
+// import Modal from './pages/Modal'
+
 
 //user
 import UserProfile from './pages/userprofile';
 
 
 function App() {
+
+  // const [openModal, setOpenModal] = useState(false);
+
   return (
+    
     <>
      <BrowserRouter>
      <Routes>
@@ -30,8 +39,14 @@ function App() {
           <Route exact path="/about" element={< About/>}/> 
           <Route exact path="/animals" element={<Animals />} />
           <Route exact path="/user/profile" element={<UserProfile/>}/>
+          <Route exact path="/birds" element={<Birds />} />
+          <Route exact path="/seaanimals" element={<SeaAnimals />} />
+          {/* <Route exact path="/modal" element={<Modal />} /> */}
+ 
       </Routes>
       </BrowserRouter>
+  
+
     </>
   );
 }
