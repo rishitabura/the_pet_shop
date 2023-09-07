@@ -72,7 +72,7 @@ function Animals() {
                 <Card_TopCat2
                  img_url = {GoldenRetrievers}
                  title = "Golden Retrievers Dog"
-                 page_url = "#"
+                 page_url = "/goldenRetrieversDog"
                  />
                 </li>
 

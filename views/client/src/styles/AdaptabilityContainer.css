@@ -1,0 +1,99 @@
+.image-icon {
+  position: absolute;
+  top: 0;
+  left: 576px;
+  width: 587px;
+  height: 485px;
+  object-fit: cover;
+}
+.upto-30-c {
+  position: absolute;
+  top: 8px;
+  left: 82px;
+  line-height: 140%;
+}
+.feature,
+.sun-1-icon {
+  position: absolute;
+  left: 0;
+  height: 66px;
+}
+.sun-1-icon {
+  top: 0;
+  width: 70px;
+  object-fit: cover;
+}
+.feature {
+  top: 113px;
+  width: 251px;
+}
+.cold-weather {
+  margin: 0;
+}
+.cold-weather-tolerance-container {
+  position: absolute;
+  top: 245px;
+  left: 70px;
+  font-size: var(--font-size-21xl);
+  line-height: 120%;
+}
+.upto-67-c {
+  position: absolute;
+  top: 367px;
+  left: 82px;
+  line-height: 140%;
+}
+.hot-weather-tolerance-container {
+  position: absolute;
+  top: 0;
+  left: 70px;
+  font-size: var(--font-size-21xl);
+  line-height: 120%;
+}
+.gold-bag-rack,
+.text6 {
+  position: absolute;
+  top: 34px;
+  left: 0;
+  width: 340px;
+  height: 417px;
+}
+.gold-bag-rack {
+  top: 232px;
+  width: 1163px;
+  height: 485px;
+}
+.adaptability,
+.temperatures-should-be {
+  position: absolute;
+  top: 103px;
+  left: 0;
+  line-height: 140%;
+}
+.adaptability {
+  top: 0;
+  left: 102px;
+  font-size: var(--font-size-51xl);
+  line-height: 120%;
+  color: var(--color-orange);
+}
+.heading,
+.multiple-modes {
+  position: absolute;
+  top: 0;
+  left: 374px;
+  width: 623px;
+  height: 137px;
+  text-align: center;
+  font-size: var(--font-size-5xl);
+}
+.multiple-modes {
+  top: 2257px;
+  left: 35px;
+  width: 1163px;
+  height: 717px;
+  text-align: left;
+  font-size: var(--font-size-17xl);
+  color: var(--color-darkslategray);
+  font-family: var(--font-ubuntu);
+}

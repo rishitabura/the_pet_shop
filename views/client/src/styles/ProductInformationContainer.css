@@ -1,0 +1,99 @@
+.friendliness {
+  position: absolute;
+  top: 4px;
+  left: 67px;
+  line-height: 140%;
+}
+.feature1,
+.feature2,
+.vector-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 49px;
+  height: 49px;
+}
+.feature1,
+.feature2 {
+  width: 230px;
+}
+.feature2 {
+  top: 83px;
+  width: 367px;
+}
+.feature3,
+.feature4,
+.feature5,
+.feature6 {
+  position: absolute;
+  top: 166px;
+  left: 0;
+  width: 272px;
+  height: 49px;
+}
+.feature4,
+.feature5,
+.feature6 {
+  top: 249px;
+  width: 331px;
+}
+.feature5,
+.feature6 {
+  top: 332px;
+  width: 241px;
+}
+.feature6 {
+  top: 415px;
+  width: 230px;
+}
+.features1,
+.image-5-icon {
+  position: absolute;
+  top: 277px;
+  left: 925px;
+  width: 367px;
+  height: 464px;
+}
+.image-5-icon {
+  top: 176px;
+  left: 0;
+  width: 794px;
+  height: 733px;
+  object-fit: cover;
+}
+.these-attributes-have {
+  position: absolute;
+  top: 103px;
+  left: 0;
+  line-height: 140%;
+}
+.heading1,
+.traits {
+  position: absolute;
+  top: 0;
+}
+.traits {
+  left: 378px;
+  font-size: var(--font-size-51xl);
+  line-height: 120%;
+  color: var(--color-orange);
+}
+.heading1 {
+  left: 263px;
+  width: 949px;
+  height: 138px;
+  text-align: center;
+  font-size: var(--font-size-6xl);
+  color: var(--color-darkslategray);
+}
+.product-information {
+  position: absolute;
+  top: 1193px;
+  left: 1px;
+  width: 1292px;
+  height: 909px;
+  text-align: left;
+  font-size: var(--font-size-11xl);
+  color: var(--color-black);
+  font-family: var(--font-ubuntu);
+}

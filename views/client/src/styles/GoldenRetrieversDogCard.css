@@ -1,0 +1,86 @@
+.image-icon1 {
+  position: absolute;
+  top: 55px;
+  left: 880px;
+  width: 510px;
+  height: 654px;
+}
+.retrievers-are-originally {
+  position: absolute;
+  top: 379px;
+  left: 0;
+  letter-spacing: 0.01em;
+  line-height: 34px;
+  display: flex;
+  align-items: center;
+  width: 353px;
+}
+.dicider {
+  position: absolute;
+  top: 330px;
+  left: 0.5px;
+  background-color: var(--color-darkslategray);
+  width: 335px;
+  height: 4px;
+}
+.golden-retrievers-dog,
+.heading2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 586px;
+}
+.golden-retrievers-dog {
+  letter-spacing: 0.01em;
+  line-height: 95px;
+  text-transform: uppercase;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+}
+.heading2 {
+  height: 334px;
+  font-size: var(--font-size-71xl);
+  color: var(--color-darkorange);
+}
+.buy-now1 {
+  position: absolute;
+  top: 13px;
+  left: 80px;
+  letter-spacing: 0.02em;
+  line-height: 32px;
+  font-weight: 500;
+}
+.buy-now,
+.icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 58px;
+  height: 58px;
+}
+.buy-now {
+  top: 526px;
+  left: 0.5px;
+  width: 162px;
+  font-size: var(--font-size-xl);
+  color: var(--color-gray);
+}
+.hero,
+.text7 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 586px;
+  height: 584px;
+}
+.hero {
+  top: 140px;
+  left: 50px;
+  width: 1390px;
+  height: 709px;
+  text-align: left;
+  font-size: var(--font-size-3xl);
+  color: var(--color-black);
+  font-family: var(--font-ubuntu);
+}

@@ -20,6 +20,8 @@ import Modal from './pages/Modal1';
 
 //user
 import UserProfile from './pages/userprofile';
+import GoldenRetrieversDog from './pages/Golden-Retrievers-Dog';
+
 
 
 function App() {
@@ -33,13 +35,14 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/loginSample" element={<LoginSample />} />
-          <Route exact path="/register" element={<Register />} />
+          <Route exact path="/register" element={<Register />} /> 
           <Route exact path="/about" element={< About/>}/> 
           <Route exact path="/animals" element={<Animals />} />
           <Route exact path="/userprofile" element={<UserProfile/>}/>
           <Route exact path="/birds" element={<Birds />} />
           <Route exact path="/seaanimals" element={<SeaAnimals />} />
           <Route exact path="/modal" element={<Modal />} />
+          <Route exact path="/goldenRetrieversDog" element={<GoldenRetrieversDog />} />
  
       </Routes>
       </BrowserRouter>
