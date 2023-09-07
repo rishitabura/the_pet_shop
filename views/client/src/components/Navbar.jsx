@@ -3,6 +3,7 @@
 import React, { useState, useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { MdAccountCircle } from "react-icons/md";
+import {ImProfile} from "react-icons/im";
 import { IoLogIn } from "react-icons/io5";
 // import '@ionic/react/css/core.css';
 import "../styles/style.css";
@@ -103,6 +104,12 @@ function Navbar() {
           <button className="action-btn user" aria-label="User">
             <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
           </button>
+
+          <a href="/userprofile">
+            <button type="button" className={login ? "loginbtn" : "hide"} >
+              <ImProfile size={30} color="black" />
+            </button>
+          </a>
 
           <button type="button" className={login ? "loginbtn" : "hide"} onClick={logout}>
             <IoLogIn size={30} color="black" /> 

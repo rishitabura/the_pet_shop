@@ -71,11 +71,11 @@ const Login = () => {
              
             </div>
 
-                <div class="login-pic">
+                <div className="login-pic">
                     <img src={cat_anmi} alt="IMG" className="login-pic-img"/>
                 </div>
 
-                <form class="login-form">
+                <form className="login-form">
                     <span className="login-form-title">Login</span>
 
                     <div className="wrap-input">

@@ -36,7 +36,7 @@ function App() {
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/about" element={< About/>}/> 
           <Route exact path="/animals" element={<Animals />} />
-          <Route exact path="/user/profile" element={<UserProfile/>}/>
+          <Route exact path="/userprofile" element={<UserProfile/>}/>
           <Route exact path="/birds" element={<Birds />} />
           <Route exact path="/seaanimals" element={<SeaAnimals />} />
           <Route exact path="/modal" element={<Modal />} />
