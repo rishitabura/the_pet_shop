@@ -78,7 +78,7 @@ app.post("/login", async (req, res) => {
     }
   });
   
-app.post("/userdata", async (req, res) => {
+app.post("/user/data", async (req, res) => {
     const { token } = req.body;
     try {
       const user = jwt.verify(token, JWT_SECRET);
@@ -92,4 +92,31 @@ app.post("/userdata", async (req, res) => {
         })
     } catch (error) { }
   });
+
+app.post("/user/profile", async (req, res)=>{
+   const {uname, email, phone, dob, address_line1, address_area, city, pincode} = req.body;
+    try {
+      const update = { $set: { 
+        Name: uname,
+        Phone: phone,
+        DOB: dob, 
+        Address_line1: address_line1, 
+        Address_area: address_area, 
+        City: city, 
+        Pincode: pincode 
+      }};
+      await collection.updateOne({_id: email }, update, {});
+      //console.log(res);
+      if (res.status(201)) {
+        return res.json({ status: "Ok" });
+      }
+      else return res.json({ error: "Error" });
+    }
+    catch (error) {
+      res.send({ status: "error" });
+      //console.log(error);
+    }
+  
+
+});
   

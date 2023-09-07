@@ -1,0 +1,249 @@
+import { useContext, useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import cat_anmi from "../assets/img/cat_anim.jpg";
+import Navbar from "../components/Navbar";
+
+ 
+const UserProfile = () => {
+ const navigate = useNavigate();
+ const location = useLocation();
+
+ const [form, setForm] = useState({
+    name: "",
+    phone: "",
+    address_line1: "",
+    address_area: "",
+    address_city:"",
+    pincode:"",
+    dob: "",
+    email: "",
+    //paymentmethods
+    //giftcards
+  });
+
+  const [isLoading, setIsLoading] = useState(null);
+
+
+  const fetchUserData = async () =>{
+      setIsLoading(true);
+      const token = window.localStorage.getItem("token");  
+      fetch("http://localhost:5000/user/data", {
+        method: "POST",
+        CrossDomain: true,
+        headers:{
+            "Content-Type":"application/json",
+            Accept:"application/json",
+            "Access-Control-Allow-Origin": "*", 
+        },
+        
+        body: JSON.stringify({
+            token
+        }),
+
+    })
+    .then((res)=>res.json())
+    .then((data)=>{
+        var userdata= data.data;
+        console.log(userdata);
+        if('Address_line1' in userdata) setForm((prevForm) => ({...prevForm, address_line1: userdata.Address_line1}));
+        if('Address_area' in userdata) setForm((prevForm) => ({...prevForm, address_area: userdata.Address_area}));
+        if('City' in userdata) setForm((prevForm) => ({...prevForm, address_city: userdata.City}));
+        if('Pincode' in userdata) setForm((prevForm) => ({...prevForm, pincode: userdata.Pincode}));
+        if('Phone' in userdata) setForm((prevForm) => ({...prevForm, phone: userdata.Phone}));
+        if('DOB' in userdata) setForm((prevForm) => ({...prevForm, dob: userdata.DOB, }));
+        setForm((prevForm) => ({...prevForm, email: userdata._id, name: userdata.Name }));
+    });
+    
+    setIsLoading(false);
+    
+  };
+  
+
+
+
+  const onFormInputChange = (event) => {
+    const { name, value } = event.target;
+    setForm({ ...form, [name]: value });
+  };
+
+  const redirectNow = () => {
+    const redirectTo = location.search.replace("?redirectTo=", "");
+    navigate(redirectTo ? redirectTo : "/");
+  }
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    var uname = form.name;
+    var phone = form.phone;
+    var dob = form.dob;
+    var address_line1 = form.address_line1;
+    var address_area = form.address_area;
+    var city = form.address_city;
+    var pincode = form.pincode;
+    var email = form.email;
+    fetch("http://localhost:5000/user/profile", {
+        method: "POST",
+        CrossDomain: true,
+        headers:{
+            "Content-Type":"application/json",
+            Accept:"application/json",
+            "Access-Control-Allow-Origin": "*", 
+        },
+        
+        body: JSON.stringify({
+            email,
+            uname,
+            dob,
+            phone,
+            address_line1,
+            address_area,
+            city,
+            pincode
+        }),
+
+    })
+    .then((res)=>res.json())
+    .then((data)=>{
+        console.log(data, "Profile");
+        if(data.status=="Ok"){
+            alert("Updated Successfully");
+            redirectNow();
+        }
+    });
+    
+  };
+
+  useEffect(() => {
+    fetchUserData();
+  }, []);
+
+  if (isLoading) return <div style={{ color: 'black' }}>Loading...</div>;
+  else{
+ return(
+
+    <div><div>
+        <Navbar/>
+   
+     
+
+   <body>
+    <div className="Main-container">
+        <div className="container-profile">
+
+            
+            <div >
+            <div >
+             
+            </div>
+
+                {/* <div class="login-pic">
+                    <img src={cat_anmi} alt="IMG" className="login-pic-img"/>
+                </div> */}
+
+                <form >
+                    <span className="profile-form-title">My Profile</span>
+
+                    <div>
+                        <input type="text" required className="input" name="name" placeholder="Name"  
+                        value={form.name} onChange={onFormInputChange} label="Name" required/>
+                        <span className="focus-input"></span>
+                        <span className="symbol-input">
+                            <i className="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                    </div>
+
+                    <div >
+                        <input type="email" required className="input" name="email" placeholder="Email"  
+                        value={form.email} onChange={onFormInputChange} label="Email" required/>
+                        <span className="focus-input"></span>
+                        <span className="symbol-input">
+                            <i className="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    
+                    <div >
+                        <input type="tel" required className="input" name="phone" placeholder="Phone Number"  
+                        value={form.phone} onChange={onFormInputChange} label="Phone" required/>
+                        <span className="focus-input"></span>
+                        <span className="symbol-input">
+                            <i className="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                    </div>
+
+                    <div >
+                        <input type="date" required className="input" name="dob" placeholder="DOB"  
+                        value={form.dob} onChange={onFormInputChange} label="DOB" required/>
+                        <span className="focus-input"></span>
+                        <span className="symbol-input">
+                            <i className="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                    </div>
+
+                    <div >
+                        <input type="text" required className="input" name="address_line1" placeholder="Address Line 1"  
+                        value={form.address_line1} onChange={onFormInputChange} label="Address Line 1" required/>
+                        <span className="focus-input"></span>
+                        <span className="symbol-input">
+                            <i className="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                    </div>
+
+                    <div>
+                        <input type="text" required className="input" name="address_area" placeholder="Area"  
+                        value={form.address_area} onChange={onFormInputChange} label="Area" required/>
+                        <span className="focus-input"></span>
+                        <span className="symbol-input">
+                            <i className="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                    </div>
+
+                    <div>
+                        <input type="text" required className="input" name="address_city" placeholder="City"  
+                        value={form.address_city} onChange={onFormInputChange} label="City" required/>
+                        <span className="focus-input"></span>
+                        <span className="symbol-input">
+                            <i className="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                    </div>
+
+                    <div>
+                        <input type="number" required className="input" name="pincode" placeholder="Pincode"  
+                        value={form.pincode} onChange={onFormInputChange} label="Pincode" required/>
+                        <span className="focus-input"></span>
+                        <span className="symbol-input">
+                            <i className="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                    </div>
+
+                    <div className="login-form-btn-container">
+                        <button className="login-form-btn" onClick={onSubmit}>Save</button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+    
+    </div></div>
+          
+)
+            }
+
+}
+
+export default UserProfile;
+
+
+
+
+
+
+
+
+
+
+
+
