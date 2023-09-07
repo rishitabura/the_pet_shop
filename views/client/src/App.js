@@ -18,13 +18,11 @@ import Animals from './pages/animals';
 import Birds from './pages/birds';
 import SeaAnimals from './pages/seaanimals';
 
-// import Modal from './pages/Modal'
-
+import Modal from './pages/Modal1';
 
 
 function App() {
 
-  // const [openModal, setOpenModal] = useState(false);
 
   return (
     
@@ -39,7 +37,7 @@ function App() {
           <Route exact path="/animals" element={<Animals />} />
           <Route exact path="/birds" element={<Birds />} />
           <Route exact path="/seaanimals" element={<SeaAnimals />} />
-          {/* <Route exact path="/modal" element={<Modal />} /> */}
+          <Route exact path="/modal" element={<Modal />} />
  
       </Routes>
       </BrowserRouter>

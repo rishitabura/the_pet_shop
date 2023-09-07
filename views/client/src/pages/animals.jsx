@@ -41,64 +41,6 @@ function Animals() {
 
       <main>
         <article>
-
-          {/* <section class="section category" aria-label="category">
-            <div class="container">
-
-              <h2 class="h2 section-title">
-                <span class="span">Dog</span> Breads
-              </h2>
-
-              <ul class="has-scrollbar">
-
-                <li class="scrollbar-item">
-                  <Card
-                    img_url={CatImg}
-                    subtitle="Cats"
-                    page_url="#"
-                  />
-                </li>
-                <li class="scrollbar-item">
-                  <Card
-                    img_url={DogImg}
-                    subtitle="Dog"
-                    page_url="#"
-                  />
-                </li>
-                <li class="scrollbar-item">
-
-                  <Card
-                    img_url={CatImg}
-                    subtitle="Cats"
-                    page_url="#"
-                  />
-                </li>
-                <li class="scrollbar-item">
-                  <Card
-                    img_url={DogImg}
-                    subtitle="Dog"
-                    page_url="#"
-                  />
-                </li>
-                <li class="scrollbar-item">
-                  <Card
-                    img_url={CatImg}
-                    subtitle="Cats"
-                    page_url="#"
-                  />
-                </li>
-                <li class="scrollbar-item">
-                  <Card
-                    img_url={DogImg}
-                    subtitle="Dog"
-                    page_url="#"
-                  />
-
-                </li>
-              </ul>
-
-            </div>
-          </section> */}
           <br></br>
           <br></br>
 
@@ -114,7 +56,7 @@ function Animals() {
                 <Card_TopCat2
                  img_url = {GermanShepherd}
                  title = "German Shepherd Dog"
-                 page_url = "#"
+                 page_url = "/modal"
                  />
                 </li>
 
