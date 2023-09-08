@@ -6,7 +6,7 @@
   height: 59px;
   object-fit: cover;
 }
-.weight {
+.weight1 {
   position: absolute;
   top: 57.92px;
   left: 18px;
@@ -17,13 +17,13 @@
   width: 68.03px;
   height: 18.03px;
 }
-.features-card,
-.text,
-.xyz {
+.features-card_1,
+.text_1,
+.xyz_1 {
   position: absolute;
   width: 104.05px;
 }
-.xyz {
+.xyz_1 {
   top: 0;
   left: 0;
   font-size: var(--font-size-21xl);
@@ -33,13 +33,13 @@
   justify-content: center;
   height: 40.08px;
 }
-.features-card,
-.text {
+.features-card_1,
+.text_1 {
   top: 28.12px;
   left: 35.03px;
   height: 75.95px;
 }
-.features-card {
+.features-card_1 {
   top: 158px;
   left: 0;
   border-radius: 6.61px;
@@ -50,7 +50,7 @@
   width: 174.47px;
   height: 137px;
 }
-.size {
+.size_1 {
   position: absolute;
   top: 209.7px;
   left: 34.1px;
@@ -61,13 +61,13 @@
   width: 193.41px;
   height: 65.29px;
 }
-.features-card1,
-.text1,
-.xyz1 {
+.features-card1_1,
+.text1+_1,
+.xyz1_1 {
   position: absolute;
   width: 261.67px;
 }
-.xyz1 {
+.xyz1_1 {
   top: 0;
   left: 0;
   font-size: var(--font-size-21xl);
@@ -77,13 +77,13 @@
   justify-content: center;
   height: 145.1px;
 }
-.features-card1,
-.text1 {
+.features-card1_1,
+.text1_1 {
   top: 101.8px;
   left: 116.64px;
   height: 274.99px;
 }
-.features-card1 {
+.features-card1_1 {
   top: 0;
   left: 53px;
   border-radius: 6.61px;
@@ -94,8 +94,8 @@
   width: 496px;
   height: 496px;
 }
-.coat,
-.curly-wavy {
+.coat_1,
+.curly-wavy_1 {
   position: absolute;
   top: 57.92px;
   left: 16px;
@@ -106,7 +106,7 @@
   width: 68.03px;
   height: 18.03px;
 }
-.curly-wavy {
+.curly-wavy_1 {
   top: 0;
   left: 0;
   font-size: var(--font-size-21xl);
@@ -114,15 +114,15 @@
   width: 101.05px;
   height: 40.08px;
 }
-.features-card2,
-.text2 {
+.features-card2_1,
+.text2_1 {
   position: absolute;
   top: 28.12px;
   left: 37.03px;
   width: 101.05px;
   height: 75.95px;
 }
-.features-card2 {
+.features-card2_1 {
   top: 158px;
   left: 466.21px;
   border-radius: 6.61px;
@@ -133,7 +133,7 @@
   width: 174.47px;
   height: 137px;
 }
-.max-torques {
+.max-torques_1 {
   position: absolute;
   top: 58.92px;
   left: 2.99px;
@@ -144,13 +144,13 @@
   width: 76.03px;
   height: 17.03px;
 }
-.features-card3,
-.text3,
-.xyz2 {
+.features-card3_1,
+.text3_1,
+.xyz2_1 {
   position: absolute;
   width: 82.04px;
 }
-.xyz2 {
+.xyz2_1 {
   top: 0;
   left: 0;
   font-size: var(--font-size-21xl);
@@ -160,13 +160,13 @@
   justify-content: center;
   height: 40.08px;
 }
-.features-card3,
-.text3 {
+.features-card3_1,
+.text3_1 {
   top: 28.12px;
   left: 46.03px;
   height: 75.95px;
 }
-.features-card3 {
+.features-card3_1 {
   top: 158px;
   left: 699.32px;
   border-radius: 6.61px;
@@ -177,7 +177,7 @@
   width: 174.47px;
   height: 137px;
 }
-.hill-climbing {
+.hill-climbing_1 {
   position: absolute;
   top: 58.92px;
   left: 32.01px;
@@ -188,13 +188,13 @@
   width: 75.03px;
   height: 17.03px;
 }
-.features-card4,
-.text4,
-.xyz3 {
+.features-card4_1,
+.text4_1,
+.xyz3_1 {
   position: absolute;
   width: 139.06px;
 }
-.xyz3 {
+.xyz3_1 {
   top: 0;
   left: 0;
   font-size: var(--font-size-21xl);
@@ -204,13 +204,13 @@
   justify-content: center;
   height: 40.08px;
 }
-.features-card4,
-.text4 {
+.features-card4_1,
+.text4_1 {
   top: 28.12px;
   left: 18.02px;
   height: 75.95px;
 }
-.features-card4 {
+.features-card4_1 {
   top: 158px;
   left: 932.43px;
   border-radius: 6.61px;
@@ -221,8 +221,8 @@
   width: 174.47px;
   height: 137px;
 }
-.hydralic-disc-brakes,
-.xyz4 {
+.hydralic-disc-brakes_1,
+.xyz4_1 {
   position: absolute;
   top: 52.04px;
   left: 0;
@@ -233,7 +233,7 @@
   width: 121.06px;
   height: 17.03px;
 }
-.xyz4 {
+.xyz4_1 {
   top: 0;
   left: 20.46px;
   font-size: 39.63px;
@@ -241,15 +241,15 @@
   width: 80px;
   height: 28px;
 }
-.features-card5,
-.text5 {
+.features-card5_1,
+.text5_1 {
   position: absolute;
   top: 35px;
   left: 27.01px;
   width: 121.06px;
   height: 69.07px;
 }
-.features-card5 {
+.features-card5_1 {
   top: 158px;
   left: 1165.53px;
   border-radius: 6.61px;
@@ -261,22 +261,22 @@
   height: 137px;
   font-size: 13.24px;
 }
-.features,
-.image-4-icon {
+.features1_1,
+.image-4-icon1 {
   position: absolute;
   top: 783px;
   left: 50px;
   width: 1340px;
   height: 496px;
 }
-.image-4-icon {
+.image-4-icon1 {
   top: 180px;
   left: 553px;
   width: 771px;
   height: 586px;
   object-fit: cover;
 }
-.landing-page {
+.landing-page1 {
   position: relative;
   background-color: var(--color-white);
   width: 100%;
