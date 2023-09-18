@@ -17,9 +17,8 @@ import Birds from './pages/birds';
 import SeaAnimals from './pages/seaanimals';
 
 import Modal from './pages/Modal1';
-
-//user
 import UserProfile from './pages/userprofile';
+
 import GoldenRetrieversDog from './pages/Golden-Retrievers-Dog';
 
 

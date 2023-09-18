@@ -584,6 +584,8 @@ body {
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: top;
+  /* background-position: bottom;
+  position: relative; */
 }
 
 .footer-top {
