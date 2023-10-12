@@ -19,7 +19,7 @@ import SeaAnimals from './pages/seaanimals';
 import Modal from './pages/Modal1';
 import UserProfile from './pages/userprofile';
 
-import GoldenRetrieversDog from './pages/Golden-Retrievers-Dog';
+// import GoldenRetrieversDog from './pages/Golden-Retrievers-Dog';
 
 
 
@@ -41,7 +41,7 @@ function App() {
           <Route exact path="/birds" element={<Birds />} />
           <Route exact path="/seaanimals" element={<SeaAnimals />} />
           <Route exact path="/modal" element={<Modal />} />
-          <Route exact path="/goldenRetrieversDog" element={<GoldenRetrieversDog />} />
+          {/* <Route exact path="/goldenRetrieversDog" element={<GoldenRetrieversDog />} /> */}
  
       </Routes>
       </BrowserRouter>
