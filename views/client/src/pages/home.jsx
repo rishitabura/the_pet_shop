@@ -30,6 +30,8 @@ import ctabanner from "../assets/img/cta-banner.png";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/footer";
+// import Navbar1 from "../components/Navbar/Navbar";
+
 
 
 function Home() {

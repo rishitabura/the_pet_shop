@@ -1,5 +1,4 @@
-/* eslint-disable jsx-a11y/aria-proptypes */
-/* eslint-disable no-unused-vars */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { MdAccountCircle } from "react-icons/md";
@@ -7,7 +6,9 @@ import {ImProfile} from "react-icons/im";
 import { IoLogIn } from "react-icons/io5";
 // import '@ionic/react/css/core.css';
 import "../styles/style.css";
-// import "../styles/common.css";
+
+import ShopDropdown from "./ShopDropdown";
+import {RiArrowDropDownLine} from "react-icons/ri";
 
 
 function Navbar() {
@@ -60,7 +61,9 @@ function Navbar() {
             </li>
 
             <li className="navbar-item">
-              <a href="#shop" className="navbar-link" data-nav-link>Shop</a>
+              <a href="" className="navbar-link" data-nav-link>Shop
+                
+              </a> 
             </li>
 
             <li className="navbar-item">
@@ -73,27 +76,7 @@ function Navbar() {
 
           </ul>
 
-          {/* <a href="#" className="navbar-action-btn">Log In</a> */}
         </nav>
-
-        {/* <div className="header-actions">
-
-            <Link to="/login">
-              <button type="button" className={login ? "hide" : "loginbtn"} > <MdAccountCircle size={30} color="black" target="_blank"/> 
-              </button>
-
-              
-            </Link>
-            <button className="action-btn user" aria-label="User">
-              <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
-            </button>
-
-           <button type="button" className={login ? "loginbtn" : "hide"} onClick={logout}><IoLogIn size={30} color="black"/> Logout
-           </button>
-
-          
-    
-          </div> */}
         <div className="header-actions">
           <a href="/login">
             <button type="button" className={login ? "hide" : "loginbtn"}>

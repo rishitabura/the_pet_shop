@@ -8,6 +8,7 @@ import ctabanner from "../assets/img/cta-banner.png";
 
 import  Accessories from "../components/accessories";
 import bags from "../assets/img/bags.jpg";
+import house from "../assets/img/house.jpg"
 
 
 function Cat_Products() {
@@ -21,155 +22,233 @@ function Cat_Products() {
           <br />
           <section className="section category" aria-label="category">
             <h2 className="h2 section-title">
-              <span className="span">Pet</span> Products
+              <span className="span">Pet</span> Shelter
             </h2>
             <br />
-            <div className="main">
-              <br />
-              <br />
-              {/* <div id="container">
-                <div id="wrapper">
-                  <div id="banner-image">
-                    <a href="http://localhost:3000/product1"><img src={require("../assets/img/bags.jpg")} alt="" /></a>
-                  </div>
-                  <h3>Compostable Poop Bags</h3>
-                  <h3>Price: ₹400 - ₹500</h3>
-                </div>
-                <div id="button-wrapper">
-                  <button className="btn outline">ADD TO CART</button>
-                  <br />
-                  <button className="btn fill">BUY NOW</button>
-                </div>
+            <div>
+              <h2 className="h2 section-title">
+                <span className="span">Shop</span> By Dogs
+              </h2>
+              <div className="main">
+                <br />
+                <br />
+                <ul className="grid-list1">
+                  <li>
+                    <Accessories
+                      img_url={bags}
+                      nameP="Compostable Poop Bags"
+                      price="Price: ₹400 - ₹500"
+                      descp="Boxer dogs are self-assured, playful, and intelligent. They are also among the most athletic members of the canine 
+                      species. Because each breed has specific needs, it’s important that your dog’s diet helps to maintain its unique lifestyle 
+                      and optimal health. Suitable for Boxers aged 15 months old and over, ROYAL CANIN Boxer Adult is specially formulated with 
+                      all the nutritional needs of your adult dog in mind. The Boxer’s dynamism is well-renowned – this breed never holds back in 
+                      terms of exerting energy once engaged in physical activity. Therefore, great demands can be placed on its body, meaning the 
+                      Boxer needs a diet adapted to its intense levels of physical activity. That’s why ROYAL CANIN Boxer Adult contributes to
+                       maintaining muscle mass, thanks to adapted protein content and the inclusion of L-Carnitine. ROYAL CANIN Boxer Adult also
+                        contains specific nutrients, such as taurine, EPA & DHA, to help support healthy cardiac function. Additionally, 
+                        this formula contains an exclusive complex of antioxidants to help neutralize free radicals and support your dog’s 
+                        natural defenses. The kibble found in ROYAL CANIN Boxer Adult is exclusively designed not only to make it easier for your
+                         dog to grasp the kibble but to also encourage sufficient chewing before swallowing."
+                    />
+                  </li>
+                </ul>
+
+                <ul>
+                  <li>
+                    <Accessories
+                      img_url={house}
+                      nameP="Plastic Dog Kennel"
+                      price="Price: ₹1,000 - ₹5,000"
+                      descp="Boxer dogs are self-assured, playful, and intelligent. They are also among the most athletic members of the canine 
+                      species. Because each breed has specific needs, it’s important that your dog’s diet helps to maintain its unique lifestyle 
+                      and optimal health. Suitable for Boxers aged 15 months old and over, ROYAL CANIN Boxer Adult is specially formulated with 
+                      all the nutritional needs of your adult dog in mind. The Boxer’s dynamism is well-renowned – this breed never holds back in 
+                      terms of exerting energy once engaged in physical activity. Therefore, great demands can be placed on its body, meaning the 
+                      Boxer needs a diet adapted to its intense levels of physical activity. That’s why ROYAL CANIN Boxer Adult contributes to
+                       maintaining muscle mass, thanks to adapted protein content and the inclusion of L-Carnitine. ROYAL CANIN Boxer Adult also
+                        contains specific nutrients, such as taurine, EPA & DHA, to help support healthy cardiac function. Additionally, 
+                        this formula contains an exclusive complex of antioxidants to help neutralize free radicals and support your dog’s 
+                        natural defenses. The kibble found in ROYAL CANIN Boxer Adult is exclusively designed not only to make it easier for your
+                         dog to grasp the kibble but to also encourage sufficient chewing before swallowing."
+                    />
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <Accessories
+                      img_url={bags}
+                      nameP="Compostable Poop Bags"
+                      price="Price: ₹400 - ₹500"
+                      descp="Boxer dogs are self-assured, playful, and intelligent. They are also among the most athletic members of the canine 
+                      species. Because each breed has specific needs, it’s important that your dog’s diet helps to maintain its unique lifestyle 
+                      and optimal health. Suitable for Boxers aged 15 months old and over, ROYAL CANIN Boxer Adult is specially formulated with 
+                      all the nutritional needs of your adult dog in mind. The Boxer’s dynamism is well-renowned – this breed never holds back in 
+                      terms of exerting energy once engaged in physical activity. Therefore, great demands can be placed on its body, meaning the 
+                      Boxer needs a diet adapted to its intense levels of physical activity. That’s why ROYAL CANIN Boxer Adult contributes to
+                       maintaining muscle mass, thanks to adapted protein content and the inclusion of L-Carnitine. ROYAL CANIN Boxer Adult also
+                        contains specific nutrients, such as taurine, EPA & DHA, to help support healthy cardiac function. Additionally, 
+                        this formula contains an exclusive complex of antioxidants to help neutralize free radicals and support your dog’s 
+                        natural defenses. The kibble found in ROYAL CANIN Boxer Adult is exclusively designed not only to make it easier for your
+                         dog to grasp the kibble but to also encourage sufficient chewing before swallowing."
+                    />
+
+                  </li>
+                </ul>
               </div>
+            </div>
 
-              <div id="container">
-                <div id="wrapper">
-                  <div id="banner-image">
-                    <a href="http://localhost:3000/product2"><img src={require("../assets/img/house.jpg")} alt="" /></a>
-                  </div>
-                  <h3>Plastic Dog Kennel</h3>
-                  <h3>Price: ₹1,000 - ₹5,000</h3>
-                </div>
-                <div id="button-wrapper">
-                  <button className="btn outline">ADD TO CART</button>
-                  <br />
-                  <button className="btn fill">BUY NOW</button>
-                </div>
+
+            <div>
+              <h2 className="h2 section-title">
+                <span className="span">Shop</span> By Cats
+              </h2>
+              <div className="main">
+                <br />
+                <br />
+                <ul className="grid-list1">
+                  <li>
+                    <Accessories
+                      img_url={bags}
+                      nameP="Compostable Poop Bags"
+                      price="Price: ₹400 - ₹500"
+                      descp="Boxer dogs are self-assured, playful, and intelligent. They are also among the most athletic members of the canine 
+                      species. Because each breed has specific needs, it’s important that your dog’s diet helps to maintain its unique lifestyle 
+                      and optimal health. Suitable for Boxers aged 15 months old and over, ROYAL CANIN Boxer Adult is specially formulated with 
+                      all the nutritional needs of your adult dog in mind. The Boxer’s dynamism is well-renowned – this breed never holds back in 
+                      terms of exerting energy once engaged in physical activity. Therefore, great demands can be placed on its body, meaning the 
+                      Boxer needs a diet adapted to its intense levels of physical activity. That’s why ROYAL CANIN Boxer Adult contributes to
+                       maintaining muscle mass, thanks to adapted protein content and the inclusion of L-Carnitine. ROYAL CANIN Boxer Adult also
+                        contains specific nutrients, such as taurine, EPA & DHA, to help support healthy cardiac function. Additionally, 
+                        this formula contains an exclusive complex of antioxidants to help neutralize free radicals and support your dog’s 
+                        natural defenses. The kibble found in ROYAL CANIN Boxer Adult is exclusively designed not only to make it easier for your
+                         dog to grasp the kibble but to also encourage sufficient chewing before swallowing."
+
+                    />
+                  </li>
+                </ul>
+
+                <ul>
+                  <li>
+                    <Accessories
+                      img_url={house}
+                      nameP="Plastic Dog Kennel"
+                      price="Price: ₹1,000 - ₹5,000"
+                      descp="Boxer dogs are self-assured, playful, and intelligent. They are also among the most athletic members of the canine 
+                      species. Because each breed has specific needs, it’s important that your dog’s diet helps to maintain its unique lifestyle 
+                      and optimal health. Suitable for Boxers aged 15 months old and over, ROYAL CANIN Boxer Adult is specially formulated with 
+                      all the nutritional needs of your adult dog in mind. The Boxer’s dynamism is well-renowned – this breed never holds back in 
+                      terms of exerting energy once engaged in physical activity. Therefore, great demands can be placed on its body, meaning the 
+                      Boxer needs a diet adapted to its intense levels of physical activity. That’s why ROYAL CANIN Boxer Adult contributes to
+                       maintaining muscle mass, thanks to adapted protein content and the inclusion of L-Carnitine. ROYAL CANIN Boxer Adult also
+                        contains specific nutrients, such as taurine, EPA & DHA, to help support healthy cardiac function. Additionally, 
+                        this formula contains an exclusive complex of antioxidants to help neutralize free radicals and support your dog’s 
+                        natural defenses. The kibble found in ROYAL CANIN Boxer Adult is exclusively designed not only to make it easier for your
+                         dog to grasp the kibble but to also encourage sufficient chewing before swallowing."
+
+                    />
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <Accessories
+                      img_url={bags}
+                      nameP="Compostable Poop Bags"
+                      price="Price: ₹400 - ₹500"
+                      descp="Boxer dogs are self-assured, playful, and intelligent. They are also among the most athletic members of the canine 
+                      species. Because each breed has specific needs, it’s important that your dog’s diet helps to maintain its unique lifestyle 
+                      and optimal health. Suitable for Boxers aged 15 months old and over, ROYAL CANIN Boxer Adult is specially formulated with 
+                      all the nutritional needs of your adult dog in mind. The Boxer’s dynamism is well-renowned – this breed never holds back in 
+                      terms of exerting energy once engaged in physical activity. Therefore, great demands can be placed on its body, meaning the 
+                      Boxer needs a diet adapted to its intense levels of physical activity. That’s why ROYAL CANIN Boxer Adult contributes to
+                       maintaining muscle mass, thanks to adapted protein content and the inclusion of L-Carnitine. ROYAL CANIN Boxer Adult also
+                        contains specific nutrients, such as taurine, EPA & DHA, to help support healthy cardiac function. Additionally, 
+                        this formula contains an exclusive complex of antioxidants to help neutralize free radicals and support your dog’s 
+                        natural defenses. The kibble found in ROYAL CANIN Boxer Adult is exclusively designed not only to make it easier for your
+                         dog to grasp the kibble but to also encourage sufficient chewing before swallowing."
+
+                    />
+
+                  </li>
+                </ul>
               </div>
+            </div>
 
-              <div id="container">
-                <div id="wrapper">
-                  <div id="banner-image">
-                    <a href="http://localhost:3000/product3"><img src={require("../assets/img/feeder.jpg")} alt="" /></a>
-                  </div>
-                  <h3>Automatic Pet Feeder</h3>
-                  <h3>Price: ₹300 - ₹2,000</h3>
-                </div>
-                <div id="button-wrapper">
-                  <button className="btn outline">ADD TO CART</button>
-                  <br />
-                  <button className="btn fill">BUY NOW</button>
-                </div>
+
+            <div>
+              <h2 className="h2 section-title">
+                <span className="span">Shop</span> By Farm Animals
+              </h2>
+              <div className="main">
+                <br />
+                <br />
+                <ul className="grid-list1">
+                  <li>
+                    <Accessories
+                      img_url={bags}
+                      nameP="Compostable Poop Bags"
+                      price="Price: ₹400 - ₹500"
+                      descp="Boxer dogs are self-assured, playful, and intelligent. They are also among the most athletic members of the canine 
+                      species. Because each breed has specific needs, it’s important that your dog’s diet helps to maintain its unique lifestyle 
+                      and optimal health. Suitable for Boxers aged 15 months old and over, ROYAL CANIN Boxer Adult is specially formulated with 
+                      all the nutritional needs of your adult dog in mind. The Boxer’s dynamism is well-renowned – this breed never holds back in 
+                      terms of exerting energy once engaged in physical activity. Therefore, great demands can be placed on its body, meaning the 
+                      Boxer needs a diet adapted to its intense levels of physical activity. That’s why ROYAL CANIN Boxer Adult contributes to
+                       maintaining muscle mass, thanks to adapted protein content and the inclusion of L-Carnitine. ROYAL CANIN Boxer Adult also
+                        contains specific nutrients, such as taurine, EPA & DHA, to help support healthy cardiac function. Additionally, 
+                        this formula contains an exclusive complex of antioxidants to help neutralize free radicals and support your dog’s 
+                        natural defenses. The kibble found in ROYAL CANIN Boxer Adult is exclusively designed not only to make it easier for your
+                         dog to grasp the kibble but to also encourage sufficient chewing before swallowing."
+
+                    />
+                  </li>
+                </ul>
+
+                <ul>
+                  <li>
+                    <Accessories
+                      img_url={house}
+                      nameP="Plastic Dog Kennel"
+                      price="Price: ₹1,000 - ₹5,000"
+                      descp="Boxer dogs are self-assured, playful, and intelligent. They are also among the most athletic members of the canine 
+                      species. Because each breed has specific needs, it’s important that your dog’s diet helps to maintain its unique lifestyle 
+                      and optimal health. Suitable for Boxers aged 15 months old and over, ROYAL CANIN Boxer Adult is specially formulated with 
+                      all the nutritional needs of your adult dog in mind. The Boxer’s dynamism is well-renowned – this breed never holds back in 
+                      terms of exerting energy once engaged in physical activity. Therefore, great demands can be placed on its body, meaning the 
+                      Boxer needs a diet adapted to its intense levels of physical activity. That’s why ROYAL CANIN Boxer Adult contributes to
+                       maintaining muscle mass, thanks to adapted protein content and the inclusion of L-Carnitine. ROYAL CANIN Boxer Adult also
+                        contains specific nutrients, such as taurine, EPA & DHA, to help support healthy cardiac function. Additionally, 
+                        this formula contains an exclusive complex of antioxidants to help neutralize free radicals and support your dog’s 
+                        natural defenses. The kibble found in ROYAL CANIN Boxer Adult is exclusively designed not only to make it easier for your
+                         dog to grasp the kibble but to also encourage sufficient chewing before swallowing."
+
+                    />
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <Accessories
+                      img_url={bags}
+                      nameP="Compostable Poop Bags"
+                      price="Price: ₹400 - ₹500"
+                      descp="Boxer dogs are self-assured, playful, and intelligent. They are also among the most athletic members of the canine 
+                      species. Because each breed has specific needs, it’s important that your dog’s diet helps to maintain its unique lifestyle 
+                      and optimal health. Suitable for Boxers aged 15 months old and over, ROYAL CANIN Boxer Adult is specially formulated with 
+                      all the nutritional needs of your adult dog in mind. The Boxer’s dynamism is well-renowned – this breed never holds back in 
+                      terms of exerting energy once engaged in physical activity. Therefore, great demands can be placed on its body, meaning the 
+                      Boxer needs a diet adapted to its intense levels of physical activity. That’s why ROYAL CANIN Boxer Adult contributes to
+                       maintaining muscle mass, thanks to adapted protein content and the inclusion of L-Carnitine. ROYAL CANIN Boxer Adult also
+                        contains specific nutrients, such as taurine, EPA & DHA, to help support healthy cardiac function. Additionally, 
+                        this formula contains an exclusive complex of antioxidants to help neutralize free radicals and support your dog’s 
+                        natural defenses. The kibble found in ROYAL CANIN Boxer Adult is exclusively designed not only to make it easier for your
+                         dog to grasp the kibble but to also encourage sufficient chewing before swallowing."
+
+                    />
+
+                  </li>
+                </ul>
               </div>
-
-              <div id="container">
-                <div id="wrapper">
-                  <div id="banner-image">
-                    <a href="http://localhost:3000/product4"><img src={require("../assets/img/rope.jpg")} alt="" /></a>
-                  </div>
-                  <h3>Dog Traction Rope</h3>
-                  <h3>Price: ₹100 - ₹500</h3>
-                </div>
-                <div id="button-wrapper">
-                  <button className="btn outline">ADD TO CART</button>
-                  <br />
-                  <button className="btn fill">BUY NOW</button>
-                </div>
-              </div>
-
-              <div id="container">
-                <div id="wrapper">
-                  <div id="banner-image">
-                    <a href="http://localhost:3000/product5"><img src={require("../assets/img/food.avif")} alt="" /></a>
-                  </div>
-                  <h3>Dog & Cat Food</h3>
-                  <h3>Price: ₹500 - ₹3,000</h3>
-                </div>
-                <div id="button-wrapper">
-                  <button className="btn outline">ADD TO CART</button>
-                  <br />
-                  <button className="btn fill">BUY NOW</button>
-                </div>
-              </div>
-
-              <div id="container">
-                <div id="wrapper">
-                  <div id="banner-image">
-                    <a href="http://localhost:3000/product6"><img src={require("../assets/img/brush.webp")} alt="" /></a>
-                  </div>
-                  <h3>Dog & Cat Brush</h3>
-                  <h3>Price: ₹200 - ₹800</h3>
-                </div>
-                <div id="button-wrapper">
-                  <button className="btn outline">ADD TO CART</button>
-                  <br />
-                  <button className="btn fill">BUY NOW</button>
-                </div>
-              </div> */}
-
-              <ul>
-                <li>
-                  <Accessories
-                  img_url = {bags}
-                  nameP= "Compostable Poop Bags"
-                  price = "Price: ₹400 - ₹500"
-                  />
-
-                </li>
-              </ul>
-              <ul>
-                <li>
-                  <Accessories
-                  img_url = {bags}
-                  nameP= "Compostable Poop Bags"
-                  price = "Price: ₹400 - ₹500"
-                  />
-
-                </li>
-              </ul>
-              <ul>
-                <li>
-                  <Accessories
-                  img_url = {bags}
-                  nameP= "Compostable Poop Bags"
-                  price = "Price: ₹400 - ₹500"
-                  />
-
-                </li>
-              </ul>
-              <ul>
-                <li>
-                  <Accessories
-                  img_url = {bags}
-                  nameP= "Compostable Poop Bags"
-                  price = "Price: ₹400 - ₹500"
-                  />
-
-                </li>
-              </ul>
-              <ul>
-                <li>
-                  <Accessories
-                  img_url = {bags}
-                  nameP= "Compostable Poop Bags"
-                  price = "Price: ₹400 - ₹500"
-                  />
-
-                </li>
-              </ul>
             </div>
           </section>
-
           <section
             class="cta has-bg-image"
             aria-label="cta"

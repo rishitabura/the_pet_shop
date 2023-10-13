@@ -75,17 +75,32 @@ function Accessories(props) {
                 </div>
                 <h3 className="h3 card-title1">{props.nameP}</h3>
                 <h3 className="h3 price-title">{props.price}</h3>
-                <div id="button-wrapper">
+                <div  
+                style={{
+                    "textAlign": "center", 
+                    "fontSize": "15px",
+                    "padding": "10px",
+                }}>
+                    <h2>Quantity :  
+                        <input type="number" name="quantity" id="quantity" 
+                        style={{"fontSize": "18px", "borderRadius":"20px","padding":"10px","margin-left": "10px" }} />
+                    </h2>
+                   
+                </div>
+                {/* <div id="button-wrapper">
                     <button className="btn" onClick={openPopup}>
                         KNOW MORE
                     </button>
-                </div>
+                </div> */}
                 <div id="button-wrapper" margin-bottom="20px">
                     <button className="btn " aria-label="add to card" title="Add To Card">
                         ADD TO CART
                     </button>
-                    <button className="btn ">
+                    {/* <button className="btn ">
                         BUY NOW
+                    </button> */}
+                    <button className="btn" onClick={openPopup}>
+                        KNOW MORE
                     </button>
                 </div>
             </div>
@@ -93,15 +108,27 @@ function Accessories(props) {
                 <div className="popup-overlay">
                     <div className="popup">
                         <div className="popup-content">
-                            <h2>{props.nameP}</h2>
-                            <p>Price: {props.price}</p>
-                            {/* Add more product details here */}
-                            <button className="close-button" onClick={closePopup}>
-                                Close
-                            </button>
+                            <div className="popup-photo">
+                                <img
+                                    src={props.img_url}
+                                    alt="Product"
+                                    width="100%"
+                                    height="auto"
+                                />
+                            </div>
+                            <div className="popup-text">
+                                <h2 style={{ color: "var(--portland-orange)" }}>{props.nameP}</h2>
+                                <p><b>Price:</b> {props.price}</p>
+                                <p><b>Description</b>: {props.descp}</p>
+                                <p><b>Description1</b>: {props.descp1}</p>
+                            </div>
                         </div>
+                        <button className="btn" onClick={closePopup}>
+                            Close
+                        </button>
                     </div>
                 </div>
+
             )}
         </div>
     );
