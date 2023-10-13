@@ -31,7 +31,7 @@ import Product5 from "./pages/product5";
 import Product6 from "./pages/product6";
 import Pet from "./pages/pet";
 
-import Modal from './pages/Modal1';
+// import ProductModal from './pages/Modal';
 import UserProfile from './pages/userprofile';
 
 // import GoldenRetrieversDog from './pages/Golden-Retrievers-Dog';
@@ -55,7 +55,7 @@ function App() {
           <Route exact path="/userprofile" element={<UserProfile/>}/>
           <Route exact path="/birds" element={<Birds />} />
           <Route exact path="/seaanimals" element={<SeaAnimals />} />
-          <Route exact path="/modal" element={<Modal />} />
+          {/* <Route exact path="/modal" element={<ProductModal />} /> */}
 
           <Route exact path="/food" element={<Food />} />
           <Route exact path="/shelter" element={<Shelter />} />

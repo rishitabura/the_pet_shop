@@ -30,11 +30,7 @@ import goat from "../assets/img/goat.jpeg";
 
 
 import { Card_TopCat2 } from "../components/card_topCategories";
-import catimg from "../assets/img/cat.jpg";
-import dogimg from "../assets/img/dog.jpg";
-import rabbitimg from "../assets/img/rabbit.jpeg";
-import farm_animalimg from "../assets/img/parrot.jpg";
-import birdimg2 from "../assets/img/parrot.jpg";
+
 
 
 // import Card from "../components/card_topCategories";
@@ -63,7 +59,7 @@ function Animals() {
                 <Card_TopCat2
                  img_url = {GermanShepherd}
                  title = "German Shepherd Dog"
-                 page_url = "/modal"
+                 page_url = "/pet"
                  />
                 </li>
 
