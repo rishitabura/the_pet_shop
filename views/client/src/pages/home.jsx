@@ -23,11 +23,14 @@ import farm_animalimg from "../assets/img/parrot.jpg";
 import birdimg2 from "../assets/img/parrot.jpg";
 // import pet-food from "assets/img/pet-food.png";
 
+
+
 import ctabg from "../assets/img/cta-bg.jpg";
 import ctabanner from "../assets/img/cta-banner.png";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/footer";
+
 
 function Home() {
   return (
@@ -68,7 +71,7 @@ function Home() {
                 <Card_TopCat
                   img_url = {birdsimg1}
                   subtitle = "Birds"
-                  page_url = "./birds"
+                  page_url = "/birds"
                   />
                 </li>
 
@@ -97,14 +100,17 @@ function Home() {
               <ul className="grid-list">
 
                 <li>
-                  <Card_PetAcc img_url = {petfoodimg1} title = "Pet Food" page_url = "#" />
+                  <Card_PetAcc 
+                  img_url = {petfoodimg1} 
+                  title = "Pet Food" 
+                  page_url = "/food"/>
                 </li>
 
                 <li>
                 <Card_PetAcc
                    img_url = {petgroomingimg1}
                    title = "Pet Grooming"
-                   page_url = "#"
+                   page_url = "/grooming"
                   />
                 </li>
 
@@ -112,7 +118,7 @@ function Home() {
                   <Card_PetAcc
                    img_url = {petessentialsimg1}
                    title = "Pet Essentials"
-                   page_url = "#"
+                   page_url = "/essentials"
                   />
                 </li>
 
@@ -120,7 +126,7 @@ function Home() {
                 <Card_PetAcc
                    img_url = {petshelterimg1}
                    title = "Pet Shelter"
-                   page_url = "#"
+                   page_url = "/shelter"
                   />
                 </li>
 

@@ -1,0 +1,39 @@
+.product1{
+    position: relative;
+    height: 500px;
+    width: 500px;
+    margin-left: 90px;
+}
+
+#info1{
+    position: relative;
+    margin-left: 100px;
+}
+
+#info1 p{
+    font-size: x-large;
+    margin-bottom: 20px;
+}
+
+#info1 h4{
+    font-size: larger;
+}
+
+#info1 ul{
+    margin-left: 20px;
+}
+
+#info1 li{
+    font-size: large;
+    list-style-type: circle;
+}
+
+#quantity{
+    outline: none;
+    height: 40px;
+    width: 95px;
+}
+
+#wrapper2{
+    margin-left: 80px;
+}

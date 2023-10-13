@@ -14,6 +14,13 @@ import RottweilersDog from "../assets/img/Rottweilers-dog.jpg";
 import BeaglesDog from "../assets/img/Beagles-dog.jpg";
 import ctabg from "../assets/img/cta-bg.jpg";
 import ctabanner from "../assets/img/cta-banner.png";
+import cat1 from "../assets/img/cat1.jpeg";
+import cat2 from "../assets/img/cat2.jpg";
+import cat3 from "../assets/img/cat3.jpg";
+import cat4 from "../assets/img/cat4.jpg";
+import cat5 from "../assets/img/cat5.jpg";
+import ducks from "../assets/img/ducks.jpg";
+import horses from "../assets/img/horses.jpg";
 
 
 import cows from "../assets/img/cows.jpeg";
@@ -118,7 +125,7 @@ function Animals() {
 
                 <li className="scrollbar-item">
                 <Card_TopCat2
-                 img_url = {catimg}
+                 img_url = {cat1}
                  title = "Cats"
                  page_url = "#"
                  />
@@ -126,7 +133,7 @@ function Animals() {
 
                 <li className="scrollbar-item">
                 <Card_TopCat2
-                 img_url = {dogimg}
+                 img_url = {cat2}
                  title = "Dogs"
                  page_url = "#"
                  />
@@ -134,7 +141,7 @@ function Animals() {
 
                 <li className="scrollbar-item">
                 <Card_TopCat2
-                 img_url = {rabbitimg}
+                 img_url = {cat3}
                  title = "Rabbits"
                  page_url = "#"
                  />
@@ -142,7 +149,7 @@ function Animals() {
 
                 <li className="scrollbar-item">
                 <Card_TopCat2
-                 img_url = {farm_animalimg}
+                 img_url = {cat4}
                  title = "Farm Animals"
                  page_url = "#"
                  />
@@ -150,7 +157,7 @@ function Animals() {
 
                 <li className="scrollbar-item">
                 <Card_TopCat2
-                 img_url = {birdimg2}
+                 img_url = {cat5}
                  title = "Birds"
                  page_url = "#"
                  />
@@ -197,16 +204,16 @@ function Animals() {
 
                 <li className="scrollbar-item">
                 <Card_TopCat2
-                 img_url = {farm_animalimg}
-                 title = "Farm Animals"
+                 img_url = {ducks}
+                 title = "Ducks"
                  page_url = "#"
                  />
                 </li>
 
                 <li className="scrollbar-item">
                 <Card_TopCat2
-                 img_url = {birdimg2}
-                 title = "Birds"
+                 img_url = {horses}
+                 title = "Horses"
                  page_url = "#"
                  />
                

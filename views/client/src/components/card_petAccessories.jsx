@@ -11,9 +11,9 @@ function Card_PetAcc(props) {
         <img src={props.img_url} width="360" height="360" loading="lazy"
           alt="petaccesory" class="img-cover default" />
 
-        <button class="card-action-btn" aria-label="add to card" title="Add To Card">
+        {/* <button class="card-action-btn" aria-label="add to card" title="Add To Card">
           <ion-icon name="bag-add-outline" aria-hidden="true"></ion-icon>
-        </button>
+        </button> */}
       </div>
 
       <div class="card-content">
