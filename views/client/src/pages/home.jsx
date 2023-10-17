@@ -23,11 +23,16 @@ import farm_animalimg from "../assets/img/parrot.jpg";
 import birdimg2 from "../assets/img/parrot.jpg";
 // import pet-food from "assets/img/pet-food.png";
 
+
+
 import ctabg from "../assets/img/cta-bg.jpg";
 import ctabanner from "../assets/img/cta-banner.png";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/footer";
+// import Navbar1 from "../components/Navbar/Navbar";
+
+
 
 function Home() {
   return (
@@ -40,7 +45,7 @@ function Home() {
 
 
           <section className="section hero has-bg-image" id="home" aria-label="home"
-            style={{ 'background-image': 'url(' + bg2 + ')' }}>
+            style={{ 'backgroundImage': 'url('+bg2+')' }}>
             <div className="container">
 
             </div>
@@ -65,10 +70,10 @@ function Home() {
                 </li>
 
                 <li>
-                  <Card_TopCat
-                    img_url={birdsimg1}
-                    subtitle="Birds"
-                    page_url="./birds"
+                <Card_TopCat
+                  img_url = {birdsimg1}
+                  subtitle = "Birds"
+                  page_url = "/birds"
                   />
                 </li>
 
@@ -97,30 +102,33 @@ function Home() {
               <ul className="grid-list">
 
                 <li>
-                  <Card_PetAcc img_url={petfoodimg1} title="Pet Food" page_url="#" />
+                  <Card_PetAcc 
+                  img_url = {petfoodimg1} 
+                  title = "Pet Food" 
+                  page_url = "/food"/>
                 </li>
 
                 <li>
-                  <Card_PetAcc
-                    img_url={petgroomingimg1}
-                    title="Pet Grooming"
-                    page_url="#"
+                <Card_PetAcc
+                   img_url = {petgroomingimg1}
+                   title = "Habitat & Accessories"
+                   page_url = "/grooming"
                   />
                 </li>
 
                 <li>
                   <Card_PetAcc
-                    img_url={petessentialsimg1}
-                    title="Pet Essentials"
-                    page_url="#"
+                   img_url = {petessentialsimg1}
+                   title = "Health Care"
+                   page_url = "/essentials"
                   />
                 </li>
 
                 <li>
-                  <Card_PetAcc
-                    img_url={petshelterimg1}
-                    title="Pet Shelter"
-                    page_url="#"
+                <Card_PetAcc
+                   img_url = {petshelterimg1}
+                   title = "Shelter"
+                   page_url = "/shelter"
                   />
                 </li>
 
@@ -185,7 +193,7 @@ function Home() {
             </div>
           </section>
 
-          <section className="cta has-bg-image" aria-label="cta" style={{ "background-image": "url(" + ctabg + ")" }}>
+          <section className="cta has-bg-image" aria-label="cta" style={{ "backgroundImage": "url("+ctabg+")" }}>
             <div className="container">
 
               <figure className="cta-banner">

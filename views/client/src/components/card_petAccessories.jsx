@@ -5,22 +5,22 @@ import "../styles/style.css";
 function Card_PetAcc(props) {
   return (
 
-    <div class="product-card">
+    <div className="product-card">
 
-      <div class="card-banner img-holder" style={{ "--width": "360", "--height": "360" }}>
+      <div className="card-banner img-holder" style={{ "--width": "360", "--height": "360" }}>
         <img src={props.img_url} width="360" height="360" loading="lazy"
-          alt="petaccesory" class="img-cover default" />
+          alt="petaccesory" className="img-cover default" />
 
-        <button class="card-action-btn" aria-label="add to card" title="Add To Card">
+        {/* <button className="card-action-btn" aria-label="add to card" title="Add To Card">
           <ion-icon name="bag-add-outline" aria-hidden="true"></ion-icon>
-        </button>
+        </button> */}
       </div>
 
-      <div class="card-content">
+      <div className="card-content">
 
 
-        <h3 class="h3">
-          <a href={props.page_url} class="card-title">{props.title}</a>
+        <h3 className="h3">
+          <a href={props.page_url} className="card-title">{props.title}</a>
         </h3>
 
       </div>

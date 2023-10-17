@@ -11,63 +11,63 @@ import {FaLocationDot} from  "react-icons/fa6";
 
 function Footer() {
     return (
-        <footer class="footer" style={{'background-image': 'url('+footer+')'}}>
+        <footer className="footer" style={{'backgroundImage': 'url('+footer+')'}}>
 
-        <div class="footer-top section">
-            <div class="container">
+        <div className="footer-top section">
+            <div className="container">
 
-                <div class="footer-brand">
+                <div className="footer-brand">
 
-                    <a href="#" class="logo">Pet Bazaar</a>
+                    <a href="#" className="logo">Pet Bazaar</a>
 
-                    <p class="footer-text">
+                    <p className="footer-text">
                         If you have any question, please contact us at <a href="mailto:support@gmail.com"
-                            class="link">petbazaar@gmail.com</a>
+                            className="link">petbazaar@gmail.com</a>
                     </p>
 
-                    <ul class="contact-list" id="contact">
+                    <ul className="contact-list" id="contact">
 
-                        <li class="contact-item">
+                        <li className="contact-item">
                             <ion-icon name="location-outline" aria-hidden="true"><FaLocationDot color="white"/></ion-icon>
 
-                            <address class="address">
+                            <address className="address">
                                 Pune, Maharashtra
                             </address>
                         </li>
 
-                        <li class="contact-item">
+                        <li className="contact-item">
                             <ion-icon name="call-outline" aria-hidden="true"><BiSolidPhoneCall color="white"/></ion-icon>
 
-                            <a href="tel:+16234567891011" class="contact-link">1234567890</a>
+                            <a href="tel:+16234567891011" className="contact-link">1234567890</a>
                         </li>
 
                     </ul>
 
-                    <ul class="social-list">
+                    <ul className="social-list">
 
                         <li>
-                            <a href="#" class="social-link">
+                            <a href="#" className="social-link">
                             < BsFacebook  color="#4267B2" />
                                 {/* <ion-icon name="logo-facebook">< BsFacebook/></ion-icon> */}
                             </a>
                         </li>
 
                         <li>
-                            <a href="#" class="social-link">
+                            <a href="#" className="social-link">
                             < AiFillTwitterCircle color="#1DA1F2"/>
                                 {/* <ion-icon name="logo-twitter"></ion-icon> */}
                             </a>
                         </li>
 
                         <li>
-                            <a href="#" class="social-link">
+                            <a href="#" className="social-link">
                             < BsPinterest color="#c8232c "/>
                                 {/* <ion-icon name="logo-pinterest"></ion-icon> */}
                             </a>
                         </li>
 
                         <li>
-                            <a href="#" class="social-link">
+                            <a href="#" className="social-link">
                             < BiLogoInstagramAlt color="#d62976"/>
                                 {/* <ion-icon name="logo-instagram">< BiLogoInstagramAlt/></ion-icon> */}
                             </a>
@@ -77,46 +77,46 @@ function Footer() {
 
                 </div>
 
-                <ul class="footer-list">
+                <ul className="footer-list">
 
                     <li>
-                        <p class="footer-list-title">Overview</p>
+                        <p className="footer-list-title">Overview</p>
                     </li>
 
                     <li>
-                        <a href="#" class="footer-link">About us</a>
+                        <a href="#" className="footer-link">About us</a>
                     </li>
 
                     <li>
-                        <a href="#" class="footer-link">Categories</a>
+                        <a href="#" className="footer-link">Categories</a>
                     </li>
 
                     <li>
-                        <a href="#" class="footer-link">Contact Us</a>
+                        <a href="#" className="footer-link">Contact Us</a>
                     </li>
 
                     <li>
-                        <a href="#" class="footer-link">FAQs</a>
+                        <a href="#" className="footer-link">FAQs</a>
                     </li>
 
                 </ul>
 
-                <ul class="footer-list">
+                <ul className="footer-list">
 
                     <li>
-                        <p class="footer-list-title">Policies</p>
+                        <p className="footer-list-title">Policies</p>
                     </li>
 
                     <li>
-                        <a href="#" class="footer-link">Terms and Condition</a>
+                        <a href="#" className="footer-link">Terms and Condition</a>
                     </li>
 
                     <li>
-                        <a href="#" class="footer-link">Shipping Policy</a>
+                        <a href="#" className="footer-link">Shipping Policy</a>
                     </li>
 
                     <li>
-                        <a href="#" class="footer-link">Refund Policy</a>
+                        <a href="#" className="footer-link">Refund Policy</a>
                     </li>
 
                 </ul>

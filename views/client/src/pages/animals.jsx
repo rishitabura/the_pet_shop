@@ -14,6 +14,13 @@ import RottweilersDog from "../assets/img/Rottweilers-dog.jpg";
 import BeaglesDog from "../assets/img/Beagles-dog.jpg";
 import ctabg from "../assets/img/cta-bg.jpg";
 import ctabanner from "../assets/img/cta-banner.png";
+import cat1 from "../assets/img/cat1.jpeg";
+import cat2 from "../assets/img/cat2.jpg";
+import cat3 from "../assets/img/cat3.jpg";
+import cat4 from "../assets/img/cat4.jpg";
+import cat5 from "../assets/img/cat5.jpg";
+import ducks from "../assets/img/ducks.jpg";
+import horses from "../assets/img/horses.jpg";
 
 
 import cows from "../assets/img/cows.jpeg";
@@ -23,11 +30,7 @@ import goat from "../assets/img/goat.jpeg";
 
 
 import { Card_TopCat2 } from "../components/card_topCategories";
-import catimg from "../assets/img/cat.jpg";
-import dogimg from "../assets/img/dog.jpg";
-import rabbitimg from "../assets/img/rabbit.jpeg";
-import farm_animalimg from "../assets/img/parrot.jpg";
-import birdimg2 from "../assets/img/parrot.jpg";
+
 
 
 // import Card from "../components/card_topCategories";
@@ -56,7 +59,7 @@ function Animals() {
                 <Card_TopCat2
                  img_url = {GermanShepherd}
                  title = "German Shepherd Dog"
-                 page_url = "/modal"
+                 page_url = "/puppies"
                  />
                 </li>
 
@@ -118,7 +121,7 @@ function Animals() {
 
                 <li className="scrollbar-item">
                 <Card_TopCat2
-                 img_url = {catimg}
+                 img_url = {cat1}
                  title = "Cats"
                  page_url = "#"
                  />
@@ -126,7 +129,7 @@ function Animals() {
 
                 <li className="scrollbar-item">
                 <Card_TopCat2
-                 img_url = {dogimg}
+                 img_url = {cat2}
                  title = "Dogs"
                  page_url = "#"
                  />
@@ -134,7 +137,7 @@ function Animals() {
 
                 <li className="scrollbar-item">
                 <Card_TopCat2
-                 img_url = {rabbitimg}
+                 img_url = {cat3}
                  title = "Rabbits"
                  page_url = "#"
                  />
@@ -142,7 +145,7 @@ function Animals() {
 
                 <li className="scrollbar-item">
                 <Card_TopCat2
-                 img_url = {farm_animalimg}
+                 img_url = {cat4}
                  title = "Farm Animals"
                  page_url = "#"
                  />
@@ -150,7 +153,7 @@ function Animals() {
 
                 <li className="scrollbar-item">
                 <Card_TopCat2
-                 img_url = {birdimg2}
+                 img_url = {cat5}
                  title = "Birds"
                  page_url = "#"
                  />
@@ -197,16 +200,16 @@ function Animals() {
 
                 <li className="scrollbar-item">
                 <Card_TopCat2
-                 img_url = {farm_animalimg}
-                 title = "Farm Animals"
+                 img_url = {ducks}
+                 title = "Ducks"
                  page_url = "#"
                  />
                 </li>
 
                 <li className="scrollbar-item">
                 <Card_TopCat2
-                 img_url = {birdimg2}
-                 title = "Birds"
+                 img_url = {horses}
+                 title = "Horses"
                  page_url = "#"
                  />
                
@@ -217,23 +220,23 @@ function Animals() {
             </div>
           </section>
 
-          <section class="cta has-bg-image" aria-label="cta" style={{ "background-image": "url("+ctabg+")" }}>
-            <div class="container">
+          <section className="cta has-bg-image" aria-label="cta" style={{ "backgroundImage": "url("+ctabg+")" }}>
+            <div className="container">
 
-              <figure class="cta-banner">
-                <img src={ctabanner} width="900" height="660" loading="lazy" alt="cat" class="w-100" />
+              <figure className="cta-banner">
+                <img src={ctabanner} width="900" height="660" loading="lazy" alt="cat" className="w-100" />
               </figure>
 
-              <div class="cta-content">
-                <h1 class="h1"> Find your Perfect Pet</h1>
+              <div className="cta-content">
+                <h1 className="h1"> Find your Perfect Pet</h1>
 
-                <h2 class="h2 section-title">Care of Your Little Pets</h2>
+                <h2 className="h2 section-title">Care of Your Little Pets</h2>
 
-                <p class="section-text">
+                <p className="section-text">
 
                 </p>
 
-                <a href="../pages/about.html" target="_blank" class="btn">About us</a>
+                <a href="../pages/about.html" target="_blank" className="btn">About us</a>
 
               </div>
 

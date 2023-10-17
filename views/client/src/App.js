@@ -17,9 +17,23 @@ import Birds from './pages/birds';
 import SeaAnimals from './pages/seaanimals';
 //import GoldenRetrieversDog from './pages/Golden-Retrievers-Dog';
 
-import Modal from './pages/Modal1';
+//pet accessories
+import Food from "./pages/food";
+import Healthcare from "./pages/healthcare";
+import Shelter from "./pages/shelter";
+import Habitat from "./pages/habitat";
 
-//user
+import Puppies from "./pages/puppies";
+
+import Product1 from "./pages/product1";
+import Product2 from "./pages/product2";
+import Product3 from "./pages/product3";
+import Product4 from "./pages/product4";
+import Product5 from "./pages/product5";
+import Product6 from "./pages/product6";
+import Pet from "./pages/pet";
+
+// import ProductModal from './pages/Modal';
 import UserProfile from './pages/userprofile';
 
 // admin
@@ -65,6 +79,22 @@ function App() {
               <Route exact path="/admin/getAllPets" element={<Admin_PetCat_GetAll/>}/>
           <Route exact path="/admin/managecustomers" element={<GetAllCustomers/>}/>
           <Route exact path="/admin/manageorders" element={<GetAllOrders/>}/>
+          {/* <Route exact path="/modal" element={<ProductModal />} /> */}
+
+          <Route exact path="/food" element={<Food />} />
+          <Route exact path="/shelter" element={<Shelter />} />
+          <Route exact path="/habitat" element={<Habitat />} />
+          <Route exact path="/essentials" element={<Healthcare />} />
+
+          <Route exact path="/product1" element={<Product1 />} />
+          <Route exact path="/product2" element={<Product2 />} />
+          <Route exact path="/product3" element={<Product3 />} />
+          <Route exact path="/product4" element={<Product4 />} />
+          <Route exact path="/product5" element={<Product5 />} />
+          <Route exact path="/product6" element={<Product6 />} />
+          <Route exact path="/pet" element={<Pet />} />
+          <Route exact path="/puppies" element={<Puppies />} />
+
 
 
  
