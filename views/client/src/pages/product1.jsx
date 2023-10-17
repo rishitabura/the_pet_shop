@@ -57,37 +57,6 @@ function single_product() {
               <button className="btn fill">BUY NOW</button>
             </div>
           </div>
-
-          <section
-            class="cta has-bg-image"
-            aria-label="cta"
-            style={{ "background-image": "url(" + ctabg + ")" }}
-          >
-            <div class="container">
-              <figure class="cta-banner">
-                <img
-                  src={ctabanner}
-                  width="900"
-                  height="660"
-                  loading="lazy"
-                  alt="cat"
-                  class="w-100"
-                />
-              </figure>
-
-              <div class="cta-content">
-                <h1 class="h1"> Find your Perfect Pet</h1>
-
-                <h2 class="h2 section-title">Care of Your Little Pets</h2>
-
-                <p class="section-text"></p>
-
-                <a href="../pages/about.html" target="_blank" class="btn">
-                  About us
-                </a>
-              </div>
-            </div>
-          </section>
         </article>
       </main>
 

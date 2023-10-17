@@ -18,10 +18,11 @@ import SeaAnimals from './pages/seaanimals';
 
 //pet accessories
 import Food from "./pages/food";
-import Essentials from "./pages/essentials";
+import Healthcare from "./pages/healthcare";
 import Shelter from "./pages/shelter";
-import Grooming from "./pages/grooming";
+import Habitat from "./pages/habitat";
 
+import Puppies from "./pages/puppies";
 
 import Product1 from "./pages/product1";
 import Product2 from "./pages/product2";
@@ -59,8 +60,8 @@ function App() {
 
           <Route exact path="/food" element={<Food />} />
           <Route exact path="/shelter" element={<Shelter />} />
-          <Route exact path="/grooming" element={<Grooming />} />
-          <Route exact path="/essentials" element={<Essentials />} />
+          <Route exact path="/habitat" element={<Habitat />} />
+          <Route exact path="/essentials" element={<Healthcare />} />
 
           <Route exact path="/product1" element={<Product1 />} />
           <Route exact path="/product2" element={<Product2 />} />
@@ -69,7 +70,10 @@ function App() {
           <Route exact path="/product5" element={<Product5 />} />
           <Route exact path="/product6" element={<Product6 />} />
           <Route exact path="/pet" element={<Pet />} />
-          {/* <Route exact path="/goldenRetrieversDog" element={<GoldenRetrieversDog />} /> */}
+          <Route exact path="/puppies" element={<Puppies />} />
+
+
+
  
       </Routes>
       </BrowserRouter>

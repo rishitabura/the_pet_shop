@@ -59,7 +59,7 @@ function Animals() {
                 <Card_TopCat2
                  img_url = {GermanShepherd}
                  title = "German Shepherd Dog"
-                 page_url = "/pet"
+                 page_url = "/puppies"
                  />
                 </li>
 
@@ -220,23 +220,23 @@ function Animals() {
             </div>
           </section>
 
-          <section class="cta has-bg-image" aria-label="cta" style={{ "background-image": "url("+ctabg+")" }}>
-            <div class="container">
+          <section className="cta has-bg-image" aria-label="cta" style={{ "backgroundImage": "url("+ctabg+")" }}>
+            <div className="container">
 
-              <figure class="cta-banner">
-                <img src={ctabanner} width="900" height="660" loading="lazy" alt="cat" class="w-100" />
+              <figure className="cta-banner">
+                <img src={ctabanner} width="900" height="660" loading="lazy" alt="cat" className="w-100" />
               </figure>
 
-              <div class="cta-content">
-                <h1 class="h1"> Find your Perfect Pet</h1>
+              <div className="cta-content">
+                <h1 className="h1"> Find your Perfect Pet</h1>
 
-                <h2 class="h2 section-title">Care of Your Little Pets</h2>
+                <h2 className="h2 section-title">Care of Your Little Pets</h2>
 
-                <p class="section-text">
+                <p className="section-text">
 
                 </p>
 
-                <a href="../pages/about.html" target="_blank" class="btn">About us</a>
+                <a href="../pages/about.html" target="_blank" className="btn">About us</a>
 
               </div>
 

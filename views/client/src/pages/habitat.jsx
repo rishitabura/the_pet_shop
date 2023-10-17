@@ -21,7 +21,7 @@ function Cat_Products() {
           <br />
           <section className="section category" aria-label="category">
             <h2 className="h2 section-title">
-              <span className="span">Pet</span> Grooming
+              <span className="span">Habitat &</span> Accessories 
             </h2>
             <br />
             <div>

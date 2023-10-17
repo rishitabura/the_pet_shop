@@ -32,7 +32,7 @@ function Navbar() {
 
   return (
 
-    <header className="header" data-header style={{ 'background-color': 'white' }}>
+    <header className="header" data-header style={{ 'backgroundColor': 'white' }}>
       <div className="container">
         {islogin()}
 

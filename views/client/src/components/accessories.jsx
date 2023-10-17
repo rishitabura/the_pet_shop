@@ -1,50 +1,3 @@
-// import React from "react";
-// import { Link } from "react-router-dom";
-// import "../styles/product_style.css";
-
-
-// function Accessories(props) {
-//     return (
-//         <div id="container">
-//             <div id="wrapper ">
-//                 <div id="banner-image" >
-//                     <img src={props.img_url} width="300" height="300" loading="lazy"
-//                         alt="petaccesory" className="banner-image" />
-//                 </div>
-//                 <h3 className="h3 card-title1">
-//                     {props.nameP}
-//                 </h3>
-//                 <h3 className="h3 price-title">
-//                     {props.price}
-//                 </h3>
-//                 <div id="button-wrapper">
-//                     <Link to="/modal"> 
-//                     <button className="btn" >
-//                         KNOW MORE
-//                     </button>
-//                     </Link>
-
-//                 </div>
-
-//                 <div id="button-wrapper" margin-bottom="20px">
-//                     <button className="btn " aria-label="add to card" title="Add To Card">
-//                         ADD TO CART
-//                     </button>
-//                     <button className="btn ">
-//                         BUY NOW
-//                     </button>
-//                 </div>
-//             </div>
-
-//         </div>
-
-//     )
-// }
-
-// export default Accessories;
-
-// Accessories.js
-
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/product_style.css";
@@ -83,7 +36,7 @@ function Accessories(props) {
                 }}>
                     <h2>Quantity :  
                         <input type="number" name="quantity" id="quantity" 
-                        style={{"fontSize": "18px", "borderRadius":"20px","padding":"10px","margin-left": "10px" }} />
+                        style={{"fontSize": "18px", "borderRadius":"20px","padding":"10px","marginLeft": "10px" }} />
                     </h2>
                    
                 </div>
@@ -120,7 +73,6 @@ function Accessories(props) {
                                 <h2 style={{ color: "var(--portland-orange)" }}>{props.nameP}</h2>
                                 <p><b>Price:</b> {props.price}</p>
                                 <p><b>Description</b>: {props.descp}</p>
-                                <p><b>Description1</b>: {props.descp1}</p>
                             </div>
                         </div>
                         <button className="btn" onClick={closePopup}>

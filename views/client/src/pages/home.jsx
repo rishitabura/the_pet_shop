@@ -45,7 +45,7 @@ function Home() {
 
 
           <section className="section hero has-bg-image" id="home" aria-label="home"
-            style={{ 'background-image': 'url('+bg2+')' }}>
+            style={{ 'backgroundImage': 'url('+bg2+')' }}>
             <div className="container">
 
             </div>
@@ -111,7 +111,7 @@ function Home() {
                 <li>
                 <Card_PetAcc
                    img_url = {petgroomingimg1}
-                   title = "Pet Grooming"
+                   title = "Habitat & Accessories"
                    page_url = "/grooming"
                   />
                 </li>
@@ -119,7 +119,7 @@ function Home() {
                 <li>
                   <Card_PetAcc
                    img_url = {petessentialsimg1}
-                   title = "Pet Essentials"
+                   title = "Health Care"
                    page_url = "/essentials"
                   />
                 </li>
@@ -127,7 +127,7 @@ function Home() {
                 <li>
                 <Card_PetAcc
                    img_url = {petshelterimg1}
-                   title = "Pet Shelter"
+                   title = "Shelter"
                    page_url = "/shelter"
                   />
                 </li>
@@ -193,7 +193,7 @@ function Home() {
             </div>
           </section>
 
-          <section className="cta has-bg-image" aria-label="cta" style={{ "background-image": "url("+ctabg+")" }}>
+          <section className="cta has-bg-image" aria-label="cta" style={{ "backgroundImage": "url("+ctabg+")" }}>
             <div className="container">
 
               <figure className="cta-banner">
