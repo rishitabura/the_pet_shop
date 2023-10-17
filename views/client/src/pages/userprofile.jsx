@@ -29,7 +29,8 @@ const UserProfile = () => {
     const fetchUserData = async () => {
         setIsLoading(true);
         const token = window.localStorage.getItem("token");
-        fetch("http://localhost:5000/user/data", {
+        console.log(token);
+        fetch("http://localhost:5000/customer/fetchaccount", {
             method: "POST",
             CrossDomain: true,
             headers: {
@@ -45,6 +46,7 @@ const UserProfile = () => {
         })
             .then((res) => res.json())
             .then((data) => {
+                if(data.data){
                 var userdata = data.data;
                 console.log(userdata);
                 if ('Address_line1' in userdata) setForm((prevForm) => ({ ...prevForm, address_line1: userdata.Address_line1 }));
@@ -53,7 +55,9 @@ const UserProfile = () => {
                 if ('Pincode' in userdata) setForm((prevForm) => ({ ...prevForm, pincode: userdata.Pincode }));
                 if ('Phone' in userdata) setForm((prevForm) => ({ ...prevForm, phone: userdata.Phone }));
                 if ('DOB' in userdata) setForm((prevForm) => ({ ...prevForm, dob: userdata.DOB, }));
+                
                 setForm((prevForm) => ({ ...prevForm, email: userdata._id, name: userdata.Name }));
+                }
             });
 
         setIsLoading(false);
@@ -81,7 +85,7 @@ const UserProfile = () => {
         var city = form.address_city;
         var pincode = form.pincode;
         var email = form.email;
-        fetch("http://localhost:5000/user/profile", {
+        fetch("http://localhost:5000/customer/profile", {
             method: "POST",
             CrossDomain: true,
             headers: {
@@ -105,7 +109,7 @@ const UserProfile = () => {
             .then((res) => res.json())
             .then((data) => {
                 console.log(data, "Profile");
-                if (data.status == "Ok") {
+                if (data.success == true) {
                     alert("Updated Successfully");
                     redirectNow();
                 }
@@ -153,7 +157,7 @@ const UserProfile = () => {
 
                                     <div className="wrap-input">
                                     <label>Email:</label>
-                                        <input type="email" required className="input" name="email" placeholder="Email"
+                                        <input type="email" required disabled className="input" name="email" placeholder="Email"
                                             value={form.email} onChange={onFormInputChange} label="Email" />
                                         <span className="focus-input"></span>
                                         <span className="symbol-input">

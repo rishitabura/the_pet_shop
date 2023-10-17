@@ -40,7 +40,7 @@ function Home() {
 
 
           <section className="section hero has-bg-image" id="home" aria-label="home"
-            style={{ 'background-image': 'url('+bg2+')' }}>
+            style={{ 'background-image': 'url(' + bg2 + ')' }}>
             <div className="container">
 
             </div>
@@ -58,25 +58,25 @@ function Home() {
 
                 <li>
                   <Card_TopCat
-                  img_url = {animalsimg1}
-                  subtitle = "Animals"
-                  page_url = "/animals"
+                    img_url={animalsimg1}
+                    subtitle="Animals"
+                    page_url="/animals"
                   />
                 </li>
 
                 <li>
-                <Card_TopCat
-                  img_url = {birdsimg1}
-                  subtitle = "Birds"
-                  page_url = "./birds"
+                  <Card_TopCat
+                    img_url={birdsimg1}
+                    subtitle="Birds"
+                    page_url="./birds"
                   />
                 </li>
 
                 <li>
-                <Card_TopCat
-                  img_url = {sea_animalsimg1}
-                  subtitle = "Sea Animals"
-                  page_url = "/seaanimals"
+                  <Card_TopCat
+                    img_url={sea_animalsimg1}
+                    subtitle="Sea Animals"
+                    page_url="/seaanimals"
                   />
                 </li>
 
@@ -97,30 +97,30 @@ function Home() {
               <ul className="grid-list">
 
                 <li>
-                  <Card_PetAcc img_url = {petfoodimg1} title = "Pet Food" page_url = "#" />
+                  <Card_PetAcc img_url={petfoodimg1} title="Pet Food" page_url="#" />
                 </li>
 
                 <li>
-                <Card_PetAcc
-                   img_url = {petgroomingimg1}
-                   title = "Pet Grooming"
-                   page_url = "#"
+                  <Card_PetAcc
+                    img_url={petgroomingimg1}
+                    title="Pet Grooming"
+                    page_url="#"
                   />
                 </li>
 
                 <li>
                   <Card_PetAcc
-                   img_url = {petessentialsimg1}
-                   title = "Pet Essentials"
-                   page_url = "#"
+                    img_url={petessentialsimg1}
+                    title="Pet Essentials"
+                    page_url="#"
                   />
                 </li>
 
                 <li>
-                <Card_PetAcc
-                   img_url = {petshelterimg1}
-                   title = "Pet Shelter"
-                   page_url = "#"
+                  <Card_PetAcc
+                    img_url={petshelterimg1}
+                    title="Pet Shelter"
+                    page_url="#"
                   />
                 </li>
 
@@ -140,44 +140,44 @@ function Home() {
               <ul className="has-scrollbar">
 
                 <li className="scrollbar-item">
-                <Card_TopCat2
-                 img_url = {catimg}
-                 title = "Cats"
-                 page_url = "#"
-                 />
+                  <Card_TopCat2
+                    img_url={catimg}
+                    title="Cats"
+                    page_url="#"
+                  />
                 </li>
 
                 <li className="scrollbar-item">
-                <Card_TopCat2
-                 img_url = {dogimg}
-                 title = "Dogs"
-                 page_url = "#"
-                 />
+                  <Card_TopCat2
+                    img_url={dogimg}
+                    title="Dogs"
+                    page_url="#"
+                  />
                 </li>
 
                 <li className="scrollbar-item">
-                <Card_TopCat2
-                 img_url = {rabbitimg}
-                 title = "Rabbits"
-                 page_url = "#"
-                 />
+                  <Card_TopCat2
+                    img_url={rabbitimg}
+                    title="Rabbits"
+                    page_url="#"
+                  />
                 </li>
 
                 <li className="scrollbar-item">
-                <Card_TopCat2
-                 img_url = {farm_animalimg}
-                 title = "Farm Animals"
-                 page_url = "#"
-                 />
+                  <Card_TopCat2
+                    img_url={farm_animalimg}
+                    title="Farm Animals"
+                    page_url="#"
+                  />
                 </li>
 
                 <li className="scrollbar-item">
-                <Card_TopCat2
-                 img_url = {birdimg2}
-                 title = "Birds"
-                 page_url = "#"
-                 />
-               
+                  <Card_TopCat2
+                    img_url={birdimg2}
+                    title="Birds"
+                    page_url="#"
+                  />
+
                 </li>
 
               </ul>
@@ -185,7 +185,7 @@ function Home() {
             </div>
           </section>
 
-          <section className="cta has-bg-image" aria-label="cta" style={{ "background-image": "url("+ctabg+")" }}>
+          <section className="cta has-bg-image" aria-label="cta" style={{ "background-image": "url(" + ctabg + ")" }}>
             <div className="container">
 
               <figure className="cta-banner">
@@ -202,7 +202,7 @@ function Home() {
                 </p>
 
                 {/* <a href="aboutus.js" className="btn">About us</a> */}
-                <Link  to= "/about" className="btn"> About us</Link>
+                <Link to="/about" className="btn"> About us</Link>
 
               </div>
 

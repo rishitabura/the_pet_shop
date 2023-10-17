@@ -15,12 +15,23 @@ import Register from './pages/register';
 import Animals from './pages/animals';
 import Birds from './pages/birds';
 import SeaAnimals from './pages/seaanimals';
+//import GoldenRetrieversDog from './pages/Golden-Retrievers-Dog';
 
 import Modal from './pages/Modal1';
 
 //user
 import UserProfile from './pages/userprofile';
-import GoldenRetrieversDog from './pages/Golden-Retrievers-Dog';
+
+// admin
+import AdminDashboard from "./pages/AdminPages/AdminDashboard";
+import AdminProfile from "./pages/AdminPages/AdminProfile";
+import GetAllAdmins from './pages/AdminPages/GetAllAdmins';
+import ViewCategories from './pages/AdminPages/ViewCategories';
+import GetAllCustomers from './pages/AdminPages/GetAllCustomers';
+import GetAllOrders from './pages/AdminPages/GetAllOrders';
+import Admin_AddPet from './pages/AdminPages/Admin_AddPet';
+import Admin_AddAdmin from './pages/AdminPages/Admin_AddAdmin';
+import Admin_PetCat_GetAll from './pages/AdminPages/Admin_PetCat_GetAll';
 
 
 
@@ -42,7 +53,20 @@ function App() {
           <Route exact path="/birds" element={<Birds />} />
           <Route exact path="/seaanimals" element={<SeaAnimals />} />
           <Route exact path="/modal" element={<Modal />} />
-          <Route exact path="/goldenRetrieversDog" element={<GoldenRetrieversDog />} />
+          {/* <Route exact path="/goldenRetrieversDog" element={<GoldenRetrieversDog />} /> */}
+
+          {/* Admin Routes */}
+          <Route exact path="/admin/dashboard" element={<AdminDashboard/>}/>
+          <Route exact path="/admin/profile" element={<AdminProfile/>}/>
+          <Route exact path="/admin/manageadmins" element={<GetAllAdmins/>}/>
+              <Route exact path="/admin/registeradmin" element={<Admin_AddAdmin/>}/>
+          <Route exact path="/admin/viewCategories" element={<ViewCategories/>}/>
+              <Route exact path="/admin/addpet" element={<Admin_AddPet/>}/>
+              <Route exact path="/admin/getAllPets" element={<Admin_PetCat_GetAll/>}/>
+          <Route exact path="/admin/managecustomers" element={<GetAllCustomers/>}/>
+          <Route exact path="/admin/manageorders" element={<GetAllOrders/>}/>
+
+
  
       </Routes>
       </BrowserRouter>

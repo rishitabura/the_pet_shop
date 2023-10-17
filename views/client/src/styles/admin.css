@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Mooli&family=Noto+Sans:wght@500&family=Roboto&display=swap');
+
+
+.adminpages{
+    padding-top: 10%;
+    padding-inline: 5%;
+    background-color: #F7F7F7;
+    min-height: 100vh;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+
+.slidermenu{
+    padding: 5%;
+    font-size: 22px;
+    line-height: 50px;
+    width: 20%;
+    background-color: #2D3850;
+    color: white;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 100;
+  }
+
+.adminheader
+{
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
+    font-size: 20px;
+}
+
+.adminlogo
+{
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 40px;
+}
+
+.admin-dashcard{
+    background-color: white;
+    margin: 5%;
+    width: 30%;
+    padding: 2%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+}
+
+.admin-dashcard-title{
+    font-size: 36px;
+    
+}
+
+.admin-dashcard-subtitle{
+    font-size: 24px;
+}
+
+.admin-dash{
+    display: flex;
+    justify-content: space-between;
+}
+
+.admin-table{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    margin: 2%;
+    font-size: 18px;
+    width: 80vw;
+}
+
+.admin-table-head{
+    background-color: #009879;
+    color: #ffffff;
+   
+    font-weight: 600;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.admin-table-data{
+    padding: 2%;
+
+}
+
+.admin-table-button{
+    margin: 1%;
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 3px;
+    padding: 12px 24px;
+    border: 0;
+    color: #fff;
+    background: #031585;
+    line-height: 1.15;
+    font-size: 16px;
+
+}
+
+.admin-table-button:hover {
+    background-color: #0921b5;
+}
+
+.admin-petcat-list{
+    font-size: 0.9em;
+    font-family: sans-serif;
+    margin: 2%;
+    font-size: 18px;
+    width: 80vw;
+}
+
+.admin-form{
+    width: 60%;
+    margin-inline: 10%;
+    padding: 2%;
+}
+
+.admin-form-title{
+    font-size: 32px;
+    margin: auto;
+    padding-bottom: 2%;
+}
+
+.admin-form-input{
+    padding: 1%;
+}
+
+.admin-petcat-button{
+    margin: 2%;
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 13px 23px;
+    border: 1px solid #222222;
+    transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s, -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s;
+    background: #fff;
+    color: #222222;
+
+}
+
+.admin-petcat-button    :hover {
+    border-color: #000000;
+    background: #f7f7f7;
+}

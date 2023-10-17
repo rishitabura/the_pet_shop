@@ -28,7 +28,7 @@ const Login = () => {
     event.preventDefault();
     var email = form.email;
     var password = form.password;
-    fetch("http://localhost:5000/login", {
+    fetch("http://localhost:5000/customer/login", {
         method: "POST",
         CrossDomain: true,
         headers:{
@@ -46,11 +46,20 @@ const Login = () => {
     .then((res)=>res.json())
     .then((data)=>{
         console.log(data, "userLogin");
-        if(data.status=="Ok"){
+        console.log(data.msg);
+        if(data.msg=="ok" && data.data.type=="customer"){
             alert("Login Successful");
-            window.localStorage.setItem("token", data.data);
+            window.localStorage.setItem("token", data.data.token);
+            window.localStorage.setItem("usertype", data.data.type);
             redirectNow();
             
+        }
+        else if(data.msg=="ok" && ( data.data.type=="admin" || data.data.type=="MasterAdmin"))
+        {
+            alert("Redirecting to Admin");
+            window.localStorage.setItem("token", data.data.token);
+            window.localStorage.setItem("usertype", data.data.type);
+            navigate('/admin/dashboard');
         }
     });
     

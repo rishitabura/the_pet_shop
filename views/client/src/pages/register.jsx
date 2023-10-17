@@ -35,13 +35,13 @@ const Register = () => {
     // As explained in the Login page.
     const onSubmit = async (e) => {
         e.preventDefault();
-        var uname = form.name;
+        var name = form.name;
         var email = form.email;
         var password = form.password;
         var phone = form.phone;
         //console.log(email, password, utype);
 
-        fetch("http://localhost:5000/register", {
+        fetch("http://localhost:5000/customer/register", {
             method: "POST",
             CrossDomain: true,
             headers: {
@@ -51,7 +51,7 @@ const Register = () => {
             },
 
             body: JSON.stringify({
-                uname,
+                name,
                 email,
                 password,
                 phone,
@@ -61,8 +61,8 @@ const Register = () => {
             .then((res) => res.json())
             .then((data) => {
                 console.log(data, "userRegister");
-                alert("Successful");
-                navigate("/login");
+                alert(data.msg);
+                if(data.success==true) navigate("/login");
             });
     };
 
