@@ -60,8 +60,8 @@ function Admin_Customer_Orders() {
                     return (
                         <tr>
                             <td className="admin-table-data">{val._id}</td>
-                            <td className="admin-table-data">{val.CreatedAt}</td>
-                            <td className="admin-table-data">{val.cost}</td>
+                            <td className="admin-table-data">{new Date(val.CreatedAt).toLocaleDateString()}</td>
+                            <td className="admin-table-data">{val.Amount}</td>
                             <td className="admin-table-data">{val.Status}</td>
                            <td>
                           <Link  to={{

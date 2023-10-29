@@ -30,12 +30,12 @@ customerRouter.get("/:customerId", getCustomerProfile);
 customerRouter.post("/:customerId/changePassword", fetchUser, changePassword);
 
 //cart
-customerRouter.put("/:customerId/cart/add/:p/:cat/:pId", addToCart);
-customerRouter.put("/:customerId/cart/remove/:p/:cat/:pId", removefromCart);
-customerRouter.get("/:customerId/cart/view", viewCart);
-customerRouter.post("/:customerId/cart/purchase", purchaseCart);
-customerRouter.get("/:customerId/orders/", getOrders);
-customerRouter.get("/:customerId/orders/:oId", viewOrder);
+customerRouter.put("/cart/add/:p/:cat/:pId", fetchUser, addToCart);
+customerRouter.put("/cart/remove/:p/:cat/:pId", fetchUser, removefromCart);
+customerRouter.post("/cart/view", fetchUser, viewCart);
+customerRouter.post("/cart/purchase", fetchUser, purchaseCart);
+customerRouter.post("/orders/", fetchUser, getOrders);
+customerRouter.get("/orders/:oId", viewOrder);
 //customerRouter.post("/verifyOTP", verifyOTP);
 //customerRouter.post("/forgotPassword", forgotPassword);
 //customerRouter.post("/resendOtp", resendOtp);

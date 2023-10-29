@@ -57,8 +57,10 @@ function ProductInfo() {
               avail={product.Available}
               weight={product.Weight}
               tags={product.Tags}
-              description={product.Description
-              }
+              description={product.Description}
+              category={category}
+              pid={pid}
+              
             />
           ) : (
             <div>No data available</div>

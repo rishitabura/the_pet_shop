@@ -61,6 +61,11 @@ import GetAllCustomers from './pages/AdminPages/GetAllCustomers';
 import GetAllOrders from './pages/AdminPages/GetAllOrders';
 import Admin_Customer_View from './pages/AdminPages/Admin_Customer_View';
 import Admin_Customer_Orders from './pages/AdminPages/Admin_Customer_Orders';
+import Admin_Order_View from './pages/AdminPages/Admin_Order_View';
+import Cart from './pages/Cart';
+import PurchaseCart from './pages/PurchaseCart';
+import Orders_Get from './pages/Orders_Get';
+import Order_View from './pages/Order_View';
 
 
 
@@ -77,7 +82,13 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/register" element={<Register />} /> 
-          <Route exact path="/userprofile" element={<UserProfile/>}/>
+          <Route exact path="/customer/profile" element={<UserProfile/>}/>
+          <Route exact path="/customer/cart" element={<Cart/>}/>
+          <Route exact path="/customer/cart/purchase" element={<PurchaseCart/>}/>
+          <Route exact path="/customer/orders/" element={<Orders_Get/>}/>
+          <Route exact path="/customer/orders/:oid" element={<Order_View/>}/>
+
+
           <Route exact path="/about" element={< About/>}/> 
           <Route exact path="/pets/tags/:searchTag" element={<DisplayAnimals />} />
           <Route exact path="/pets/:category/:pid" element={<PetInfo />} />
@@ -114,7 +125,8 @@ function App() {
           <Route exact path="/admin/customers" element={<GetAllCustomers/>}/>
           <Route exact path="/admin/customers/:cid" element={<Admin_Customer_View/>}/>
           <Route exact path="/admin/customers/:cid/orders" element={<Admin_Customer_Orders/>}/>
-          <Route exact path="/admin/orders" element={<GetAllOrders/>}/>
+          <Route exact path="/admin/orders/" element={<GetAllOrders/>}/>
+          <Route exact path="/admin/orders/:oid" element={<Admin_Order_View/>}/>
           {/* <Route exact path="/modal" element={<ProductModal />} /> */}
 
           <Route exact path="/food" element={<Food />} />

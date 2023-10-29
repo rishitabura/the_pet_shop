@@ -171,30 +171,38 @@ const getCustomerProfile = async (req, res) => {
 };
 
 const addToCart = async (req, res) => {
-  const { qty } = req.body;
-  const customerId = req.params.customerId;
+  const { qty, cost, name } = req.body;
+  const customerId = new ObjectId(req.user.Id);
   const p = req.params.p;
   const pId = req.params.pId;
   const cat = req.params.cat;
-  const amt = qty*cost;
+  const amt = qty * cost;
   try {
     const query = { CustomerId: customerId };
-    const update = { $set: { $push: { Items: { Type: p, Category: cat, pId: pId, Qty: qty } } } };
+    const update = {
+      $push: {
+        Items: {
+          Type: p,
+          Category: cat,
+          pId: pId,
+          Name: name,
+          Qty: qty,
+          Cost: cost,
+          Amt: amt,
+        },
+      },
+    };
     const options = { upsert: true };
     await customercarts.updateOne(query, update, options);
-    if (res.status(201)) {
-      return res.status(201).send(Response(true, "ok", {}));
-    }
-    else return res.status(500).send(Response(false, "error", {}));
-  }
-  catch (error) {
+    return res.status(201).send(Response(true, "ok", {}));
+  } catch (error) {
     res.status(500).send(Response(false, "error", error));
     console.log(error);
   }
 };
 
 const removefromCart = async (req, res) => {
-  const customerId = req.params.customerId;
+  const customerId = new ObjectId(req.user.Id);
   const p = req.params.p;
   const pId = req.params.pId;
   const cat = req.params.cat;
@@ -221,10 +229,12 @@ const removefromCart = async (req, res) => {
 
 
 const viewCart = async (req, res) => {
-  const customerId = req.params.customerId;
+  const customerId = new ObjectId(req.user.Id);
+  //console.log(customerId);
   try {
     const cart = await customercarts.findOne({ CustomerId: customerId });
     if (res.status(201)) {
+      //console.log(cart);
       return res.status(201).send(Response(true, "ok", cart));
     }
     else return res.status(500).send(Response(false, "error", {}));
@@ -237,8 +247,8 @@ const viewCart = async (req, res) => {
 
 
 const purchaseCart = async (req, res) => {
-  const customerId = req.params.customerId;
-  const { totalamt, paymentMethod } = req.body
+  const customerId = new ObjectId(req.user.Id);
+  const { totalAmount, totalItems, paymentMethod } = req.body
   try {
     const cart = await customercarts.findOne({ CustomerId: customerId });
     if (!cart) {
@@ -264,9 +274,10 @@ const purchaseCart = async (req, res) => {
     await customercarts.updateOne({ CustomerId: customerId }, { $set: { Items: [] } });
     const order = await orders.insertOne({
       CustomerId: customerId,
+      NumItems: totalItems,
       OrderItems: orderItems,
       CreatedAt: date,
-      Amount: totalamt,
+      Amount: totalAmount,
       PaymentMethod: paymentMethod,
       Status: "Order Placed"
     });
@@ -278,23 +289,27 @@ const purchaseCart = async (req, res) => {
 };
 
 const getOrders = async (req, res) => {
-  const customerId = req.params.customerId;
+  const customerId = new ObjectId(req.user.Id);
   try {
-    const orders = await orders.find({CustomerId: customerId}).toArray();
-    res.status(201).send(Response(true, "ok", orders));
+    const ordersarr = await orders.find({CustomerId: customerId}).toArray();
+    //console.log(ordersarr);
+    res.status(201).send(Response(true, "ok", ordersarr));
   }
   catch (error) {
+    //console.log(error);
     res.status(500).send(Response(false, "error", error));
   }
 }
 
 const viewOrder = async (req, res) => {
-  const orderId = req.params.oId;
+  const orderId = new ObjectId(req.params.oId);
   try {
-    const order = await orders.findOne({_id: orderId}).toArray();
+    const order = await orders.findOne({_id: orderId});
+    //console.log(order);
     res.status(201).send(Response(true, "ok", order));
   }
   catch (error) {
+    console.log(error);
     res.status(500).send(Response(false, "error", error));
   }
 }

@@ -58,6 +58,8 @@ function PetInfo() {
               weight={pet.Weight}
               height={pet.Height}
               color={pet.Colour}
+              category={category}
+              pid={pid}
               features={pet.Features}
             />
           ) : (

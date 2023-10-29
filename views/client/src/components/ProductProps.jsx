@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React from "react";
+import {React, useState } from "react";
 import "../styles/single_product_style.css"
 import { MdDeliveryDining } from "react-icons/md";
 import { BiBlock } from "react-icons/bi";
@@ -15,6 +15,45 @@ function ProductProps(props) {
         fontWeight:"100px",
         textAlign: "left",
     };
+
+
+    const [qty, setQty] = useState(1);
+
+    const onQtyChange = (event) => {
+        const selectedQty = event.target.value;
+        setQty(selectedQty);
+    };
+
+
+    const addToCart = async (event) => {
+        event.preventDefault();
+        const token = window.localStorage.getItem("wtcptoken");
+        const cost = props.price;
+        const name = props.nameP;
+        fetch(`http://localhost:5000/customer/cart/add/products/${props.category}/${props.pid}`, {
+            method: "PUT",
+            CrossDomain: true,
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+                "Access-Control-Allow-Origin": "*",
+            },
+
+            body: JSON.stringify({
+                token, qty, cost, name
+            }),
+
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                if (data.success == true) {
+                    alert("Added Successfully");
+                }
+            });
+
+    };
+
+
 
     return (
         <div>
@@ -36,11 +75,9 @@ function ProductProps(props) {
                         {props.price} (inclusive of all taxes)
                     </p>
                     <div>
-                        <label>
-                            Quantity :
-                        </label>
-                        <select name="quantity" id="quantity">
-                            <option value="1">1</option>
+                        <label>Quantity :</label>
+                        <select name="qty" id="qty" onChange={onQtyChange} value={qty}>
+                            <option value="1" selected>1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
@@ -52,10 +89,9 @@ function ProductProps(props) {
                             <option value="10">10</option>
                         </select>
                     </div>
-
                     {/* <input type="number" name="quantity" id="quantity" /> */}
                     <div className="product-actions">
-                        <button className="butt outline">
+                        <button className="butt outline" onClick={addToCart}>
                             <b>ADD TO CART</b>
                         </button>
                         <button className="butt fill">

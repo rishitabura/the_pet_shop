@@ -540,8 +540,8 @@ const viewCustomer = async (req, res) => {
 const viewCustomerOrders = async (req, res) => {
   const cId = new ObjectId(req.params.cId);
   try {
-    const orders = await orders.find({ CustomerId: cId }).toArray();
-    res.status(201).send(Response(true, "ok", orders));
+    const ordersarr = await orders.find({ CustomerId: cId }).toArray();
+    res.status(201).send(Response(true, "ok", ordersarr));
   }
   catch (error) {
     res.status(500).send(Response(false, "error", error));
@@ -562,8 +562,10 @@ const getAllOrders = async (req, res) => {
 
 const viewOrder = async (req, res) => {
   const oId = new ObjectId(req.params.oId);
+  //console.log(oId);
   try {
     const order = await orders.findOne({ _id: oId });
+    //console.log(order);
     res.status(201).send(Response(true, "ok", order));
   }
   catch (error) {
@@ -573,6 +575,7 @@ const viewOrder = async (req, res) => {
 
 const updateOrderStatus = async (req, res) => {
   const { newstatus } = req.body;
+  console.log(newstatus);
   const oId = new ObjectId(req.params.oId);
   try {
     const order = await orders.updateOne({ _id: oId }, { $set: { Status: newstatus } }, {});

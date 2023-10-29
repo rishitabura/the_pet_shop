@@ -88,11 +88,23 @@ function Navbar() {
             <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
           </button>
 
-          <a href="/userprofile">
+          <Link to="/customer/profile">
             <button type="button" className={login ? "loginbtn" : "hide"} >
               <ImProfile size={30} color="black" />
             </button>
-          </a>
+          </Link>
+
+          <Link to="/customer/cart">
+          <button type="button" className={login ? "loginbtn" : "hide"}>
+            {/* <IoLogIn size={30} color="black" />  */} Cart
+          </button>
+          </Link>
+
+          <Link to="/customer/orders">
+          <button type="button" className={login ? "loginbtn" : "hide"}>
+            {/* <IoLogIn size={30} color="black" />  */} Orders
+          </button>
+          </Link>
 
           <button type="button" className={login ? "loginbtn" : "hide"} onClick={logout}>
             <IoLogIn size={30} color="black" /> 
