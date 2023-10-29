@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-pascal-case */
 import React, { useState, useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, useParams } from "react-router-dom";
 import "../styles/style.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/footer";
@@ -34,18 +34,17 @@ import { Card_TopCat3 } from "../components/card_topCategories";
 
 
 // import Card from "../components/card_topCategories";
-function Animals() {
+function DisplayProducts() {
   const [isLoading, setIsLoading] = useState(null);
   const [categories, setCategories] = useState([]);
   const [categoryData, setCategoryData] = useState({});
-
-  const [petcat, setPetCat] = useState(null);
+  const {searchTag} = useParams();
   const navigate = useNavigate();
 
 
   const fetchData = async () => {
     setIsLoading(true);
-    fetch("http://localhost:5000/admin/pet/viewCategories", {
+    fetch(`http://localhost:5000/product/tags/${searchTag}`, {
       method: "POST",
       CrossDomain: true,
       headers: {
@@ -53,17 +52,15 @@ function Animals() {
         Accept: "application/json",
         "Access-Control-Allow-Origin": "*",
       },
-      body: JSON.stringify({}),
     })
       .then((res) => res.json())
       .then((data) => {
         setCategories(data.data);
         //console.log(data.data);
-
         // Fetch data for each category
         const categoryPromises = data.data.map((cat) => {
-          console.log("Printing cat", cat);
-          return fetch(`http://localhost:5000/pet/${cat.name}/getAll`, {
+          //console.log("Printing cat", cat);
+          return fetch(`http://localhost:5000/product/${cat}/getAll`, {
             method: "POST",
             CrossDomain: true,
             headers: {
@@ -77,7 +74,7 @@ function Animals() {
               console.log(cat.name, data.data);
               setCategoryData((prevData) => ({
                 ...prevData,
-                [cat.name]: data.data,
+                [cat]: data.data,
               }));
             }
             );
@@ -108,15 +105,15 @@ function Animals() {
               <section key={cat} className="section category" aria-label="category">
                 <div className="container">
                   <h2 className="h2 section-title">
-                    <span className="span">{cat.name}</span> Breeds
+                    <span className="span">{cat}</span> Breeds
                   </h2>
                   <ul className="has-scrollbar">
-                    {categoryData[cat.name]?.map((item, index) => (
+                    {categoryData[cat]?.map((item, index) => (
                       <Card_TopCat3
                         key={index}
                         img_url={item.Image} 
                         title={item.Name} 
-                        page_url={`pets/${cat.name}/${item._id}`} 
+                        page_url={`/products/${cat}/${item._id}`} 
                       />
                     ))}
                   </ul>
@@ -133,5 +130,5 @@ function Animals() {
   }
 }
 
-export default Animals;
+export default DisplayProducts;
 

@@ -47,18 +47,18 @@ const Login = () => {
     .then((data)=>{
         console.log(data, "userLogin");
         console.log(data.msg);
-        if(data.msg=="ok" && data.data.type=="customer"){
-            alert("Login Successful");
-            window.localStorage.setItem("token", data.data.token);
+        if(data.msg=="ok")
+        {
+            window.localStorage.setItem("wtcptoken", data.data.token);
             window.localStorage.setItem("usertype", data.data.type);
-            redirectNow();
-            
         }
-        else if(data.msg=="ok" && ( data.data.type=="admin" || data.data.type=="MasterAdmin"))
+        if(data.data.type=="customer"){
+            alert("Login Successful"); 
+            redirectNow();
+        }
+        else if( data.data.type=="Admin" || data.data.type=="MasterAdmin")
         {
             alert("Redirecting to Admin");
-            window.localStorage.setItem("token", data.data.token);
-            window.localStorage.setItem("usertype", data.data.type);
             navigate('/admin/dashboard');
         }
     });

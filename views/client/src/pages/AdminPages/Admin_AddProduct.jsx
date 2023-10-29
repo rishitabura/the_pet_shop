@@ -6,21 +6,18 @@ import cat_anmi from "../../assets/img/cat_anim.jpg";
 import AdminNavbar from "../../components/AdminNavbar";
 
 
-const Admin_AddPet = () => {
+const Admin_AddProduct = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
     const [form, setForm] = useState({
         name: "",
-        gender: "",
-        colour: "",
         weight: "",
-        height: "",
         cost: "",
         available: "",
-        features: "",
-        category: "",
-        tags: ""
+        tags: "",
+        description: "",
+        category: ""
     });
     const [file, setFile] = useState(null);
     const [fileurl, setFileurl] = useState(null);
@@ -38,25 +35,22 @@ const Admin_AddPet = () => {
 
     const redirectNow = () => {
         const redirectTo = location.search.replace("?redirectTo=", "");
-        navigate(redirectTo ? redirectTo : "/admin/pets/viewCategories");
+        navigate(redirectTo ? redirectTo : "/admin/products/viewCategories");
     }
 
     const onSubmit = async (event) => {
         event.preventDefault();
         const formData = new FormData();
         formData.append('name', form.name);
-        formData.append('gender', form.gender);
-        formData.append('colour', form.colour);
         formData.append('weight', form.weight);
-        formData.append('height', form.height);
         formData.append('cost', form.cost);
         formData.append('available', form.available);
-        formData.append('features', form.features);
-        formData.append('category', form.category);
         formData.append('tags', form.tags);
+        formData.append('description', form.description);
+        formData.append('category', form.category);
         formData.append('file', file);
         
-        fetch("http://localhost:5000/admin/pet/add", {
+        fetch("http://localhost:5000/admin/product/add", {
             method: "POST",
             body: formData,
         })
@@ -82,7 +76,7 @@ const Admin_AddPet = () => {
                 <div className="admin-addpet">
 
                     <form className="admin-form" encType="multipart/form-data">
-                        <span className="admin-form-title">Add Pet</span>
+                        <span className="admin-form-title">Add Product</span>
 
                         <div className="admin-form-input">
                             <label>Name:</label>
@@ -95,38 +89,7 @@ const Admin_AddPet = () => {
                         </div>
 
                         <div className="admin-form-input">
-                            <label>Gender:</label>
-                            <input type="text" required className="input" name="gender" placeholder="Gender(M/F)"
-                                value={form.gender} onChange={onFormInputChange} label="Gender" />
-                            <span className="focus-input"></span>
-                            <span className="symbol-input">
-                                <i className="fa fa-envelope" aria-hidden="true"></i>
-                            </span>
-                        </div>
-
-                        <div className="admin-form-input">
-                            <label>Colour:</label>
-                            <input type="text" required className="input" name="colour" placeholder="colour"
-                                value={form.colour} onChange={onFormInputChange} label="colour" />
-                            <span className="focus-input"></span>
-                            <span className="symbol-input">
-                                <i className="fa fa-envelope" aria-hidden="true"></i>
-                            </span>
-                        </div>
-
-                        <div className="admin-form-input">
-                            <label>Height:</label>
-                            <input type="text" required className="input" name="height" placeholder="Height Range in inches"
-                                value={form.height} onChange={onFormInputChange} label="Height" />
-                            <span className="focus-input"></span>
-                            <span className="symbol-input">
-                                <i className="fa fa-envelope" aria-hidden="true"></i>
-                            </span>
-                        </div>
-
-
-                        <div className="admin-form-input">
-                            <label>Weight:</label>
+                            <label>Weight in kg:</label>
                             <input type="text" required className="input" name="weight" placeholder="Weight Range in kg"
                                 value={form.weight} onChange={onFormInputChange} label="Weight" />
                             <span className="focus-input"></span>
@@ -146,9 +109,19 @@ const Admin_AddPet = () => {
                         </div>
 
                         <div className="admin-form-input">
-                            <label>Features:</label>
-                            <textarea required className="input" name="features" placeholder="Features"
-                                value={form.features} onChange={onFormInputChange} label="Features" />
+                            <label>Description:</label>
+                            <textarea required className="input" name="description" placeholder="Description"
+                                value={form.description} onChange={onFormInputChange} label="Description" />
+                            <span className="focus-input"></span>
+                            <span className="symbol-input">
+                                <i className="fa fa-envelope" aria-hidden="true"></i>
+                            </span>
+                        </div>
+
+                        <div className="admin-form-input">
+                            <label>Tags:</label>
+                            <input type="text" required className="input" name="tags" placeholder="Tags"
+                                value={form.tags} onChange={onFormInputChange} label="Tags" />
                             <span className="focus-input"></span>
                             <span className="symbol-input">
                                 <i className="fa fa-envelope" aria-hidden="true"></i>
@@ -169,16 +142,6 @@ const Admin_AddPet = () => {
                             <label>Category:</label>
                             <input type="text" required className="input" name="category" placeholder="category"
                                 value={form.category} onChange={onFormInputChange} label="category" />
-                            <span className="focus-input"></span>
-                            <span className="symbol-input">
-                                <i className="fa fa-envelope" aria-hidden="true"></i>
-                            </span>
-                        </div>
-
-                        <div className="admin-form-input">
-                            <label>Tags:</label>
-                            <input type="text" required className="input" name="tags" placeholder="tags"
-                                value={form.tags} onChange={onFormInputChange} label="tags" />
                             <span className="focus-input"></span>
                             <span className="symbol-input">
                                 <i className="fa fa-envelope" aria-hidden="true"></i>
@@ -212,7 +175,7 @@ const Admin_AddPet = () => {
 
 }
 
-export default Admin_AddPet;
+export default Admin_AddProduct;
 
 
 

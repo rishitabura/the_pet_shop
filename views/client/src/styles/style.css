@@ -216,6 +216,19 @@ body {
   object-fit: cover;
 }
 
+.img-holder-card {
+  width: 330px;
+  height: 300px;
+  background-color: var(--light-gray);
+  overflow: hidden;
+}
+
+.img-cover-card {
+  width: 330px;
+  height: 100%;
+  object-fit: cover;
+}
+
 .has-scrollbar {
   display: flex;
   align-items: center;

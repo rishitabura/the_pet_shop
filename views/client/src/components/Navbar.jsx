@@ -17,7 +17,7 @@ function Navbar() {
   var login = false;
 
   const islogin = () => {
-    const token = window.localStorage.getItem("token");
+    const token = window.localStorage.getItem("wtcptoken");
     //console.log(token);
     if (token) login = true;
     else login = false;
@@ -53,25 +53,25 @@ function Navbar() {
           <ul className="navbar-list">
 
             <li className="navbar-item">
-              <a href="/" className="navbar-link" data-nav-link>Home</a>
+              <Link to="/" className="navbar-link" data-nav-link>Home</Link>
             </li>
 
-            <li className="navbar-item">
-              <a href="#pet-categories" className="navbar-link" data-nav-link>Pet Categories</a>
-            </li>
+            {/* <li className="navbar-item">
+            <Link to="/animalCategories" className="navbar-link" data-nav-link>Animal Categories</Link>
+            </li> */}
 
             <li className="navbar-item">
-              <a href="" className="navbar-link" data-nav-link>Shop
+            <Link to="/animals" className="navbar-link" data-nav-link>Shop
                 
-              </a> 
+              </Link> 
             </li>
 
             <li className="navbar-item">
-              <a href="/about" className="navbar-link" data-nav-link>About Us </a>
+            <Link to="/about" className="navbar-link" data-nav-link>About Us </Link>
             </li>
 
             <li className="navbar-item">
-              <a href="#contact" className="navbar-link" data-nav-link>Contact</a>
+            <Link to="#contact" className="navbar-link" data-nav-link>Contact</Link>
             </li>
 
           </ul>

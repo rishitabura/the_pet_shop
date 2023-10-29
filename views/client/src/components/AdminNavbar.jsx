@@ -16,7 +16,7 @@ function AdminNavbar() {
   const isAdmin = () => {
     usertype = window.localStorage.getItem("usertype");
     console.log(usertype);
-    if (usertype == "admin" || usertype == "MasterAdmin") setAdmin(usertype);
+    if (usertype == "Admin" || usertype == "MasterAdmin") setAdmin(usertype);
     else usertype = null;
   };
 
@@ -36,7 +36,7 @@ function AdminNavbar() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  if (!(admin == "admin" || admin == "MasterAdmin"))
+  if (!(admin == "Admin" || admin == "MasterAdmin"))
     return (
       <>
         <div style={{ color: "black" }}>Access Restricted</div>
@@ -96,15 +96,19 @@ function AdminNavbar() {
               <p className={admin == "MasterAdmin" ?  "menu-item": "hide" }>Admins</p>
             </Link>
 
-            <Link to="/admin/viewCategories">
+            <Link to="/admin/pets/viewCategories">
               <p className="menu-item">Pets</p>
             </Link>
 
-            <Link to="/admin/managecustomers">
+            <Link to="/admin/products/viewCategories">
+              <p className="menu-item">Products</p>
+            </Link>
+
+            <Link to="/admin/customers">
               <p className="menu-item">Customers</p>
             </Link>
 
-            <Link to="/admin/manageorders">
+            <Link to="/admin/orders">
               <p className="menu-item">Orders</p>
             </Link>
           </Menu>
