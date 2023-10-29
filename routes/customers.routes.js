@@ -1,14 +1,22 @@
 const express = require("express");
 const customerRouter = express.Router();
+
 const {
   customerRegister,
   loginRoute,
-  fetchCustomer,
-  updateCustomer
+  getRoute,
+  getCustomerProfile,
+  updateCustomer,
+  changePassword,
+
+  addToCart,
+  viewCart,
+  removefromCart,
+  purchaseCart,
+  getOrders,
+  viewOrder
 } = require("../controllers/customers.controllers");
-const Customer = require("../models/customer.model");
-//const fetchcustomer = require("../middlewares/fetchcustomer.middleware");
-const { verify } = require("jsonwebtoken");
+const fetchUser = require("../middleware/fetchuser.middleware");
 //const multer = require("multer");
 //const storage = multer.memoryStorage();
 //const upload = multer({ storage: storage });
@@ -16,12 +24,23 @@ const { verify } = require("jsonwebtoken");
 // Account Management
 customerRouter.post("/register", customerRegister);
 customerRouter.post("/login", loginRoute);
-customerRouter.post("/fetchaccount", fetchCustomer);
-customerRouter.post("/profile", updateCustomer);
+customerRouter.post("/fetchprofile", fetchUser, getRoute);
+customerRouter.put("/profile", fetchUser, updateCustomer);
+customerRouter.get("/:customerId", getCustomerProfile);
+customerRouter.post("/:customerId/changePassword", fetchUser, changePassword);
+
+//cart
+customerRouter.put("/:customerId/cart/add/:p/:cat/:pId", addToCart);
+customerRouter.put("/:customerId/cart/remove/:p/:cat/:pId", removefromCart);
+customerRouter.get("/:customerId/cart/view", viewCart);
+customerRouter.post("/:customerId/cart/purchase", purchaseCart);
+customerRouter.get("/:customerId/orders/", getOrders);
+customerRouter.get("/:customerId/orders/:oId", viewOrder);
+//customerRouter.post("/verifyOTP", verifyOTP);
 //customerRouter.post("/forgotPassword", forgotPassword);
+//customerRouter.post("/resendOtp", resendOtp);
 //customerRouter.post("/resetPassword/:id/:token", resetPassword);
-
-// Orders
-
+//customerRouter.put("/update/:Id",  fetchUser, updateCustomer);
 
 module.exports = customerRouter;
+

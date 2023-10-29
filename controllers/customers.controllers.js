@@ -1,8 +1,10 @@
-const mongoose = require("mongoose");
+const { ObjectId } = require('mongodb');
 
 //const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const { customeraccounts, adminaccounts } = require("../database/db.js");
+const { customeraccounts, adminaccounts, customercarts, orders } = require("../database/db.js");
+const { purchasePet } = require("./pets.controllers");
+const { purchaseProduct } = require("./products.controllers");
 //const nodemailer = require("nodemailer");
 //const imagesize = require("image-size");
 //const multer = require("multer");
@@ -30,20 +32,20 @@ const customerRegister = async (req, res) => {
   date = Date.now();
   if (
     !name || !email || !phone || !password
-    ) { return res.status(400).send(Response(false, "Missing Information", {})); }
+  ) { return res.status(400).send(Response(false, "Missing Information", {})); }
   try {
-    const customerExists = await customeraccounts.findOne({ _id: email });
+    const customerExists = await customeraccounts.findOne({ Email: email });
     if (customerExists) {
       return res.status(406).send(Response(false, "Customer already exists!", {}));
     }
     //const hashedPassword = await bcrypt.hash(password, 12);
 
     const customer = await customeraccounts.insertOne({
-        _id: email,
-        Name: name,
-        Phone: phone,
-        Password: password,
-        CreatedAt: date
+      Email: email,
+      Name: name,
+      Phone: phone,
+      Password: password,
+      CreatedAt: date
     });
     //sendOTPVerificationEmail(user._id, email);
     if (customer) {
@@ -70,21 +72,21 @@ const customerRegister = async (req, res) => {
 const loginRoute = async (req, res) => {
   const { email, password } = req.body;
   try {
-    const customer = await customeraccounts.findOne({ _id: email, Password: password  });
+    const customer = await customeraccounts.findOne({ Email: email, Password: password });
     if (!customer) {
-      const admin = await adminaccounts.findOne({ _id: email, Password: password });
-      if(!admin)
-      return res.status(400).send(Response(false, "Invalid Credentials", {}));
-      else{
-        const token = jwt.sign({ _id: admin._id }, process.env.JWT_SECRET);
+      const admin = await adminaccounts.findOne({ Email: email, Password: password });
+      if (!admin)
+        return res.status(400).send(Response(false, "Invalid Credentials", {}));
+      else {
+        const token = jwt.sign({ Id: admin._id, Email: email }, process.env.JWT_SECRET);
         if (res.status(201)) {
-          return res.status(201).send(Response(true, "ok", {token: token, type: admin.Type}));
+          return res.status(201).send(Response(true, "ok", { token: token, type: admin.Type }));
         }
       }
     }
-    const token = jwt.sign({ _id: customer._id }, process.env.JWT_SECRET);
+    const token = jwt.sign({ Id: customer._id, Email: email }, process.env.JWT_SECRET);
     if (res.status(201)) {
-      return res.status(201).send(Response(true, "ok", {token: token, type: "customer"}));
+      return res.status(201).send(Response(true, "ok", { token: token, type: "customer" }));
 
     }
     else return res.status(500).send(Response(false, "Error", error));
@@ -95,53 +97,241 @@ const loginRoute = async (req, res) => {
 };
 
 const updateCustomer = async (req, res) => {
-    const {uname, email, phone, dob, address_line1, address_area, city, pincode, date} = req.body;
-    try {
-      const update = { $set: { 
+  const { uname, email, phone, dob, address_line1, address_area, city, pincode } = req.body;
+  try {
+    const update = {
+      $set: {
         Name: uname,
         Phone: phone,
-        DOB: dob, 
-        Address_line1: address_line1, 
-        Address_area: address_area, 
-        City: city, 
-        Pincode: pincode 
-      }};
-      await customeraccounts.updateOne({_id: email }, update, {});
-      if (res.status(201)) {
-        res.status(201).send(Response(true, "ok", {}));
+        DOB: dob,
+        Address_line1: address_line1,
+        Address_area: address_area,
+        City: city,
+        Pincode: pincode
       }
-      else res.status(500).send(Response(false, "Error", {}));
+    };
+    await customeraccounts.updateOne({ Email: email }, update, {});
+    if (res.status(201)) {
+      res.status(201).send(Response(true, "ok", {}));
     }
-    catch (error) {
-      res.send({ status: "error" });
-      //console.log(error);
-    }
+    else res.status(500).send(Response(false, "Error", {}));
+  }
+  catch (error) {
+    res.send({ status: "error" });
+    //console.log(error);
+  }
 };
 
-const fetchCustomer = async (req, res) => {
-    const { token } = req.body;
-    //console.log(token);
-    try {
-      const customer = jwt.verify(token, process.env.JWT_SECRET);
-      const id = customer._id;
-      await customeraccounts.findOne({ _id: id })
-        .then((customerdata) => {
-            //console.log(customerdata);
-            res.status(201).send(Response(true, "ok", customerdata));
-        })
-        .catch((error) => {
-            res.status(500).send(Response(false, "Error", error));
-        })
-    } catch (error) { console.log(error); }
-} 
+const changePassword = async (req, res) => {
+  const { oldpass, newpass } = req.body;
+  try {
+    const customerId = new ObjectId(req.params.customerId);
+    const customer = await adminaccounts.findOne({ _id: customerId , Password: oldpass})
+    if (!customer) {
+      return res.status(404).json({ message: 'Invalid Credentials' });
+    }
+    const update = {
+      $set: {
+        Password: newpass
+      }
+    };
+    await customeraccounts.updateOne({ _id: customerId }, update, {});
+    return res.status(201).send(Response(true, "ok", {}));
+  } catch (error) {
+    return res.status(500).json({ message: 'Server error', error: error.message });
+  }
+};
+
+const getRoute = async (req, res) => {
+  const userId = new ObjectId(req.user.Id);
+  //console.log("get userId", req.user.Id);
+  try {
+    await customeraccounts.findOne({ _id: userId })
+      .then((customerdata) => {
+        //console.log(customerdata);
+        res.status(201).send(Response(true, "ok", customerdata));
+      })
+      .catch((error) => {
+        res.status(500).send(Response(false, "Error", error));
+      })
+  } catch (error) { console.log(error); }
+};
+
+const getCustomerProfile = async (req, res) => {
+  try {
+    const customerId = new ObjectId(req.params.customerId);
+    const customer = await customeraccounts.findOne({ _id: customerId })
+    if (!customer) {
+      return res.status(404).json({ message: 'Customer not found' });
+    }
+    return res.json({ customer });
+  } catch (error) {
+    return res.status(500).json({ message: 'Server error', error: error.message });
+  }
+};
+
+const addToCart = async (req, res) => {
+  const { qty } = req.body;
+  const customerId = req.params.customerId;
+  const p = req.params.p;
+  const pId = req.params.pId;
+  const cat = req.params.cat;
+  const amt = qty*cost;
+  try {
+    const query = { CustomerId: customerId };
+    const update = { $set: { $push: { Items: { Type: p, Category: cat, pId: pId, Qty: qty } } } };
+    const options = { upsert: true };
+    await customercarts.updateOne(query, update, options);
+    if (res.status(201)) {
+      return res.status(201).send(Response(true, "ok", {}));
+    }
+    else return res.status(500).send(Response(false, "error", {}));
+  }
+  catch (error) {
+    res.status(500).send(Response(false, "error", error));
+    console.log(error);
+  }
+};
+
+const removefromCart = async (req, res) => {
+  const customerId = req.params.customerId;
+  const p = req.params.p;
+  const pId = req.params.pId;
+  const cat = req.params.cat;
+
+  try {
+    const query = { CustomerId: customerId };
+    const update = {
+      $pull: {
+        Items: { Type: p, Category: cat, pId: pId }
+      }
+    };
+    await customercarts.updateOne(query, update, {});
+
+    if (res.status(201)) {
+      return res.status(201).send(Response(true, "ok", {}));
+    } else {
+      return res.status(500).send(Response(false, "error", {}));
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(500).send(Response(false, "error", error));
+  }
+};
+
+
+const viewCart = async (req, res) => {
+  const customerId = req.params.customerId;
+  try {
+    const cart = await customercarts.findOne({ CustomerId: customerId });
+    if (res.status(201)) {
+      return res.status(201).send(Response(true, "ok", cart));
+    }
+    else return res.status(500).send(Response(false, "error", {}));
+  }
+  catch (error) {
+    res.status(500).send(Response(false, "error", error));
+    console.log(error);
+  }
+};
+
+
+const purchaseCart = async (req, res) => {
+  const customerId = req.params.customerId;
+  const { totalamt, paymentMethod } = req.body
+  try {
+    const cart = await customercarts.findOne({ CustomerId: customerId });
+    if (!cart) {
+      return res.status(404).send(Response(false, "Cart not found", {}));
+    }
+    const orderItems = new Array();
+    var i = 0;
+    for (const cartItem of cart.Items) {
+      const { Type, Category, pId, Qty } = cartItem;
+      var pres;
+      if (Type == "pet") {
+        pres = await purchasePet(pId, Category, Qty);
+        if (pres.status != 200) return res.status(400).send(Response(false, "Not enough stock", {}));
+      }
+      else if (Type == "product") {
+        pres = await purchaseProduct(pId, Category, Qty);
+        if (pres.status != 200) return res.status(400).send(Response(false, "Not enough stock", {}));
+      }
+      orderItems[i] = cartItem;
+      i++;
+    }
+    const date = Date.now();
+    await customercarts.updateOne({ CustomerId: customerId }, { $set: { Items: [] } });
+    const order = await orders.insertOne({
+      CustomerId: customerId,
+      OrderItems: orderItems,
+      CreatedAt: date,
+      Amount: totalamt,
+      PaymentMethod: paymentMethod,
+      Status: "Order Placed"
+    });
+    return res.status(201).send(Response(true, "Purchase successful", order));
+  } catch (error) {
+  console.log(error);
+  res.status(500).send(Response(false, "error", error));
+}
+};
+
+const getOrders = async (req, res) => {
+  const customerId = req.params.customerId;
+  try {
+    const orders = await orders.find({CustomerId: customerId}).toArray();
+    res.status(201).send(Response(true, "ok", orders));
+  }
+  catch (error) {
+    res.status(500).send(Response(false, "error", error));
+  }
+}
+
+const viewOrder = async (req, res) => {
+  const orderId = req.params.oId;
+  try {
+    const order = await orders.findOne({_id: orderId}).toArray();
+    res.status(201).send(Response(true, "ok", order));
+  }
+  catch (error) {
+    res.status(500).send(Response(false, "error", error));
+  }
+}
+
+// const fetchCustomer = async (req, res) => {
+//     const { token } = req.body;
+//     //console.log(token);
+//     try {
+//       const customer = jwt.verify(token, process.env.JWT_SECRET);
+//       const id = customer._id;
+//       await customeraccounts.findOne({ _id: id })
+//         .then((customerdata) => {
+//             //console.log(customerdata);
+//             res.status(201).send(Response(true, "ok", customerdata));
+//         })
+//         .catch((error) => {
+//             res.status(500).send(Response(false, "Error", error));
+//         })
+//     } catch (error) { console.log(error); }
+// } 
 
 
 
 module.exports = {
   customerRegister,
   loginRoute,
-  fetchCustomer,
-  updateCustomer
+  getRoute,
+  updateCustomer,
+  getCustomerProfile,
+  changePassword,
+
+  addToCart,
+  viewCart,
+  removefromCart,
+  purchaseCart,
+  getOrders,
+  viewOrder
 };
 
 

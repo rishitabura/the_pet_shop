@@ -1,4 +1,3 @@
-const mongoose = require("mongoose");
 const { MongoClient } = require("mongodb");
 require("dotenv").config({ path: "./.env" });
 
@@ -12,17 +11,20 @@ const connectToMongo = () => {
   .catch(e => console.log(e));
 };
 
-const customerDB = client.db("CustomerDB");
-const customeraccounts = customerDB.collection("CustomerAccountInfo");
-const orders = customerDB.collection("Orders");
-const adminDB = client.db("AdminDB");
-const adminaccounts = adminDB.collection("AdminAccountInfo");
+const DB = client.db("PetBazaarDB");
+const customeraccounts = DB.collection("CustomerAccountInfo");
+const customercarts = DB.collection("Carts");
+const orders = DB.collection("Orders");
+const adminaccounts = DB.collection("AdminAccountInfo");
 const petsDB = client.db("petsDB");
+const productsDB = client.db("productsDB");
 
 module.exports = {
   connectToMongo,
   customeraccounts,
   adminaccounts,
+  orders,
   petsDB,
-  orders
+  productsDB,
+  customercarts
 };
