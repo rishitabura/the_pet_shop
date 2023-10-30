@@ -586,6 +586,106 @@ const updateOrderStatus = async (req, res) => {
   }
 }
 
+const searchAllCollections = async (db, searchTerm) => {
+  try {
+    const collections = await db.listCollections().toArray();
+    const results = {};
+
+    for (const collection of collections) {
+      const collectionName = collection.name;
+      const regex = new RegExp(searchTerm, 'i'); // 'i' for case-insensitive
+      if (collectionName.match(regex)) {
+        const collectionResults = await db.collection(collectionName).find({}).toArray();
+        results[collectionName] = collectionResults;
+      } else {
+        const collectionResults = await db.collection(collectionName)
+          .find({
+            $or: [
+              { Name: { $regex: searchTerm, $options: 'i' } },
+              { Tags: { $regex: searchTerm, $options: 'i' } },
+            ],
+          })
+          .toArray();
+        if(collectionResults.length>0) results[collectionName] = collectionResults;
+      }
+    }
+    return results;
+  } catch (error) {
+    console.log(error);
+    res.status(500).send(Response(false, "error", error));
+  }
+};
+
+
+
+const searchAll = async (req, res) => {
+  const searchTerm = req.params.search; 
+  try {
+    const petsResults = await searchAllCollections(petsDB, searchTerm);
+    //console.log(petsResults);
+    const productsResults = await searchAllCollections(productsDB, searchTerm);
+    //console.log(productsResults);
+    const combinedResults = {
+      pets: petsResults,
+      products: productsResults,
+    };
+
+    res.status(201).send(Response(true, "ok", combinedResults));
+  } catch (error) {
+    res.status(500).json({ error: 'An error occurred while searching for items.' });
+  }
+};
+
+const searchinCustomers = async (req, res) => {
+  const searchTerm = req.params.search; 
+  console.log(searchTerm);
+  try {
+      const collectionResults = await customeraccounts
+          .find({
+            $or: [
+              { Name: { $regex: searchTerm, $options: 'i' } },
+              { Email: { $regex: searchTerm, $options: 'i' } },
+              { Phone: { $regex: searchTerm, $options: 'i' } },
+              { Address_line1: { $regex: searchTerm, $options: 'i' } },
+              { Address_area: { $regex: searchTerm, $options: 'i' } },
+              { City: { $regex: searchTerm, $options: 'i' } },
+              { Pincode: { $regex: searchTerm, $options: 'i' } },
+              { _id: { $regex: searchTerm, $options: 'i' } },
+            ],
+          })
+          .toArray();
+        
+        res.status(201).send(Response(true, "ok", collectionResults));
+  } catch (error) {
+    console.log(error);
+    res.status(500).send(Response(false, "error", error));
+  }
+};
+
+const searchinOrders= async (req, res) => {
+  console.log("Here");
+  const searchTerm = req.params.search; 
+  try {
+      const collectionResults = await orders
+          .find({
+            $or: [
+              { CustomerId: { $regex: searchTerm, $options: 'i' } },
+              { CreatedAt: { $regex: searchTerm, $options: 'i' } },
+              { Amount: { $regex: searchTerm, $options: 'i' } },
+              { PaymentMethod: { $regex: searchTerm, $options: 'i' } },
+              { Status: { $regex: searchTerm, $options: 'i' } },
+              { _id: { $regex: searchTerm, $options: 'i' } },
+            ],
+          })
+          .toArray();
+        
+        res.status(201).send(Response(true, "ok", collectionResults));
+  } catch (error) {
+    console.log(error);
+    res.status(500).send(Response(false, "error", error));
+  }
+};
+
 
 module.exports = {
   adminRegister,
@@ -621,6 +721,9 @@ module.exports = {
 
   getAllOrders,
   viewOrder,
-  updateOrderStatus
+  updateOrderStatus,
+  searchAll,
+  searchinCustomers,
+  searchinOrders
 };
 

@@ -14,7 +14,9 @@ const {
   removefromCart,
   purchaseCart,
   getOrders,
-  viewOrder
+  viewOrder,
+
+  searchAll
 } = require("../controllers/customers.controllers");
 const fetchUser = require("../middleware/fetchuser.middleware");
 //const multer = require("multer");
@@ -36,6 +38,10 @@ customerRouter.post("/cart/view", fetchUser, viewCart);
 customerRouter.post("/cart/purchase", fetchUser, purchaseCart);
 customerRouter.post("/orders/", fetchUser, getOrders);
 customerRouter.get("/orders/:oId", viewOrder);
+
+// other
+customerRouter.get("/search/:search", searchAll);
+
 //customerRouter.post("/verifyOTP", verifyOTP);
 //customerRouter.post("/forgotPassword", forgotPassword);
 //customerRouter.post("/resendOtp", resendOtp);

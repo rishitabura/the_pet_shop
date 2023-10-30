@@ -35,6 +35,9 @@ const {
   getAllOrders,
   viewOrder,
   updateOrderStatus,
+  searchAll,
+  searchinCustomers,
+  searchinOrders
 } = require("../controllers/admin.controllers");
 const fetchUser = require("../middleware/fetchuser.middleware");
 
@@ -52,6 +55,9 @@ adminRouter.post("/removeAdmin", fetchUser, removeAdmin);
 adminRouter.post("/updatePriviledges", fetchUser, updatePriviledges);
 
 // Pet Management
+adminRouter.get("/search/:search", searchAll);
+adminRouter.get("/customers/search/:search", searchinCustomers);
+adminRouter.get("/orders/search/:search", searchinOrders);
 adminRouter.post("/pet/add", uploadMiddleware, addPet);
 adminRouter.post("/pet/:category/:pId/update",  uploadMiddleware, updatePet);
 adminRouter.post("/pet/:category/:pId/delete",  deletePet);

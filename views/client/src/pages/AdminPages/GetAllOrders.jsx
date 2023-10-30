@@ -10,6 +10,13 @@ function GetAllOrders() {
     const navigate = useNavigate();
     const {cid} = useParams();
 
+const [searchTerm, setSearchTerm] = useState("");
+  const handleSearch = () => {
+    //console.log("Searching for:", searchTerm);
+    navigate(`/admin/orders/search/${searchTerm}`);
+    window.location.reload(false);
+  };
+
     const fetchData = async () => {
         setIsLoading(true);
         const token = window.localStorage.getItem("wtcptoken");
@@ -43,6 +50,16 @@ function GetAllOrders() {
                 <AdminNavbar />
                 <div className="adminpages">
                     <h1>Orders</h1>
+                    <input
+            type="text"
+            className="search-bar"
+            placeholder="Search Orders..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <button type="button" className="search-btn" onClick={handleSearch}>
+            Search
+          </button>
                     <table className="admin-table">
                         <tr>
                             <th className="admin-table-head">Id</th>

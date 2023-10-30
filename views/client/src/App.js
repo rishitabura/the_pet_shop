@@ -47,6 +47,9 @@ import AdminProfile from "./pages/AdminPages/AdminProfile";
 import GetAllAdmins from './pages/AdminPages/GetAllAdmins';
 import Admin_AddAdmin from './pages/AdminPages/Admin_AddAdmin';
 // admin - pets
+import Admin_DisplaySearchResults from './pages/AdminPages/Admin_DisplaySearchResults';
+import Admin_Customers_DisplaySearchResults from './pages/AdminPages/Admin_Customers_DisplaySearchResults';
+import Admin_Orders_DisplaySearchResults from './pages/AdminPages/Admin_Orders_DisplaySearchResults';
 import ViewPetCategories from './pages/AdminPages/ViewPetCategories';
 import Admin_AddPet from './pages/AdminPages/Admin_AddPet';
 import Admin_PetCat_GetAll from './pages/AdminPages/Admin_PetCat_GetAll';
@@ -66,6 +69,8 @@ import Cart from './pages/Cart';
 import PurchaseCart from './pages/PurchaseCart';
 import Orders_Get from './pages/Orders_Get';
 import Order_View from './pages/Order_View';
+import DisplaySearchResults from './pages/DisplaySearchResults';
+
 
 
 
@@ -90,6 +95,8 @@ function App() {
 
 
           <Route exact path="/about" element={< About/>}/> 
+          <Route exact path="/search/:searchTerm" element={<DisplaySearchResults/>}/>
+          <Route exact path="/search/" element={<Home/>}/>
           <Route exact path="/pets/tags/:searchTag" element={<DisplayAnimals />} />
           <Route exact path="/pets/:category/:pid" element={<PetInfo />} />
           <Route exact path="/pets/:category/" element={<PetsCategory />} />
@@ -127,6 +134,14 @@ function App() {
           <Route exact path="/admin/customers/:cid/orders" element={<Admin_Customer_Orders/>}/>
           <Route exact path="/admin/orders/" element={<GetAllOrders/>}/>
           <Route exact path="/admin/orders/:oid" element={<Admin_Order_View/>}/>
+          <Route exact path="/admin/search/:searchTerm" element={<Admin_DisplaySearchResults/>}/>
+          <Route exact path="/admin/customers/search/:searchTerm" element={<Admin_Customers_DisplaySearchResults/>}/>
+          <Route exact path="/admin/orders/search/:searchTerm" element={<Admin_Orders_DisplaySearchResults/>}/>
+          
+
+          <Route exact path="/admin/search/" element={<AdminDashboard/>}/>
+          <Route exact path="/admin/customers/search/" element={<GetAllCustomers/>}/>
+          <Route exact path="/admin/orders/search/" element={<GetAllOrders/>}/>
           {/* <Route exact path="/modal" element={<ProductModal />} /> */}
 
           <Route exact path="/food" element={<Food />} />

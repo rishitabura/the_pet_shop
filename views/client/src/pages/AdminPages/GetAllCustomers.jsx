@@ -9,6 +9,13 @@ function GetAllCustomers() {
     const [customers, setCustomers] = useState([]);
     const navigate = useNavigate();
 
+const [searchTerm, setSearchTerm] = useState("");
+  const handleSearch = () => {
+    //console.log("Searching for:", searchTerm);
+    navigate(`/admin/customers/search/${searchTerm}`);
+    window.location.reload(false);
+  };
+
     const fetchData = async () => {
         setIsLoading(true);
         fetch("http://localhost:5000/admin/customers/getAllCustomers", {
@@ -74,6 +81,17 @@ function GetAllCustomers() {
     
       <div className="adminpages">
         <h1> Customers </h1>
+
+        <input
+            type="text"
+            className="search-bar"
+            placeholder="Search Customers..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <button type="button" className="search-btn" onClick={handleSearch}>
+            Search
+          </button>
       
         <table className="admin-table">
                 <tr>

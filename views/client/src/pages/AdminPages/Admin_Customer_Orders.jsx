@@ -10,6 +10,13 @@ function Admin_Customer_Orders() {
     const navigate = useNavigate();
     const {cid} = useParams();
 
+    const [searchTerm, setSearchTerm] = useState("");
+  const handleSearch = () => {
+    //console.log("Searching for:", searchTerm);
+    navigate(`/admin/orders/search/${searchTerm}`);
+    window.location.reload(false);
+  };
+
     const fetchData = async () => {
         setIsLoading(true);
         fetch(`http://localhost:5000/admin/customers/${cid}/orders`, {
@@ -47,6 +54,18 @@ function Admin_Customer_Orders() {
     
       <div className="adminpages">
         <h1> Orders </h1>
+
+        <input
+            type="text"
+            className="search-bar"
+            placeholder="Search Orders..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <button type="button" className="search-btn" onClick={handleSearch}>
+            Search
+          </button>
+
         {/* <button onClick={registeradmin()}>Register New Admin</button> */}
         <table className="admin-table">
                 <tr>

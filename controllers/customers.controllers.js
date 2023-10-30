@@ -2,7 +2,7 @@ const { ObjectId } = require('mongodb');
 
 //const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const { customeraccounts, adminaccounts, customercarts, orders } = require("../database/db.js");
+const { customeraccounts, adminaccounts, customercarts, orders, productsDB, petsDB } = require("../database/db.js");
 const { purchasePet } = require("./pets.controllers");
 const { purchaseProduct } = require("./products.controllers");
 //const nodemailer = require("nodemailer");
@@ -314,6 +314,58 @@ const viewOrder = async (req, res) => {
   }
 }
 
+
+
+const searchAllCollections = async (db, searchTerm) => {
+  try {
+    const collections = await db.listCollections().toArray();
+    const results = {};
+
+    for (const collection of collections) {
+      const collectionName = collection.name;
+      const regex = new RegExp(searchTerm, 'i'); // 'i' for case-insensitive
+      if (collectionName.match(regex)) {
+        const collectionResults = await db.collection(collectionName).find({}).toArray();
+        results[collectionName] = collectionResults;
+      } else {
+        const collectionResults = await db.collection(collectionName)
+          .find({
+            $or: [
+              { Name: { $regex: searchTerm, $options: 'i' } },
+              { Tags: { $regex: searchTerm, $options: 'i' } },
+            ],
+          })
+          .toArray();
+        if(collectionResults.length>0) results[collectionName] = collectionResults;
+      }
+    }
+    return results;
+  } catch (error) {
+    console.log(error);
+    res.status(500).send(Response(false, "error", error));
+  }
+};
+
+
+
+const searchAll = async (req, res) => {
+  const searchTerm = req.params.search; 
+  try {
+    const petsResults = await searchAllCollections(petsDB, searchTerm);
+    //console.log(petsResults);
+    const productsResults = await searchAllCollections(productsDB, searchTerm);
+    //console.log(productsResults);
+    const combinedResults = {
+      pets: petsResults,
+      products: productsResults,
+    };
+
+    res.status(201).send(Response(true, "ok", combinedResults));
+  } catch (error) {
+    res.status(500).json({ error: 'An error occurred while searching for items.' });
+  }
+};
+
 // const fetchCustomer = async (req, res) => {
 //     const { token } = req.body;
 //     //console.log(token);
@@ -340,13 +392,16 @@ module.exports = {
   updateCustomer,
   getCustomerProfile,
   changePassword,
+  
 
   addToCart,
   viewCart,
   removefromCart,
   purchaseCart,
   getOrders,
-  viewOrder
+  viewOrder,
+
+  searchAll
 };
 
 

@@ -28,6 +28,8 @@ function ProductProps(props) {
     const addToCart = async (event) => {
         event.preventDefault();
         const token = window.localStorage.getItem("wtcptoken");
+        if(!token) alert("Please login first");
+        else{
         const cost = props.price;
         const name = props.nameP;
         fetch(`http://localhost:5000/customer/cart/add/products/${props.category}/${props.pid}`, {
@@ -50,7 +52,7 @@ function ProductProps(props) {
                     alert("Added Successfully");
                 }
             });
-
+        }
     };
 
 

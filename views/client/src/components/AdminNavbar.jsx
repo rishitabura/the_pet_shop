@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { MdAccountCircle } from "react-icons/md";
 import { ImProfile } from "react-icons/im";
 import { IoLogIn } from "react-icons/io5";
@@ -11,7 +11,17 @@ import { slide as Menu } from "react-burger-menu";
 
 function AdminNavbar() {
   const [admin, setAdmin] = useState(null);
+  const navigate = useNavigate();
   let usertype = null;
+
+  const [searchTerm, setSearchTerm] = useState("");
+  const handleSearch = () => {
+    console.log("Searching for:", searchTerm);
+    navigate(`/admin/search/${searchTerm}`);
+    window.location.reload(false);
+
+
+  };
 
   const isAdmin = () => {
     usertype = window.localStorage.getItem("usertype");
@@ -71,6 +81,18 @@ function AdminNavbar() {
             </nav>
 
             <div className="header-actions">
+
+            <input
+            type="text"
+            className="search-bar"
+            placeholder="Search products..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <button type="button" className="search-btn" onClick={handleSearch}>
+            Search
+          </button>
+
               <button className="action-btn user" aria-label="User">
                 <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
               </button>
@@ -111,6 +133,8 @@ function AdminNavbar() {
             <Link to="/admin/orders">
               <p className="menu-item">Orders</p>
             </Link>
+
+           
           </Menu>
           
         )}

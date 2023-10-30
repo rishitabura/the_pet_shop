@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useContext } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { MdAccountCircle } from "react-icons/md";
 import {ImProfile} from "react-icons/im";
 import { IoLogIn } from "react-icons/io5";
@@ -14,14 +14,24 @@ import {RiArrowDropDownLine} from "react-icons/ri";
 function Navbar() {
 
   let location = useLocation();
+  let navigate = useNavigate();
   var login = false;
+
+  const [searchTerm, setSearchTerm] = useState("");
 
   const islogin = () => {
     const token = window.localStorage.getItem("wtcptoken");
-    //console.log(token);
     if (token) login = true;
     else login = false;
-  }
+  };
+
+  const handleSearch = () => {
+    console.log("Searching for:", searchTerm);
+    navigate(`/search/${searchTerm}`);
+    window.location.reload(false);
+
+
+  };
 
   const logout = () => {
     alert("Successful");
@@ -78,6 +88,18 @@ function Navbar() {
 
         </nav>
         <div className="header-actions">
+
+          <input
+            type="text"
+            className="search-bar"
+            placeholder="Search products..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <button type="button" className="search-btn" onClick={handleSearch}>
+            Search
+          </button>
+      
           <a href="/login">
             <button type="button" className={login ? "hide" : "loginbtn"}>
               <MdAccountCircle size={30} color="black" />
