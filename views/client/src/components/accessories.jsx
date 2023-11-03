@@ -28,17 +28,17 @@ function Accessories(props) {
                 </div>
                 <h3 className="h3 card-title1">{props.nameP}</h3>
                 <h3 className="h3 price-title">{props.price}</h3>
-                <div  
-                style={{
-                    "textAlign": "center", 
-                    "fontSize": "15px",
-                    "padding": "10px",
-                }}>
-                    <h2>Quantity :  
-                        <input type="number" name="quantity" id="quantity" 
-                        style={{"fontSize": "18px", "borderRadius":"20px","padding":"10px","marginLeft": "10px" }} />
+                <div
+                    style={{
+                        "textAlign": "center",
+                        "fontSize": "15px",
+                        "padding": "10px",
+                    }}>
+                    <h2>Quantity :
+                        <input type="number" name="quantity" id="quantity"
+                            style={{ "fontSize": "18px", "borderRadius": "20px", "padding": "10px", "marginLeft": "10px" }} />
                     </h2>
-                   
+
                 </div>
                 {/* <div id="button-wrapper">
                     <button className="btn" onClick={openPopup}>
@@ -72,7 +72,11 @@ function Accessories(props) {
                             <div className="popup-text">
                                 <h2 style={{ color: "var(--portland-orange)" }}>{props.nameP}</h2>
                                 <p><b>Price:</b> {props.price}</p>
-                                <p><b>Description</b>: {props.descp}</p>
+                                <p><b>Description:</b> {props.descp}</p>
+                                {/* <p><b>Features:</b> {props.feat} </p>
+                                <p><b>Indications:</b> {props.ind}</p> */}
+                                {props.feat && <p><b>Features:</b> {props.feat}</p>}
+                                {props.ind && <p><b>Indications:</b> {props.ind}</p>}
                             </div>
                         </div>
                         <button className="btn" onClick={closePopup}>

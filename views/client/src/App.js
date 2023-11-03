@@ -66,7 +66,7 @@ function App() {
           <Route exact path="/userprofile" element={<UserProfile/>}/>
           <Route exact path="/birds" element={<Birds />} />
           <Route exact path="/seaanimals" element={<SeaAnimals />} />
-          <Route exact path="/modal" element={<Modal />} />
+          {/* <Route exact path="/modal" element={<Modal />} /> */}
           {/* <Route exact path="/goldenRetrieversDog" element={<GoldenRetrieversDog />} /> */}
 
           {/* Admin Routes */}

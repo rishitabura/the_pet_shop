@@ -2,13 +2,13 @@
 import React, { useState, useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { MdAccountCircle } from "react-icons/md";
-import {ImProfile} from "react-icons/im";
+import { ImProfile } from "react-icons/im";
 import { IoLogIn } from "react-icons/io5";
 // import '@ionic/react/css/core.css';
 import "../styles/style.css";
 
 import ShopDropdown from "./ShopDropdown";
-import {RiArrowDropDownLine} from "react-icons/ri";
+import { RiArrowDropDownLine } from "react-icons/ri";
 
 
 function Navbar() {
@@ -61,9 +61,17 @@ function Navbar() {
             </li>
 
             <li className="navbar-item">
-              <a href="" className="navbar-link" data-nav-link>Shop
-                
-              </a> 
+              {/* <a href="" className="navbar-link" data-nav-link>Shop */}
+              <div className="dropdown">
+                <button className="dropbtn" style={{"color" : "var(--eerie-black)"}}>Shop</button>
+                <div className="dropdown-content">
+                  <a href="#">Link 1</a>
+                  <a href="#">Link 2</a>
+                  <a href="#">Link 3</a>
+                </div>
+              </div>
+              {/* 
+              </a> */}
             </li>
 
             <li className="navbar-item">
@@ -95,7 +103,7 @@ function Navbar() {
           </a>
 
           <button type="button" className={login ? "loginbtn" : "hide"} onClick={logout}>
-            <IoLogIn size={30} color="black" /> 
+            <IoLogIn size={30} color="black" />
           </button>
         </div>
 
