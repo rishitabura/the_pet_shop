@@ -25,9 +25,9 @@ const AdminProfile = () => {
 
     const fetchData = async () => {
         setIsLoading(true);
-        const token = window.localStorage.getItem("token");
+        const token = window.localStorage.getItem("wtcptoken");
         console.log(token);
-        fetch("http://localhost:5000/admin/fetchaccount", {
+        fetch("http://localhost:5000/admin/fetchprofile", {
             method: "POST",
             CrossDomain: true,
             headers: {
@@ -48,7 +48,7 @@ const AdminProfile = () => {
                 if ('Phone' in userdata) setForm((prevForm) => ({ ...prevForm, phone: userdata.Phone }));
                 if ('DOB' in userdata) setForm((prevForm) => ({ ...prevForm, dob: userdata.DOB, }));
                 if ('Type' in userdata) setForm((prevForm) => ({ ...prevForm, type: userdata.Type, }));
-                setForm((prevForm) => ({ ...prevForm, email: userdata._id, name: userdata.Name }));
+                setForm((prevForm) => ({ ...prevForm, email: userdata.Email, name: userdata.Name }));
             });
 
         setIsLoading(false);
@@ -69,11 +69,12 @@ const AdminProfile = () => {
     const onSubmit = async (event) => {
         event.preventDefault();
         var uname = form.name;
+        const token = window.localStorage.getItem("wtcptoken");
         var phone = form.phone;
         var dob = form.dob;
         var email = form.email;
         fetch("http://localhost:5000/admin/profile", {
-            method: "POST",
+            method: "PUT",
             CrossDomain: true,
             headers: {
                 "Content-Type": "application/json",
@@ -85,7 +86,8 @@ const AdminProfile = () => {
                 email,
                 uname,
                 dob,
-                phone
+                phone,
+                token
             }),
 
         })

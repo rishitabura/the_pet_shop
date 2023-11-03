@@ -44,6 +44,27 @@ export function Card_TopCat2(props)
 }
 
 
+export function Card_TopCat3(props)
+{
+    return(
+        <div className="category-card">
+
+          <figure className="card-banner img-holder-card">
+            <img src={`data:image/jpeg;base64, ${props.img_url}`} loading="lazy" alt="card_topcategories_img"
+              className="img-cover-card" />
+          </figure>
+
+          <h3 className="h3">
+            <a href={props.page_url} className="card-title">{props.title}</a>
+          </h3>
+
+        </div>
+
+    )
+}
+
+
+
 
 
 

@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { MdAccountCircle } from "react-icons/md";
 import { ImProfile } from "react-icons/im";
 import { IoLogIn } from "react-icons/io5";
@@ -11,12 +11,22 @@ import { slide as Menu } from "react-burger-menu";
 
 function AdminNavbar() {
   const [admin, setAdmin] = useState(null);
+  const navigate = useNavigate();
   let usertype = null;
+
+  const [searchTerm, setSearchTerm] = useState("");
+  const handleSearch = () => {
+    console.log("Searching for:", searchTerm);
+    navigate(`/admin/search/${searchTerm}`);
+    window.location.reload(false);
+
+
+  };
 
   const isAdmin = () => {
     usertype = window.localStorage.getItem("usertype");
     console.log(usertype);
-    if (usertype == "admin" || usertype == "MasterAdmin") setAdmin(usertype);
+    if (usertype == "Admin" || usertype == "MasterAdmin") setAdmin(usertype);
     else usertype = null;
   };
 
@@ -36,7 +46,7 @@ function AdminNavbar() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  if (!(admin == "admin" || admin == "MasterAdmin"))
+  if (!(admin == "Admin" || admin == "MasterAdmin"))
     return (
       <>
         <div style={{ color: "black" }}>Access Restricted</div>
@@ -71,6 +81,18 @@ function AdminNavbar() {
             </nav>
 
             <div className="header-actions">
+
+            <input
+            type="text"
+            className="search-bar"
+            placeholder="Search products..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <button type="button" className="search-btn" onClick={handleSearch}>
+            Search
+          </button>
+
               <button className="action-btn user" aria-label="User">
                 <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
               </button>
@@ -96,17 +118,23 @@ function AdminNavbar() {
               <p className={admin == "MasterAdmin" ?  "menu-item": "hide" }>Admins</p>
             </Link>
 
-            <Link to="/admin/viewCategories">
+            <Link to="/admin/pets/viewCategories">
               <p className="menu-item">Pets</p>
             </Link>
 
-            <Link to="/admin/managecustomers">
+            <Link to="/admin/products/viewCategories">
+              <p className="menu-item">Products</p>
+            </Link>
+
+            <Link to="/admin/customers">
               <p className="menu-item">Customers</p>
             </Link>
 
-            <Link to="/admin/manageorders">
+            <Link to="/admin/orders">
               <p className="menu-item">Orders</p>
             </Link>
+
+           
           </Menu>
           
         )}

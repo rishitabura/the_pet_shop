@@ -7,6 +7,7 @@ import { useNavigate, Link } from "react-router-dom";
 function GetAllAdmins() {
     const [isLoading, setIsLoading] = useState(null);
     const [admins, setAdmins] = useState([]);
+    const [userEmail, setUserEmail] = useState(null);
     const navigate = useNavigate();
 
     const fetchData = async () => {
@@ -28,20 +29,43 @@ function GetAllAdmins() {
             .then((data) => {
                 
                 setAdmins(data.data);
-                console.log(data.data);
-                console.log(admins);
+                //console.log(data.data);
+                //console.log(admins);
             
             });
+            const token = window.localStorage.getItem("wtcptoken");
+            fetch("http://localhost:5000/admin/getEmail", {
+                method: "POST",
+                CrossDomain: true,
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                    "Access-Control-Allow-Origin": "*",
+                },
+    
+                body: JSON.stringify({  token: token}),
+    
+            })
+                .then((res) => res.json())
+                .then((data) => {
+                    //console.log(data);
+                    setUserEmail(data.data);
+                    //console.log(userEmail);
+                    //console.log(admins);
+                
+                });
+    
 
         setIsLoading(false);
 
     };
 
 
-    const updatePrivileges = async (event, id) => {
+    const updatePrivileges = async (event, id, type) => {
         event.preventDefault();
-        const token = window.localStorage.getItem("token");
-        
+        const token = window.localStorage.getItem("wtcptoken");
+        if(type=="Admin") type = "MasterAdmin";
+        else type = "Admin";
         fetch("http://localhost:5000/admin/updatePriviledges", {
             method: "POST",
             CrossDomain: true,
@@ -54,7 +78,7 @@ function GetAllAdmins() {
             body: JSON.stringify({
                 token: token,
                 email: id,
-                type: "MasterAdmin"
+                type: type
 
             }),
 
@@ -63,7 +87,8 @@ function GetAllAdmins() {
             .then((data) => {
                 if (data.success == true) {
                     alert("Updated Successfully");
-                    navigate("/admin/getAllAdmins");
+                    navigate("/admin/manageadmins");
+                    window.location.reload(false);
                 }
                 
             });
@@ -71,7 +96,7 @@ function GetAllAdmins() {
     };
 
     const deleteAdmin = async (event, id) => {
-        const token = window.localStorage.getItem("token");
+        const token = window.localStorage.getItem("wtcptoken");
         event.preventDefault();
         fetch("http://localhost:5000/admin/removeAdmin", {
             method: "POST",
@@ -94,7 +119,8 @@ function GetAllAdmins() {
                 console.log(data, "Profile");
                 if (data.success == true) {
                     alert("Deleted Successfully");
-                    navigate("/admin/getAllAdmins");
+                    navigate("/admin/manageadmins");
+                    window.location.reload(false);
                 }
             });
 
@@ -127,16 +153,16 @@ function GetAllAdmins() {
                     return (
                         <tr>
                             <td className="admin-table-data">{val.Name}</td>
-                            <td className="admin-table-data">{val._id}</td>
+                            <td className="admin-table-data">{val.Email}</td>
                             <td className="admin-table-data">{val.Type}</td>
-                            {val.Type != "MasterAdmin" && (<td className="admin-table-data">
-                            <button className="admin-table-button" onClick={(event)=>updatePrivileges(event, val._id)}>Update to MasterAdmin</button>
+                            { val.Email != userEmail && val.Email != "masteradmin@petbazaar.com" ? (<td className="admin-table-data">
+                            <button className="admin-table-button" onClick={(event)=>updatePrivileges(event, val.Email, val.Type)}>Change Priviledges</button>
                             
-                                <button className="admin-table-button" onClick={(event) => deleteAdmin(event, val._id)}>
+                                <button className="admin-table-button" onClick={(event) => deleteAdmin(event, val.Email, val.Type)}>
                                 Delete
                                 </button>
                                 </td>
-                            )}
+                            ):null}
                             
                         </tr>
                     )

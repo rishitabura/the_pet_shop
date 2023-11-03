@@ -29,8 +29,8 @@ const Admin_AddAdmin = () => {
         event.preventDefault();
         var uname = form.name;
         var email = form.email;
-        var type = "admin";
-        const token = window.localStorage.getItem("token");
+        var type = "Admin";
+        const token = window.localStorage.getItem("wtcptoken");
         fetch("http://localhost:5000/admin/registerNewAdmin", {
             method: "POST",
             CrossDomain: true,

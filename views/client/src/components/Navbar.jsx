@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useContext } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { MdAccountCircle } from "react-icons/md";
 import { ImProfile } from "react-icons/im";
 import { IoLogIn } from "react-icons/io5";
@@ -14,14 +14,24 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 function Navbar() {
 
   let location = useLocation();
+  let navigate = useNavigate();
   var login = false;
 
+  const [searchTerm, setSearchTerm] = useState("");
+
   const islogin = () => {
-    const token = window.localStorage.getItem("token");
-    //console.log(token);
+    const token = window.localStorage.getItem("wtcptoken");
     if (token) login = true;
     else login = false;
-  }
+  };
+
+  const handleSearch = () => {
+    console.log("Searching for:", searchTerm);
+    navigate(`/search/${searchTerm}`);
+    window.location.reload(false);
+
+
+  };
 
   const logout = () => {
     alert("Successful");
@@ -53,14 +63,15 @@ function Navbar() {
           <ul className="navbar-list">
 
             <li className="navbar-item">
-              <a href="/" className="navbar-link" data-nav-link>Home</a>
+              <Link to="/" className="navbar-link" data-nav-link>Home</Link>
             </li>
 
-            <li className="navbar-item">
-              <a href="#pet-categories" className="navbar-link" data-nav-link>Pet Categories</a>
-            </li>
+            {/* <li className="navbar-item">
+            <Link to="/animalCategories" className="navbar-link" data-nav-link>Animal Categories</Link>
+            </li> */}
 
             <li className="navbar-item">
+<<<<<<< HEAD
               {/* <a href="" className="navbar-link" data-nav-link>Shop */}
               <div className="dropdown">
                 <button className="dropbtn" style={{"color" : "var(--eerie-black)"}}>Shop</button>
@@ -72,20 +83,37 @@ function Navbar() {
               </div>
               {/* 
               </a> */}
+=======
+            <Link to="/animals" className="navbar-link" data-nav-link>Shop
+                
+              </Link> 
+>>>>>>> b2ac66d4dafc4b5be935f7e459cf0848644b33fd
             </li>
 
             <li className="navbar-item">
-              <a href="/about" className="navbar-link" data-nav-link>About Us </a>
+            <Link to="/about" className="navbar-link" data-nav-link>About Us </Link>
             </li>
 
             <li className="navbar-item">
-              <a href="#contact" className="navbar-link" data-nav-link>Contact</a>
+            <Link to="#contact" className="navbar-link" data-nav-link>Contact</Link>
             </li>
 
           </ul>
 
         </nav>
         <div className="header-actions">
+
+          <input
+            type="text"
+            className="search-bar"
+            placeholder="Search products..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <button type="button" className="search-btn" onClick={handleSearch}>
+            Search
+          </button>
+      
           <a href="/login">
             <button type="button" className={login ? "hide" : "loginbtn"}>
               <MdAccountCircle size={30} color="black" />
@@ -96,11 +124,23 @@ function Navbar() {
             <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
           </button>
 
-          <a href="/userprofile">
+          <Link to="/customer/profile">
             <button type="button" className={login ? "loginbtn" : "hide"} >
               <ImProfile size={30} color="black" />
             </button>
-          </a>
+          </Link>
+
+          <Link to="/customer/cart">
+          <button type="button" className={login ? "loginbtn" : "hide"}>
+            {/* <IoLogIn size={30} color="black" />  */} Cart
+          </button>
+          </Link>
+
+          <Link to="/customer/orders">
+          <button type="button" className={login ? "loginbtn" : "hide"}>
+            {/* <IoLogIn size={30} color="black" />  */} Orders
+          </button>
+          </Link>
 
           <button type="button" className={login ? "loginbtn" : "hide"} onClick={logout}>
             <IoLogIn size={30} color="black" />

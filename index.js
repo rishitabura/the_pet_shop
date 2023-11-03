@@ -7,11 +7,17 @@ app.use(cors());
 
 require("dotenv").config({ path: "./config.env" });
 const PORT = process.env.PORT || 5000;
-const customerRouter = require("./routes/customers.routes");
+
 const { connectToMongo } = require("./database/db");
+
+const customerRouter = require("./routes/customers.routes");
 const adminRouter = require("./routes/admin.routes");
+const petRouter = require("./routes/pets.routes");
+const productRouter = require("./routes/products.routes");
 app.use("/customer", customerRouter);
 app.use("/admin", adminRouter);
+app.use("/pet", petRouter);
+app.use("/product", productRouter);
 
 app.listen(PORT, () => {
     console.log("Server started");

@@ -28,9 +28,9 @@ const UserProfile = () => {
 
     const fetchUserData = async () => {
         setIsLoading(true);
-        const token = window.localStorage.getItem("token");
+        const token = window.localStorage.getItem("wtcptoken");
         console.log(token);
-        fetch("http://localhost:5000/customer/fetchaccount", {
+        fetch("http://localhost:5000/customer/fetchprofile", {
             method: "POST",
             CrossDomain: true,
             headers: {
@@ -48,7 +48,7 @@ const UserProfile = () => {
             .then((data) => {
                 if(data.data){
                 var userdata = data.data;
-                console.log(userdata);
+                //console.log(userdata);
                 if ('Address_line1' in userdata) setForm((prevForm) => ({ ...prevForm, address_line1: userdata.Address_line1 }));
                 if ('Address_area' in userdata) setForm((prevForm) => ({ ...prevForm, address_area: userdata.Address_area }));
                 if ('City' in userdata) setForm((prevForm) => ({ ...prevForm, address_city: userdata.City }));
@@ -56,7 +56,7 @@ const UserProfile = () => {
                 if ('Phone' in userdata) setForm((prevForm) => ({ ...prevForm, phone: userdata.Phone }));
                 if ('DOB' in userdata) setForm((prevForm) => ({ ...prevForm, dob: userdata.DOB, }));
                 
-                setForm((prevForm) => ({ ...prevForm, email: userdata._id, name: userdata.Name }));
+                setForm((prevForm) => ({ ...prevForm, email: userdata.Email, name: userdata.Name }));
                 }
             });
 
@@ -85,8 +85,9 @@ const UserProfile = () => {
         var city = form.address_city;
         var pincode = form.pincode;
         var email = form.email;
+        var token = window.localStorage.getItem("wtcptoken");
         fetch("http://localhost:5000/customer/profile", {
-            method: "POST",
+            method: "PUT",
             CrossDomain: true,
             headers: {
                 "Content-Type": "application/json",
@@ -102,13 +103,14 @@ const UserProfile = () => {
                 address_line1,
                 address_area,
                 city,
-                pincode
+                pincode,
+                token
             }),
 
         })
             .then((res) => res.json())
             .then((data) => {
-                console.log(data, "Profile");
+                //console.log(data, "Profile");
                 if (data.success == true) {
                     alert("Updated Successfully");
                     redirectNow();

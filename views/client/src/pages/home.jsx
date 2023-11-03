@@ -21,6 +21,8 @@ import dogimg from "../assets/img/dog.jpg";
 import rabbitimg from "../assets/img/rabbit.jpeg";
 import farm_animalimg from "../assets/img/parrot.jpg";
 import birdimg2 from "../assets/img/parrot.jpg";
+import farmanimals2 from "../assets/img/farmanimals2.jpg";
+import farmimg1 from "../assets/img/farmanimal.png";
 // import pet-food from "assets/img/pet-food.png";
 
 
@@ -64,8 +66,8 @@ function Home() {
                 <li>
                   <Card_TopCat
                     img_url={animalsimg1}
-                    subtitle="Animals"
-                    page_url="/animals"
+                    subtitle="Home Pets"
+                    page_url="pets/tags/HomePet"
                   />
                 </li>
 
@@ -73,17 +75,25 @@ function Home() {
                 <Card_TopCat
                   img_url = {birdsimg1}
                   subtitle = "Birds"
-                  page_url = "/birds"
+                  page_url = "pets/Birds"
                   />
                 </li>
 
                 <li>
+                <Card_TopCat
+                  img_url = {farmimg1}
+                  subtitle = "Farm Animals"
+                  page_url = "pets/tags/FarmAnimals"
+                  />
+                </li>
+
+                {/* <li>
                   <Card_TopCat
                     img_url={sea_animalsimg1}
                     subtitle="Sea Animals"
-                    page_url="/seaanimals"
+                    page_url="pets/SeaAnimals"
                   />
-                </li>
+                </li> */}
 
 
               </ul>
@@ -105,22 +115,22 @@ function Home() {
                   <Card_PetAcc 
                   img_url = {petfoodimg1} 
                   title = "Pet Food" 
-                  page_url = "/food"/>
+                  page_url = "products/Food"/>
                 </li>
 
                 <li>
                 <Card_PetAcc
-                   img_url = {petgroomingimg1}
-                   title = "Habitat & Accessories"
-                   page_url = "/grooming"
+                   img_url = {petessentialsimg1}
+                   title = "Accessories"
+                   page_url = "products/Accessories"
                   />
                 </li>
 
                 <li>
                   <Card_PetAcc
-                   img_url = {petessentialsimg1}
-                   title = "Health Care"
-                   page_url = "/essentials"
+                   img_url = {petgroomingimg1}
+                   title = "Hygiene"
+                   page_url = "products/Hygiene"
                   />
                 </li>
 
@@ -128,7 +138,7 @@ function Home() {
                 <Card_PetAcc
                    img_url = {petshelterimg1}
                    title = "Shelter"
-                   page_url = "/shelter"
+                   page_url = "products/Shelter"
                   />
                 </li>
 
@@ -151,7 +161,7 @@ function Home() {
                   <Card_TopCat2
                     img_url={catimg}
                     title="Cats"
-                    page_url="#"
+                    page_url="/pets/Cats"
                   />
                 </li>
 
@@ -159,7 +169,7 @@ function Home() {
                   <Card_TopCat2
                     img_url={dogimg}
                     title="Dogs"
-                    page_url="#"
+                    page_url="/pets/Dogs"
                   />
                 </li>
 
@@ -167,15 +177,15 @@ function Home() {
                   <Card_TopCat2
                     img_url={rabbitimg}
                     title="Rabbits"
-                    page_url="#"
+                    page_url="/pets/Rabbits"
                   />
                 </li>
 
                 <li className="scrollbar-item">
                   <Card_TopCat2
-                    img_url={farm_animalimg}
+                    img_url={farmanimals2}
                     title="Farm Animals"
-                    page_url="#"
+                    page_url="/pets/tags/FarmAnimals"
                   />
                 </li>
 
@@ -183,7 +193,7 @@ function Home() {
                   <Card_TopCat2
                     img_url={birdimg2}
                     title="Birds"
-                    page_url="#"
+                    page_url="/pets/Birds"
                   />
 
                 </li>
