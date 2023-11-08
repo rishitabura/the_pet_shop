@@ -95,13 +95,6 @@ function App() {
 
 
           <Route exact path="/about" element={< About/>}/> 
-<<<<<<< HEAD
-          <Route exact path="/animals" element={<Animals />} />
-          <Route exact path="/userprofile" element={<UserProfile/>}/>
-          <Route exact path="/birds" element={<Birds />} />
-          <Route exact path="/seaanimals" element={<SeaAnimals />} />
-          {/* <Route exact path="/modal" element={<Modal />} /> */}
-=======
           <Route exact path="/search/:searchTerm" element={<DisplaySearchResults/>}/>
           <Route exact path="/search/" element={<Home/>}/>
           <Route exact path="/pets/tags/:searchTag" element={<DisplayAnimals />} />
@@ -114,7 +107,6 @@ function App() {
            <Route exact path="/animals" element={<Animals />} />
           {/*<Route exact path="/birds" element={<Birds />} /> */}
           {/* <Route exact path="/seaanimals" element={<SeaAnimals />} /> */}
->>>>>>> b2ac66d4dafc4b5be935f7e459cf0848644b33fd
           {/* <Route exact path="/goldenRetrieversDog" element={<GoldenRetrieversDog />} /> */}
 
           {/* Admin Routes */}

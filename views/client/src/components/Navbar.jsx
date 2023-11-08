@@ -71,23 +71,9 @@ function Navbar() {
             </li> */}
 
             <li className="navbar-item">
-<<<<<<< HEAD
-              {/* <a href="" className="navbar-link" data-nav-link>Shop */}
-              <div className="dropdown">
-                <button className="dropbtn" style={{"color" : "var(--eerie-black)"}}>Shop</button>
-                <div className="dropdown-content">
-                  <a href="#">Link 1</a>
-                  <a href="#">Link 2</a>
-                  <a href="#">Link 3</a>
-                </div>
-              </div>
-              {/* 
-              </a> */}
-=======
             <Link to="/animals" className="navbar-link" data-nav-link>Shop
                 
               </Link> 
->>>>>>> b2ac66d4dafc4b5be935f7e459cf0848644b33fd
             </li>
 
             <li className="navbar-item">

@@ -27,11 +27,8 @@
     "mdb-react-ui-kit": "^6.2.0",
     "mongodb": "^5.7.0",
     "mongoose": "^7.5.2",
-<<<<<<< HEAD
     "react-burger-menu": "^3.0.9",
-=======
     "multer": "^1.4.5-lts.1",
->>>>>>> b2ac66d4dafc4b5be935f7e459cf0848644b33fd
     "react-icons": "^4.10.1",
     "react-modal": "^3.16.1",
     "react-router-dom": "^6.15.0"
