@@ -330,7 +330,16 @@ nav .menu span {
         align-items: center;
     }
 
-    nav .menu {
+
+    nav{
+        flex-direction: column;
+        
+    }
+    nav ul{
+        max-width: 100%;
+    }
+
+    /* nav .menu {
         display: flex;
     }
 
@@ -358,7 +367,7 @@ nav .menu span {
 
     nav ul li a {
         margin: 0.2rem 0.5rem;
-    }
+    } */
 }
 
 @media (min-width: 820px) and (max-width: 1124px) {

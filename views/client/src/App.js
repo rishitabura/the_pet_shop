@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 //main
 import Home from "./pages/home";
 import About from './pages/aboutus';
+import Contact from './pages/contact'
 
 //login
 import Login from './pages/login';
@@ -76,6 +77,9 @@ import DisplaySearchResults from './pages/DisplaySearchResults';
 
 
 
+
+
+
 function App() {
 
 
@@ -95,6 +99,7 @@ function App() {
 
 
           <Route exact path="/about" element={< About/>}/> 
+          <Route exact path='/contact'element={<Contact/>}/>
           <Route exact path="/search/:searchTerm" element={<DisplaySearchResults/>}/>
           <Route exact path="/search/" element={<Home/>}/>
           <Route exact path="/pets/tags/:searchTag" element={<DisplayAnimals />} />
@@ -157,6 +162,8 @@ function App() {
           <Route exact path="/product6" element={<Product6 />} />
           <Route exact path="/pet" element={<Pet />} />
           <Route exact path="/puppies" element={<Puppies />} />
+
+
 
 
 
