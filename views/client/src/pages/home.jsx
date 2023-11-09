@@ -31,6 +31,8 @@ import ctabg from "../assets/img/cta-bg.jpg";
 import ctabanner from "../assets/img/cta-banner.png";
 
 import Navbar from "../components/Navbar";
+import Navbar1 from "../components/Navbar1";
+
 import Footer from "../components/footer";
 // import Navbar1 from "../components/Navbar/Navbar";
 
