@@ -8,6 +8,7 @@ import "../styles/style.css";
 import "../styles/admincommons.css";
 import { setupConfig } from "@ionic/core";
 import { slide as Menu } from "react-burger-menu";
+// import Sidebar from "./Sidebar"
 
 function AdminNavbar() {
   const [admin, setAdmin] = useState(null);
@@ -26,7 +27,7 @@ function AdminNavbar() {
   const isAdmin = () => {
     usertype = window.localStorage.getItem("usertype");
     console.log(usertype);
-    if (usertype == "Admin" || usertype == "MasterAdmin") setAdmin(usertype);
+    if (usertype === "Admin" || usertype === "MasterAdmin") setAdmin(usertype);
     else usertype = null;
   };
 
@@ -46,7 +47,7 @@ function AdminNavbar() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  if (!(admin == "Admin" || admin == "MasterAdmin"))
+  if (!(admin === "Admin" || admin === "MasterAdmin"))
     return (
       <>
         <div style={{ color: "black" }}>Access Restricted</div>
@@ -115,7 +116,7 @@ function AdminNavbar() {
             </Link>
 
             <Link to="/admin/manageadmins">
-              <p className={admin == "MasterAdmin" ?  "menu-item": "hide" }>Admins</p>
+              <p className={admin === "MasterAdmin" ?  "menu-item": "hide" }>Admins</p>
             </Link>
 
             <Link to="/admin/pets/viewCategories">
