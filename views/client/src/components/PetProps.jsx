@@ -72,7 +72,7 @@ function PetProps(props) {
                         by {props.shop}
                     </p> */}
                     <p className="product-price">
-                        {props.price} (inclusive of all taxes)
+                       Rs. {props.price} (inclusive of all taxes)
                     </p>
                     <div>
                         <label>Quantity :</label>
@@ -95,9 +95,7 @@ function PetProps(props) {
                         <button className="butt outline" onClick={addToCart}>
                             <b>ADD TO CART</b>
                         </button>
-                        <button className="butt fill">
-                            <b>BUY NOW</b>
-                        </button>
+                     
                     </div>
                     <div className="product-feat" style={{ "marginTop": "40px" }}>
                         <div className="icon-con">

@@ -1,0 +1,13 @@
+.menu-item{
+    padding: 10%;
+}
+
+.bm-item-list{
+    width: 30vw;
+    display: block;
+    background-color: #2D3850;
+    text-align: left;
+    padding: 5vw;
+    margin: auto;
+    color: white;
+}

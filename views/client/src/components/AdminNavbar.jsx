@@ -112,27 +112,27 @@ function AdminNavbar() {
         {isMenuOpen && (
           <Menu  className="slidermenu" isOpen={true} onStateChange={(state) => setIsMenuOpen(state.isOpen)} pageWrapId={"page-wrap"} outerContainerId={"outer-container"}>
             <Link to="/admin/dashboard">
-              <p className="menu-item">Dashboard</p>
+              <p className="menu-item1">Dashboard</p>
             </Link>
 
             <Link to="/admin/manageadmins">
-              <p className={admin === "MasterAdmin" ?  "menu-item": "hide" }>Admins</p>
+              <p className={admin === "MasterAdmin" ?  "menu-item1": "hide" }>Admins</p>
             </Link>
 
             <Link to="/admin/pets/viewCategories">
-              <p className="menu-item">Pets</p>
+              <p className="menu-item1">Pets</p>
             </Link>
 
             <Link to="/admin/products/viewCategories">
-              <p className="menu-item">Products</p>
+              <p className="menu-item1">Products</p>
             </Link>
 
             <Link to="/admin/customers">
-              <p className="menu-item">Customers</p>
+              <p className="menu-item1">Customers</p>
             </Link>
 
             <Link to="/admin/orders">
-              <p className="menu-item">Orders</p>
+              <p className="menu-item1">Orders</p>
             </Link>
 
            
