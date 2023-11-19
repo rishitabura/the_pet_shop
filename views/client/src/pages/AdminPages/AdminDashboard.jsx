@@ -14,33 +14,19 @@ function AdminDashboard() {
       <div className="adminpages">
         <h1> Dashboard </h1>
 
-        <h3> Statistics Today </h3>
-        <div className="admin-dash">
-        <Admin_Dashboard_Card
-        title="4"
-        subtitle="Pets"
-         />
-         <Admin_Dashboard_Card
-        title="32"
-        subtitle="Pet Care Supplies"
-         />
-         <Admin_Dashboard_Card
-        title="2"
-        subtitle="New Customers"
-         />
-         </div>
-         <h3> Statistics Till Date </h3>
+     
+         <h3> Statistics  </h3>
          <div className="admin-dash">
         <Admin_Dashboard_Card
-        title="96"
+        title="36"
         subtitle="Pets"
          />
          <Admin_Dashboard_Card
-        title="212"
+        title="112"
         subtitle="Pet Care Supplies"
          />
          <Admin_Dashboard_Card
-        title="20"
+        title="200"
         subtitle="New Customers"
          />
          </div>

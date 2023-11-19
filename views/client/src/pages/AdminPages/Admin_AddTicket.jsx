@@ -1,12 +1,13 @@
-import Button from "../Button/Button";
-import styles from "./Contact.module.css";
+import Button from "../../components/Button/Button";
+import styles from "../../components/ContactForm/Contact.module.css";
 import { MdMessage } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import AdminNavbar from "../../components/AdminNavbar";
 
-const ContactForm = () => {
+const Admin_AddTicket = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [name, setName] = useState("TYCSA GROUP 18 : ");
@@ -28,7 +29,7 @@ const onFormInputChange = (event) => {
 
 const redirectNow = () => {
   const redirectTo = location.search.replace("?redirectTo=", "");
-  navigate(redirectTo ? redirectTo : "/");
+  navigate(redirectTo ? redirectTo : "/admin/dashboard");
 }
 
 const onSubmit = async (event) => {
@@ -56,7 +57,7 @@ const onSubmit = async (event) => {
       .then((data) => {
           //console.log(data, "Profile");
           if (data.success == true) {
-              alert("Successful. We will contact you soon");
+              alert("Successful");
               redirectNow();
           }
       });
@@ -65,30 +66,25 @@ const onSubmit = async (event) => {
 
  
   return (
+    <div>
+    <AdminNavbar />
+    <div className="adminpages">
     <section className={styles.container}>
       <div className={styles.contact_form}>
-        <div className={styles.top_btn}>
-         
-          <Button disabled text="VIA CALL +919898767654" icon={<FaPhoneAlt fontSize="24px" />} />
-          <Button
-          isOutline={true}
-          text="VIA EMAIL support@petbazaar.com"
-          icon={<HiMail fontSize="24px" />}
-        />
-        </div>
-        
+      <h1>Customer Support Add Ticket</h1>
+      <h3>Please fill out this form if a customer reached out via call or email</h3>
 
         <form onSubmit={onSubmit}>
           <div className={styles.form_control}>
-            <label htmlFor="name">Name</label>
+            <label htmlFor="name">Customer Name</label>
             <input required type="text" name="name" value={form.name} onChange={onFormInputChange}/>
           </div>
           <div className={styles.form_control}>
-            <label htmlFor="email">Your Email</label>
+            <label htmlFor="email">Customer Email</label>
             <input required type="email" name="email" value={form.email} onChange={onFormInputChange}/>
           </div>
           <div className={styles.form_control}>
-            <label htmlFor="text">Text</label>
+            <label htmlFor="text">Customer Query</label>
             <textarea required name="text" rows="8" value={form.text} onChange={onFormInputChange}/>
           </div>
           <div
@@ -100,14 +96,15 @@ const onSubmit = async (event) => {
             <Button text="SUBMIT" />
           </div>
 
-          <div>{name + " "  + email + " . "  + text}</div>
+          
         </form>
       </div>
       {/* <div className={styles.contact_image}>
         <img src={contact} alt="contact image" />
       </div> */}
     </section>
+    </div></div>
   );
 };
 
-export default ContactForm;
+export default Admin_AddTicket;

@@ -37,7 +37,12 @@ const {
   updateOrderStatus,
   searchAll,
   searchinCustomers,
-  searchinOrders
+  searchinOrders,
+
+  getAllTickets,
+  addTicket,
+  viewTicket,
+  updateTicketStatus
 } = require("../controllers/admin.controllers");
 const fetchUser = require("../middleware/fetchuser.middleware");
 
@@ -47,7 +52,7 @@ adminRouter.post("/registerNewAdmin", fetchUser, adminRegister);
 adminRouter.post("/fetchprofile", fetchUser, getRoute);
 adminRouter.put("/profile", fetchUser, updateAdmin);
 adminRouter.get("/:adminId", getAdminProfile);
-adminRouter.post("/:adminId/changePassword", fetchUser, changePassword);
+adminRouter.post("/changepassword", fetchUser, changePassword);
   //adminRouter.put("/update/:Id",  fetchUser, updateAdmin);
 adminRouter.post("/getalladmins", getAllAdmins);
 adminRouter.post("/viewAdmin", fetchUser, viewAdmin);
@@ -82,5 +87,11 @@ adminRouter.get("/customers/:cId/orders", viewCustomerOrders);
 adminRouter.get("/orders/getAllOrders", getAllOrders);
 adminRouter.get("/orders/:oId", viewOrder);
 adminRouter.put("/orders/:oId", updateOrderStatus);
+
+//Customer Support
+adminRouter.post("/customersupport/add", addTicket);
+adminRouter.get("/customersupport/getAllTickets", getAllTickets);
+adminRouter.get("/customersupport/:tId", viewTicket);
+adminRouter.post("/customersupport/:tId", updateTicketStatus);
 
 module.exports = adminRouter;

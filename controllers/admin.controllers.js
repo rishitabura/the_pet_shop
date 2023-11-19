@@ -7,7 +7,7 @@ const fs = require('fs');
 const { promisify } = require('util');
 const unlinkAsync = promisify(fs.unlink);
 const upload = multer({ dest: 'uploads' });
-const { adminaccounts, petsDB, productsDB, customeraccounts, orders, customercarts } = require("../database/db.js");
+const { adminaccounts, petsDB, productsDB, customeraccounts, orders, supportTickets } = require("../database/db.js");
 const { put } = require('../routes/customers.routes.js');
 //const nodemailer = require("nodemailer");
 //const imagesize = require("image-size");
@@ -125,10 +125,13 @@ const updateAdmin = async (req, res) => {
 
 const changePassword = async (req, res) => {
   const { oldpass, newpass } = req.body;
+  const userId = new ObjectId(req.user.Id);
+ 
   try {
-    const adminId = new ObjectId(req.params.adminId);
-    const admin = await adminaccounts.findOne({ _id: adminId, Password: oldpass })
+   
+    const admin = await adminaccounts.findOne({ _id: userId, Password: oldpass })
     if (!admin) {
+      
       return res.status(404).json({ message: 'Invalid Credentials' });
     }
     const update = {
@@ -136,7 +139,7 @@ const changePassword = async (req, res) => {
         Password: newpass
       }
     };
-    await adminaccounts.updateOne({ _id: adminId }, update, {});
+    await adminaccounts.updateOne({ _id: userId }, update, {});
     return res.status(201).send(Response(true, "ok", {}));
   } catch (error) {
     return res.status(500).json({ message: 'Server error', error: error.message });
@@ -586,6 +589,66 @@ const updateOrderStatus = async (req, res) => {
   }
 }
 
+const getAllTickets = async (req, res) => {
+  try {
+    const ticketsinfo = await supportTickets.find().toArray();
+
+    res.status(201).send(Response(true, "ok", ticketsinfo));
+  }
+  catch (error) {
+    res.status(500).send(Response(false, "error", error));
+  }
+}
+
+const addTicket = async (req, res) => {
+  const { name, email, text } = req.body;
+  const date = Date.now();
+  try {
+    await supportTickets.insertOne({
+      Name: name,
+      Email: email,
+      Text: text,
+      Status: "Pending",
+      CreatedAt: date,
+    });
+    if (res.status(201)) {
+      return res.status(201).send(Response(true, "ok", {}));
+    }
+    else return res.status(500).send(Response(false, "error", {}));
+  }
+  catch (error) {
+    res.status(500).send(Response(false, "error", error));
+    console.log(error);
+  }
+
+};
+
+const viewTicket = async (req, res) => {
+  const tId = new ObjectId(req.params.tId);
+  //console.log(oId);
+  try {
+    const ticket = await supportTickets.findOne({ _id: tId });
+    //console.log(order);
+    res.status(201).send(Response(true, "ok", ticket));
+  }
+  catch (error) {
+    res.status(500).send(Response(false, "error", error));
+  }
+}
+
+const updateTicketStatus = async (req, res) => {
+  const { newstatus } = req.body;
+  console.log(newstatus);
+  const tId = new ObjectId(req.params.tId);
+  try {
+    const ticket = await supportTickets.updateOne({ _id: tId }, { $set: { Status: newstatus } }, {});
+    res.status(201).send(Response(true, "ok", ticket));
+  }
+  catch (error) {
+    res.status(500).send(Response(false, "error", error));
+  }
+}
+
 const searchAllCollections = async (db, searchTerm) => {
   try {
     const collections = await db.listCollections().toArray();
@@ -724,6 +787,11 @@ module.exports = {
   updateOrderStatus,
   searchAll,
   searchinCustomers,
-  searchinOrders
+  searchinOrders,
+
+  getAllTickets,
+  viewTicket,
+  updateTicketStatus,
+  addTicket
 };
 

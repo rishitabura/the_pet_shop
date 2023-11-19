@@ -151,6 +151,13 @@ const AdminProfile = () => {
                                     </div>
 
                                     <div className="wrap-input">
+                                    <label>Password:</label><br/>
+                                    <Link to='/admin/changepassword'>
+                                        <button className="login-form-btn">Change Password</button>
+                                    </Link>
+                                    </div>
+
+                                    <div className="wrap-input">
                                     <label>Phone number:</label>
                                         <input type="tel" required className="input" name="phone" placeholder="Phone Number"
                                             value={form.phone} onChange={onFormInputChange} label="Phone" />

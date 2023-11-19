@@ -5,7 +5,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 //main
 import Home from "./pages/home";
 import About from './pages/aboutus';
-import Contact from './pages/contact'
+import Contact from './pages/contact';
+import UserProfile from './pages/userprofile';
+import ChangePassword from './pages/ChangePassword';
 
 //login
 import Login from './pages/login';
@@ -39,12 +41,11 @@ import Product5 from "./pages/product5";
 import Product6 from "./pages/product6";
 import Pet from "./pages/pet";
 
-// import ProductModal from './pages/Modal';
-import UserProfile from './pages/userprofile';
 
 // admin
 import AdminDashboard from "./pages/AdminPages/AdminDashboard";
 import AdminProfile from "./pages/AdminPages/AdminProfile";
+import Admin_ChangePassword from './pages/AdminPages/Admin_ChangePassword';
 import GetAllAdmins from './pages/AdminPages/GetAllAdmins';
 import Admin_AddAdmin from './pages/AdminPages/Admin_AddAdmin';
 // admin - pets
@@ -71,13 +72,10 @@ import PurchaseCart from './pages/PurchaseCart';
 import Orders_Get from './pages/Orders_Get';
 import Order_View from './pages/Order_View';
 import DisplaySearchResults from './pages/DisplaySearchResults';
-
-
-
-
-
-
-
+// admin - customer support
+import GetAllTickets from './pages/AdminPages/GetAllTickets';
+import Admin_Ticket_View from './pages/AdminPages/Admin_Ticket_View';
+import Admin_AddTicket from './pages/AdminPages/Admin_AddTicket';
 
 
 function App() {
@@ -92,6 +90,7 @@ function App() {
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/register" element={<Register />} /> 
           <Route exact path="/customer/profile" element={<UserProfile/>}/>
+          <Route exact path="/customer/changepassword" element={<ChangePassword/>}/>
           <Route exact path="/customer/cart" element={<Cart/>}/>
           <Route exact path="/customer/cart/purchase" element={<PurchaseCart/>}/>
           <Route exact path="/customer/orders/" element={<Orders_Get/>}/>
@@ -118,6 +117,7 @@ function App() {
             {/* Admin */}
             <Route exact path="/admin/dashboard" element={<AdminDashboard/>}/>
             <Route exact path="/admin/profile" element={<AdminProfile/>}/>
+            <Route exact path="/admin/changepassword" element={<Admin_ChangePassword/>}/>
             <Route exact path="/admin/manageadmins" element={<GetAllAdmins/>}/>
             <Route exact path="/admin/registeradmin" element={<Admin_AddAdmin/>}/>
            
@@ -147,6 +147,11 @@ function App() {
           <Route exact path="/admin/search/" element={<AdminDashboard/>}/>
           <Route exact path="/admin/customers/search/" element={<GetAllCustomers/>}/>
           <Route exact path="/admin/orders/search/" element={<GetAllOrders/>}/>
+
+          <Route exact path="/admin/customersupport" element={<GetAllTickets/>}/>
+          <Route exact path="/admin/customersupport/:tid" element={<Admin_Ticket_View/>}/>
+          <Route exact path="/admin/customersupport/add" element={<Admin_AddTicket/>}/>
+    
           {/* <Route exact path="/modal" element={<ProductModal />} /> */}
 
           <Route exact path="/food" element={<Food />} />

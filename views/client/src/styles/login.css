@@ -9,7 +9,7 @@
 }
 
 .container-login {
-  margin-top: 6%;
+  margin-top: 0;
   background-color: #F8A01B;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -99,4 +99,17 @@
   text-decoration: none;
 }
 
-/* Additional styles can be added here as needed */
+
+@media (max-width: 1200px) {
+  .container-login {
+    margin-top: 6%;
+    
+  }
+}
+
+@media (max-width: 600px) {
+  .container-login {
+    margin-top: 10%;
+    
+  }
+}

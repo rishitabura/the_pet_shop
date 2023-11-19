@@ -135,6 +135,10 @@ function AdminNavbar() {
               <p className="menu-item1">Orders</p>
             </Link>
 
+            <Link to="/admin/customersupport">
+              <p className="menu-item1">Customer Support</p>
+            </Link>
+
            
           </Menu>
           

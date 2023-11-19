@@ -51,7 +51,7 @@ function Orders_View() {
                 setOrder(data.data);
                 console.log(order);
                 customerId = data.data.CustomerId;
-                setOrderStatus(data.data.OrderStatus);
+                setOrderStatus(data.data.Status);
      
         }).then(()=>{
         fetch(`http://localhost:5000/admin/customers/${customerId}`, {

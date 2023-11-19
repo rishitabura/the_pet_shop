@@ -168,6 +168,15 @@ const UserProfile = () => {
                                     </div>
 
                                     <div className="wrap-input">
+                                    <label>Password:</label> <br/>
+                                    
+                                        <Link to='/customer/changepassword'>
+                                        <button className="login-form-btn">Change Password</button>
+                                        </Link>
+                                   
+                                    </div>
+
+                                    <div className="wrap-input">
                                     <label>Phone number:</label>
                                         <input type="tel" required className="input" name="phone" placeholder="Phone Number"
                                             value={form.phone} onChange={onFormInputChange} label="Phone" />
@@ -230,6 +239,11 @@ const UserProfile = () => {
                                     <div className="login-form-btn-container">
                                         <button className="login-form-btn" onClick={onSubmit}>Save</button>
                                     </div>
+
+                                    
+
+                                
+                                   
 
                                 </form>
 

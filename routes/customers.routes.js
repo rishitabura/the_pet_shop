@@ -29,7 +29,7 @@ customerRouter.post("/login", loginRoute);
 customerRouter.post("/fetchprofile", fetchUser, getRoute);
 customerRouter.put("/profile", fetchUser, updateCustomer);
 customerRouter.get("/:customerId", getCustomerProfile);
-customerRouter.post("/:customerId/changePassword", fetchUser, changePassword);
+customerRouter.post("/changepassword", fetchUser, changePassword);
 
 //cart
 customerRouter.put("/cart/add/:p/:cat/:pId", fetchUser, addToCart);

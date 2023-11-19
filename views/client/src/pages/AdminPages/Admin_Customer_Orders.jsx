@@ -62,7 +62,7 @@ function Admin_Customer_Orders() {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-          <button type="button" className="search-btn" onClick={handleSearch}>
+          <button type="button" className="admin-table-button" onClick={handleSearch}>
             Search
           </button>
 

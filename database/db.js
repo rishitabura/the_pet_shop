@@ -14,6 +14,7 @@ const connectToMongo = () => {
 const DB = client.db("PetBazaarDB");
 const customeraccounts = DB.collection("CustomerAccountInfo");
 const customercarts = DB.collection("Carts");
+const supportTickets = DB.collection("SupportTickets");
 const orders = DB.collection("Orders");
 const adminaccounts = DB.collection("AdminAccountInfo");
 const petsDB = client.db("petsDB");
@@ -26,5 +27,6 @@ module.exports = {
   orders,
   petsDB,
   productsDB,
-  customercarts
+  customercarts,
+  supportTickets
 };

@@ -51,16 +51,18 @@ const Login = () => {
         {
             window.localStorage.setItem("wtcptoken", data.data.token);
             window.localStorage.setItem("usertype", data.data.type);
+            if(data.data.type=="customer"){
+                alert("Login Successful"); 
+                redirectNow();
+            }
+            else if( data.data.type=="Admin" || data.data.type=="MasterAdmin")
+            {
+                alert("Redirecting to Admin");
+                navigate('/admin/dashboard');
+            }
         }
-        if(data.data.type=="customer"){
-            alert("Login Successful"); 
-            redirectNow();
-        }
-        else if( data.data.type=="Admin" || data.data.type=="MasterAdmin")
-        {
-            alert("Redirecting to Admin");
-            navigate('/admin/dashboard');
-        }
+        else alert("Invalid Credentials");
+       
     });
     
   };
