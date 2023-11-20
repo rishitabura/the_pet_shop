@@ -1,3 +1,6 @@
+/* body{
+  margin-top: 100px;
+}
 .contact_section {
   max-width: 1000px;
   margin: 0 auto;
@@ -9,4 +12,65 @@
 }
 .contact_section p {
   font-weight: 500;
+} */
+/* Default styles */
+body {
+  margin-top: 100px;
+}
+
+.contact_section {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contact_section h1 {
+  font-size: 48px;
+  font-weight: 800;
+  max-width: 80%;
+}
+
+.contact_section p {
+  font-weight: 500;
+}
+
+/* Media Queries for smaller screens */
+@media screen and (max-width: 768px) {
+  body {
+    margin-top: 150px; /* Adjust margin for smaller screens */
+  }
+
+  .contact_section h1 {
+    font-size: 36px; /* Decrease font size for smaller screens */
+    max-width: 90%; /* Adjust max-width for smaller screens */
+  }
+}
+
+/* Media Queries for even smaller screens, like mobile phones */
+@media screen and (max-width: 480px) {
+  body {
+    margin-top: 60px; /* Further adjust margin for smaller screens */
+  }
+
+  .contact_section h1 {
+    font-size: 28px; /* Decrease font size for even smaller screens */
+    max-width: 100%; /* Allow full width for headings on small screens */
+  }
+
+  .contact_section p {
+    font-size: 16px; /* Adjust font size for paragraphs on small screens */
+  }
+}
+@media screen and (max-width: 1024px) {
+  body {
+    margin-top: 200px; /* Further adjust margin for smaller screens */
+  }
+
+  
+}
+@media screen and (max-width: 1200px) {
+  body {
+    margin-top: 200px; /* Further adjust margin for smaller screens */
+  }
+
+  
 }
